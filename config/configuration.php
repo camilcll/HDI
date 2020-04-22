@@ -38,7 +38,7 @@ define('PATH_IMAGES', PATH_ASSETS.'images/');
 define('PATH_SCRIPTS', PATH_ASSETS.'scripts/');
 
 //fichiers
-define('PATH_LOGO', PATH_IMAGES.'logo.jpg');
+define('PATH_LOGO', PATH_IMAGES.'logo.png');
 define('PATH_MAIL', PATH_IMAGES.'mail.jpg');
 define('PATH_FAX', PATH_IMAGES.'fax.png');
 define('PATH_APPEL', PATH_IMAGES.'appel.png');
