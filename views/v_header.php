@@ -21,17 +21,32 @@
 	</head> 
 	<body>
 		<!-- En-tête -->
-		<header class="header"; style="background-color:#3CB371;">
-			<section class="container" >
-				<div class = "row" >
-					<div class = "col-md-2 col-sm-2 col-xs-12">
-						<img src="<?= PATH_LOGO ?>" alt="<?= LOGO ?>" class="img-circle" style="width:45%">
-					</div>
-					<div class="col-md-10 col-sm-10 col-xs-12">
-						<h2><?= TITRE ?></h2>
-					</div>
+		<header>
+			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+				<a class="navbar-brand" href="#">
+					<img src="<?= PATH_LOGO ?>" width="100" class="d-inline-block align-top" alt="">
+					NomPortail
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="#">Toutes les publications <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Mes publications</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">A propos</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Paramètres</a>
+					</li>
+					</ul>
 				</div>
-			</section>
+			</nav>
 		</header>
 		<!-- Vue -->
 			<section class="container">
