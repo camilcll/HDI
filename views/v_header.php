@@ -24,7 +24,7 @@
 		<header>
 			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 				<a class="navbar-brand" href="#">
-					<img src="<?= PATH_LOGO ?>" width="100" class="d-inline-block align-top" alt="">
+					<img src="<?= PATH_LOGO ?>" width="30" class="d-inline-block align-top" alt="">
 					NomPortail
 				</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
