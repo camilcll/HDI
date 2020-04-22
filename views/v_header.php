@@ -24,7 +24,7 @@
 		<header>
 			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 				<a class="navbar-brand" href="#">
-					<img src="<?= PATH_LOGO ?>" width="30" class="d-inline-block align-top" alt="">
+					<img src="<?= PATH_LOGO ?>" width="30" class="d-inline-block align-top mb-3 mx-2" alt="">
 					NomPortail
 				</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,19 +32,20 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarNav">
 					<ul class="navbar-nav">
-					<li class="nav-item">
+					<li class="nav-item mx-3">
 						<a class="nav-link" href="#">Toutes les publications <span class="sr-only">(current)</span></a>
 					</li>
-					<li class="nav-item">
+					<li class="nav-item mx-3">
 						<a class="nav-link" href="#">Mes publications</a>
 					</li>
-					<li class="nav-item">
+					<li class="nav-item mx-3">
 						<a class="nav-link" href="#">A propos</a>
 					</li>
-					<li class="nav-item">
+					<li class="nav-item mx-3">
 						<a class="nav-link" href="#">Paramètres</a>
 					</li>
 					</ul>
+					<button class="btn btn-outline-light my-3 float-right" type="button">Se connecter</button>
 				</div>
 			</nav>
 		</header>
