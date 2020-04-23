@@ -32,17 +32,37 @@
 					<li class="nav-item mx-3">
 						<a class="nav-link" href="#">Toutes les publications</span></a>
 					</li>
+					<?php if(isset($_SESSION['logged'])) { ?>
 					<li class="nav-item mx-3">
 						<a class="nav-link" href="#">Mes publications</a>
 					</li>
-					<li class="nav-item mx-3">
-						<a class="nav-link" href="#">A propos</a>
+					<?php } ?>
+					<li  class="nav-item mx-3">
+						<a class="nav-link" href="#" style="">A propos</a>
 					</li>
+					<?php if(isset($_SESSION['logged'])) { ?>
 					<li class="nav-item mx-3">
 						<a class="nav-link" href="#">Paramètres</a>
 					</li>
+					<?php } ?>
+					
 					</ul>
-					<a href="index.php?page=connexion"><button class="btn btn-outline-light my-3 float-right" type="button" <?php echo ($page=='connexion' ? '':'')?>>Se connecter</button></a>
+					<ul class="nav navbar-nav navbar-right ">
+							<?php if(isset($_SESSION['logged'])) { ?>
+								<li <?php echo ($page=='deconnexion' ? 'class="active"':'')?>>
+									<a href="index.php?page=deconnexion" >
+										<?= MENU_DECONNEXION ?>
+									</a>
+								</li>
+							<?php }else {  ?>	
+								<li <?php echo ($page=='connexion' ? 'class="active"':'')?>>
+									<a href="index.php?page=connexion" >
+										<?= MENU_CONNEXION ?>
+									</a>
+								</li>
+								
+							<?php } ?>
+    				</ul>
 				</div>
 			</nav>
 		</header>
