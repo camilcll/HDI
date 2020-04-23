@@ -9,7 +9,7 @@ class UserDAO extends DAO {
 		
 		$ligne = $this -> queryRow("SELECT * FROM CHERCHEUR WHERE LOGIN = ? AND PWD = ?", array($LOGIN, $PWD));
 		if ($ligne) {
-				return new CHERCHEUR($ligne['ID_CHERCHEUR'], $ligne['LOGIN'], $ligne['PWD']);
+			return new User($ligne['ID_CHERCHEUR'], $ligne['NOM'], $ligne['PRENOM'], $ligne['LOGIN'], $ligne['PWD'], $ligne['EMAIL']);
 		}
 		else {
 			return false;
@@ -20,7 +20,8 @@ class UserDAO extends DAO {
 		
 		$ligne = $this -> queryRow("SELECT * FROM CHERCHEUR WHERE LOGIN = ? ", array($LOGIN));
 		if ($ligne) {
-            return new User($ligne['ID_CHERCHEUR'], $ligne['LOGIN'], $ligne['PWD']);
+			return new User($ligne['ID_CHERCHEUR'], $ligne['NOM'], $ligne['PRENOM'], $ligne['LOGIN'], $ligne['PWD'], $ligne['EMAIL']);
+		
 		}
 		else {
 			return false;
@@ -30,7 +31,7 @@ class UserDAO extends DAO {
 		
 		$ligne = $this -> queryRow("SELECT LOGIN FROM CHERCHEUR WHERE ID_CHERCHEUR = ? ", array($id));
 		if ($ligne) {
-            return new User($ligne['ID_CHERCHEUR'], $ligne['LOGIN'], $ligne['PWD']);
+            return new User($ligne['ID_CHERCHEUR'], $ligne['NOM'], $ligne['PRENOM'], $ligne['LOGIN'], $ligne['PWD'], $ligne['EMAIL']);
 		}
 		else {
 			return false;
@@ -41,7 +42,7 @@ class UserDAO extends DAO {
 		
 		$ligne = $this -> queryRow("SELECT * FROM CHERCHEUR WHERE ID_CHERCHEUR = ?", array($id));
 		if ($ligne) {
-				return new User($ligne['ID_CHERCHEUR'], $ligne['LOGIN'], $ligne['PWD']);
+			return new User($ligne['ID_CHERCHEUR'], $ligne['NOM'], $ligne['PRENOM'], $ligne['LOGIN'], $ligne['PWD'], $ligne['EMAIL']);
 		}
 		else {
 			return false;

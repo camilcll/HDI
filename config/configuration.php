@@ -4,9 +4,9 @@ const DEBUG = true; // production : false; dev : true
 
 // Accès base de données
 const BD_HOST = 'iutdoua-web.univ-lyon1.fr';
-const BD_DBNAME = 'p1804713';
-const BD_USER = 'p1804713';
-const BD_PWD = '367876';
+const BD_DBNAME = 'p1804059';
+const BD_USER = 'p1804059';
+const BD_PWD = '367361';
 
 // Langue du site
 const LANG ='FR-fr';
@@ -17,11 +17,6 @@ const MDPADMIN='$2y$10$va9WuT947Hbgc9HYKZSZ7.7E1uXgLmW1AZKqzMzTcy4M9LCt0nIbu';
 const ADMIN='administrateur';
 const MDP='admin';
 
-const LOGADMIN2='admin';
-const MDPADMIN2='$2y$10$8mOKCUiyOvV5iv18Iv6nKuvc5n9Gtk1.UTg3Cp77qb2k/KmczsYqO';
-
-// Paramètres du site : nom de l'auteur ou des auteurs
-const AUTEUR = 'HMB';
 
 //dossiers racines du site
 define('PATH_CONTROLLERS','./controllers/c_');
