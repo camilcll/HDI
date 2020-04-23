@@ -28,13 +28,12 @@
                 <div class="overlay">
                     <div class="overlay-panel overlay-right">
                         <h1>Bienvenue !</h1>
-                        <p>Entrez vos informations personnelles</p>
+                        <!--<p>Veuillez entrer vos informations personnelles afin de vous connecter</p>-->
                     </div>
                 </div>
             </div>
         
         </div>
-		<script src="main.js"></script>
 		
 		<style type="text/css">
 
@@ -51,7 +50,7 @@ p {
     font-weight: 100;
     line-height: 20px;
     letter-spacing: 0.5px;
-    margin: 20px 0 30px;
+    margin: 10px 0 20px;
 }
 h1 {
 	font-size: 25px;
@@ -74,7 +73,8 @@ a{
     overflow: hidden;
     width: 730px;
     max-width: 100%;
-    min-height: 480px;
+    min-height: 450px;
+    margin-top:-65px;
 }
 
 .form-container form{
@@ -87,6 +87,7 @@ a{
     justify-content: center;
     align-items: center;
     text-align: center;
+    margin-top:15px;
 
 }
 

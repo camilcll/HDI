@@ -42,3 +42,5 @@ define('PATH_TERRAIN', PATH_IMAGES.'terrain.jpg');
 define('PATH_LOGO2', PATH_IMAGES.'homme.png');
 define('PATH_MENU', PATH_VIEWS.'menu.php');
 define('PATH_PLAN', PATH_IMAGES.'openTennis.jpg');
+
+
