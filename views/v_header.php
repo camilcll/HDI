@@ -24,6 +24,7 @@
 		<header class="mb-0 sticky-top">
 			<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark m-0 rounded-0">
 				<img src="<?= PATH_LOGO ?>" width="50" class="d-inline-block align-center mb-3 mx-2" alt="">
+				<img src="<?= PATH_IMAGES ?>/logo_LTDS.png" width="100" class="d-inline-block align-center mb-3 mx-2" alt="">
 				<div class="collapse navbar-collapse" id="navbarNav">
 					<ul class="navbar-nav">
 					<li class="nav-item mx-3">
