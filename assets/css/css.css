@@ -1,8 +1,23 @@
 
+::selection{
+  color: black;
+  background-color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: .6em;
+  height: .2em;
+}
+::-webkit-scrollbar-thumb {
+  background: grey;
+}
+::-webkit-scrollbar-track {
+  background: #0D0D0D;
+}
+
 html, body{
   overflow-x: hidden;
 }
-
 
 .navbar{
   height: 7em;
@@ -16,21 +31,13 @@ a {
   text-decoration: none;
 }
 
-.img-fluid {max-width: 100%; height: auto;}
-
-.carousel-item .img-fluid {
-width:100%;
-height:auto;
-}
-
 section {
   width: 100vw!important;
-  height: 80vh;
+  height: 100vh;
 }
 
 #main{
   width: 100vw!important;
-  height: 70vh!important;
 }
 
   div#slider figure {
@@ -43,7 +50,7 @@ section {
 }
   div#slider figure img { width: 20%; float: left; }
 
-  div#slider { width: 80%; max-width: 1000px; height: 50%; overflow: hidden }
+  div#slider { width: 80%; max-width: 1000px; overflow: hidden }
 
   @keyframes slidy {
   0% { left: 0%; }
