@@ -21,7 +21,7 @@
 	</head> 
 	<body>
 		<!-- En-tête -->
-		<header class="m-0">
+		<header class="mb-0">
 			<nav class="navbar navbar-expand-lg navbar-dark bg-dark m-0">
 				<img src="<?= PATH_LOGO ?>" width="50" class="d-inline-block align-center mb-3 mx-2" alt="">
 				<div class="collapse navbar-collapse" id="navbarNav">
