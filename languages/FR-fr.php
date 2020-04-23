@@ -16,11 +16,9 @@ define('SELECTION_PHOTOS', 'photo(s) sélectionnées');
 define('TEXTE_PAGE_404', "Oups, la page demandée n'existe pas !");
 define('MESSAGE_ERREUR', "Une erreur s'est produite");
 define('ERREUR_ID_PHOTO', "Identifiant de vip incorrect dans l'URL");
-define('TITRE', 'Open Tennis de Lyon');
+define('TITRE', 'Portail');
 define('ERREUR_QUERY', "Problème d\'accès à la base de données. Contactez l\'administrateur");
-define('INFOS_VIP', 'Info sur le vip');
-define('TITRE_PAGE_PHOTO', 'Les details de cette photo');
-define('TITRE_AJOUT_VIP','Ajouter un nouveau VIP');
+
 
 define('NOM_FICHIER', 'Nom du fichier');
 
