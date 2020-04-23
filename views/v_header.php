@@ -45,10 +45,11 @@
 						<a class="nav-link" href="#">Paramètres</a>
 					</li>
 					</ul>
-					<button class="btn btn-outline-light my-3 float-right" type="button">Se connecter</button>
+					<a href="index.php?page=connexion"><button class="btn btn-outline-light my-3 float-right" type="button" <?php echo ($page=='connexion' ? '':'')?>>Se connecter</button></a>
+					
 				</div>
 			</nav>
 		</header>
 		<!-- Vue -->
-			<section class="container">
-				<div class = "row">
+			<section class="container mx-0">
+				<div id="main" class = "row mx-0">

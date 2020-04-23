@@ -1,7 +1,32 @@
+
+html, body{
+  overflow-x: hidden;
+}
+
+
 .navbar{
   height: 7em;
 }
 
 a, button{
   font-size: large!important;
+}
+
+a {
+  text-decoration: none;
+}
+
+.img-fluid {max-width: 100%; height: auto;}
+
+.carousel-item .img-fluid {
+width:100%;
+height:auto;
+}
+
+section {
+  width: 100vw!important;
+}
+
+#main{
+  width: 100vw!important;
 }
