@@ -37,7 +37,12 @@
 		<script src="main.js"></script>
 		
 		<style type="text/css">
-		h1{
+
+* {
+    box-sizing: border-box;
+}
+
+h1{
     font-weight: bold;
     margin: 0;
 }
@@ -112,8 +117,8 @@ a{
 
 .valider{
     border-radius: 20px;
-    border: 1px solid #ff4b2B;
-    background:#ff4b2B ;
+    border: 1px solid #99182c;
+    background:#AB1515 ;
     color:#fff;
     font-size: 12px;
     font-weight: bold;
@@ -130,10 +135,7 @@ button:focus{
     outline: none;
 }
 
-button.ghost{
-    background: transparent;
-    border-color: #fff;
-}
+
 .form-container {
     position: absolute;
     top: 0;
@@ -169,9 +171,9 @@ button.ghost{
 }
 
 .overlay{
-    background: #ff416c;
-    background: -webkit-linear-gradient(to right, #ff4b2b, #ff416c);
-    background: linear-gradient(to right, #ff4b2b, #ff416c);
+    background: #99182c;
+    background: -webkit-linear-gradient(to right, #ff4b2b, #99182c);
+    background: linear-gradient(to right, #ff4b2b, #99182c);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 0 0;
