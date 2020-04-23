@@ -26,12 +26,12 @@ require_once(PATH_ENTITY . 'User.php');
 
 if (isset($_POST['identifiant']))
 {
-	$identifiant = htmlspecialchars($_POST['identifiant']);
+	$LOGIN = htmlspecialchars($_POST['identifiant']);
 	//si l'utilisateur est l'administrateur alors variable session admin passe a true
 	
 
 		 $uDao = new UserDAO();
-		$userBD = $uDao->getUserByUsername($identifiant);
+		$userBD = $uDao->getUserByUsername($LOGIN);
 		if (!$userBD) $alert=choixAlert('erreur_id');
 		if (!isset($_POST['password']) || $_POST['password']!=$userBD->getPassword()) $alert = choixAlert('erreur_mdp');
 		else {

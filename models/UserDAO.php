@@ -5,22 +5,22 @@ require_once(PATH_ENTITY . 'User.php');
 
 class UserDAO extends DAO {
 	
-    public function connexion($username, $password) {
+    public function connexion($LOGIN, $PWD) {
 		
-		$ligne = $this -> queryRow("SELECT * FROM User WHERE username = ? AND password = ?", array($username, $password));
+		$ligne = $this -> queryRow("SELECT * FROM CHERCHEUR WHERE LOGIN = ? AND PWD = ?", array($LOGIN, $PWD));
 		if ($ligne) {
-				return new User($ligne['userID'], $ligne['username'], $ligne['password']);
+				return new CHERCHEUR($ligne['ID_CHERCHEUR'], $ligne['LOGIN'], $ligne['PWD']);
 		}
 		else {
 			return false;
         }
     }
     
-    public function getUserByUsername($username) {
+    public function getUserByUsername($LOGIN) {
 		
-		$ligne = $this -> queryRow("SELECT * FROM User WHERE username = ? ", array($username));
+		$ligne = $this -> queryRow("SELECT * FROM CHERCHEUR WHERE LOGIN = ? ", array($LOGIN));
 		if ($ligne) {
-            return new User($ligne['userID'], $ligne['username'], $ligne['password']);
+            return new User($ligne['ID_CHERCHEUR'], $ligne['LOGIN'], $ligne['PWD']);
 		}
 		else {
 			return false;
@@ -28,9 +28,9 @@ class UserDAO extends DAO {
     }
     public function getUsernameById($id) {
 		
-		$ligne = $this -> queryRow("SELECT username FROM User WHERE userID = ? ", array($id));
+		$ligne = $this -> queryRow("SELECT LOGIN FROM CHERCHEUR WHERE ID_CHERCHEUR = ? ", array($id));
 		if ($ligne) {
-            return new User($ligne['userID'], $ligne['username'], $ligne['password']);
+            return new User($ligne['ID_CHERCHEUR'], $ligne['LOGIN'], $ligne['PWD']);
 		}
 		else {
 			return false;
@@ -39,16 +39,16 @@ class UserDAO extends DAO {
     
     public function getUserById($id) {
 		
-		$ligne = $this -> queryRow("SELECT * FROM User WHERE userID = ?", array($id));
+		$ligne = $this -> queryRow("SELECT * FROM CHERCHEUR WHERE ID_CHERCHEUR = ?", array($id));
 		if ($ligne) {
-				return new User($ligne['userID'], $ligne['username'], $ligne['password']);
+				return new User($ligne['ID_CHERCHEUR'], $ligne['LOGIN'], $ligne['PWD']);
 		}
 		else {
 			return false;
         }
     }
 
-    public function creerUser($username, $password)
+    /*public function creerUser($username, $password)
     {
     	// Récupération d'un identifiant libre
         $res = $this -> queryRow('SELECT MAX(userID) FROM User');
@@ -57,7 +57,7 @@ class UserDAO extends DAO {
 		// Ajout du VIP en base
 		$this -> _requete("INSERT INTO User (userID, username, password) VALUES (?, ?, ?)", array($userID,$username, $password));
 		return $userID;
-    }
+    }*/
 
 }
 

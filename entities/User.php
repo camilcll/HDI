@@ -2,26 +2,32 @@
 
 class User {
 	
-	private $_userID;
-	private $_username;
-	private $_password;
+	private $_ID_CHERCHEUR;
+	private $_NOM;
+	private $_PRENOM;
+	private $_LOGIN;
+	private $_PWD;
+	private $_EMAIL;
 	
-	public function __construct($userID, $username, $password) {
-		$this -> _userID = $userID;
-		$this -> _username = $username;
-		$this -> _password = $password;
+	public function __construct($ID_CHERCHEUR, $NOM, $PRENOM,$LOGIN ,$PWD ,$EMAIL ) {
+		$this -> _ID_CHERCHEUR = $ID_CHERCHEUR;
+		$this -> _NOM = $NOM;
+		$this -> _PRENOM = $PRENOM;
+		$this -> _LOGIN = $LOGIN;
+		$this -> _PWD = $PWD;
+		$this -> _EMAIL = $EMAIL;
 	}
 	
 	public function getUserID() {
-		return $this -> _userID;
+		return $this -> _ID_CHERCHEUR;
 	}
 	
 	public function getUsername() {
-		return htmlspecialchars($this -> _username);
+		return htmlspecialchars($this -> _LOGIN);
 	}
     
     public function getPassword() {
-		return htmlspecialchars($this -> _password);
+		return htmlspecialchars($this -> _PWD);
 	}
 	
 }

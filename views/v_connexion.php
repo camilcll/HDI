@@ -15,12 +15,12 @@
 	<div class="container" id="container">
         
             <div class="form-container sign-in-container">
-                <form action="#">
+                <form method="post" action="index.php?page=connexion">
                     <h1> Se Connecter </h1>
-                    <input type="text" placeholder="Identifiant"/>
-                    <input type="password" placeholder="Password"/>
+                    <input name="identifiant" type="text" placeholder="Identifiant"/>
+                    <input name="password" type="password" placeholder="Password"/>
                     <a href="#">Forgot your password</a>
-                    <button> Valider </button>
+                    <button class="valider"> Valider </button>
                 </form>
 
             </div>
@@ -29,7 +29,6 @@
                     <div class="overlay-panel overlay-right">
                         <h1>Bienvenue !</h1>
                         <p>Entrez vos informations personnelles</p>
-                        <button class="ghost" id="signIn"> S'inscrire </button>
                     </div>
                 </div>
             </div>
@@ -111,7 +110,7 @@ a{
     width: 100%;
 }
 
-button{
+.valider{
     border-radius: 20px;
     border: 1px solid #ff4b2B;
     background:#ff4b2B ;
