@@ -24,7 +24,7 @@ define('TITRE_AJOUT_VIP','Ajouter un nouveau VIP');
 
 define('NOM_FICHIER', 'Nom du fichier');
 
-define('TITRE_PAGE_CONNEXION', 'Connexion');
+define('TITRE_PAGE_CONNEXION', 'Se Connecter');
 define('IDENTIFIANT','Identifiant');
 define('MOTDEPASSE','Mot De Passe');
 define('ERREUR_IDENTIFIANT','');
