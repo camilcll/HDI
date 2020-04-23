@@ -25,11 +25,12 @@ height:auto;
 
 section {
   width: 100vw!important;
+  height: 80vh;
 }
 
 #main{
   width: 100vw!important;
-  height: 70vw!important;
+  height: 70vh!important;
 }
 
   div#slider figure {
