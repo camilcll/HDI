@@ -21,8 +21,8 @@
 	</head> 
 	<body>
 		<!-- En-tête -->
-		<header>
-			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<header class="m-0">
+			<nav class="navbar navbar-expand-lg navbar-dark bg-dark m-0">
 				<img src="<?= PATH_LOGO ?>" width="50" class="d-inline-block align-center mb-3 mx-2" alt="">
 				<div class="collapse navbar-collapse" id="navbarNav">
 					<ul class="navbar-nav">
@@ -47,5 +47,5 @@
 			</nav>
 		</header>
 		<!-- Vue -->
-			<section class="container mx-0">
-				<div id="main" class = "row mx-0">
+			<section class="d-flex justify-content-center flex-column p-0 m-0">
+				<div id="main" class = "d-flex justify-content-center p-0 m-0">
