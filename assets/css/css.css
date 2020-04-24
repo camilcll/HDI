@@ -126,3 +126,8 @@ footer a{
 footer p{
   font-size: medium;
 }
+
+header button {
+  color:#848888!important;
+  text-transform: lowercase!important;
+}

@@ -52,13 +52,13 @@
 							<?php if(isset($_SESSION['logged'])) { ?>
 								<li <?php echo ($page=='deconnexion' ? 'class="active"':'')?>>
 									<a href="index.php?page=deconnexion" class="p-0 rounded">
-										<button class="btn btn-outline-light m-0" type="submit"><?= MENU_DECONNEXION ?></button>
+										<button class="btn m-0 rounded" type="submit"><?= MENU_DECONNEXION ?></button>
 									</a>
 								</li>
 							<?php }else {  ?>	
 								<li <?php echo ($page=='connexion' ? 'class="active"':'')?>>
 									<a href="index.php?page=connexion" class="p-0 rounded">
-										<button class="btn btn-outline-light m-0" type="submit"><?= MENU_CONNEXION ?></button>
+										<button class="btn m-0 rounded" type="submit"><?= MENU_CONNEXION ?></button>
 									</a>
 								</li>
 								
