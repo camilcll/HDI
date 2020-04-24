@@ -33,7 +33,7 @@ if (isset($_POST['email']))
 		 $uDao = new UserDAO();
 		$userBD = $uDao->getUserByUsername($EMAIL);
 		if (!$userBD) $alert=choixAlert('erreur_id');
-		if (!isset($_POST['password']) || ($_POST['password']!="jean")) $alert = choixAlert('erreur_mdp');
+		if (!isset($_POST['password']) || $_POST['password']!=$userBD->getPwd()) $alert = choixAlert('erreur_mdp');
 		else {
 			$alert = choixAlert('ok_connexion');
 			$_SESSION['logged'] = true;

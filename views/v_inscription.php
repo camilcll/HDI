@@ -13,11 +13,11 @@
 			<div class="form-container sign-in-container">
                 <form method="post" action="index.php?page=inscription">
                     <h1> Creer un compte </h1>
-                    <input type="text" placeholder="Nom"/>
-                    <input type="text" placeholder="Prénom"/>
-                    <input type="email" placeholder="Email"/>
-                    <input type="text" placeholder="Identifiant"/>
-                    <input type="password" placeholder="Password"/>
+                    <input name="nom" type="text" placeholder="Nom"/>
+                    <input type="text" name="prenom" placeholder="Prénom"/>
+                    <input type="password" name="pwd"placeholder="Password"/>
+                    <input type="email" name="email"placeholder="Email"/>
+                    
                     <button> S'inscrire </button>
                 </form>
 

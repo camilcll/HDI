@@ -49,16 +49,16 @@ class UserDAO extends DAO {
         }
     }
 
-    /*public function creerUser($username, $password)
+    public function creerUser($NOM, $PRENOM, $PWD, $EMAIL)
     {
     	// Récupération d'un identifiant libre
-        $res = $this -> queryRow('SELECT MAX(userID) FROM User');
-		$userID = $res['MAX(userID)'] + 1;
+        $res = $this -> queryRow('SELECT MAX(ID_CHERCHEUR) FROM CHERCHEUR');
+		$userID = $res['MAX(ID_CHERCHEUR)'] + 1;
 		
 		// Ajout du VIP en base
-		$this -> _requete("INSERT INTO User (userID, username, password) VALUES (?, ?, ?)", array($userID,$username, $password));
+		$this -> _requete("INSERT INTO CHERCHEUR (ID_CHERCHEUR, NOM, PRENOM, PWD, EMAIL) VALUES (?, ?, ?,?,?)", array($userID,$NOM, $PRENOM, $PWD, $EMAIL));
 		return $userID;
-    }*/
+    }
 
 }
 

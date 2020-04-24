@@ -6,6 +6,7 @@
 <!--  Début de la page -->
 
 <?php
+
 	if(!isset($alert)){ //s'il n'y a pas eu d'erreurs
 ?>
 	

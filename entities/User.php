@@ -15,6 +15,25 @@ class User {
 		$this -> _PWD = $PWD;
 		$this -> _EMAIL = $EMAIL;
 	}
+
+	public function getIdChercheur() {
+		return $this -> _ID_CHERCHEUR;
+	}
+	
+	public function getNom() {
+		return htmlspecialchars($this -> _NOM);
+	}
+    
+    public function getPrenom() {
+		return htmlspecialchars($this -> _PRENOM);
+	}
+	public function getPwd() {
+		return htmlspecialchars($this -> _PWD);
+	}
+	
+	public function getEmail() {
+		return htmlspecialchars($this -> _EMAIL);
+	}
 	
 
 	
