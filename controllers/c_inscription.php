@@ -20,7 +20,7 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['prenom']) && !
 		$PWD = htmlspecialchars($_POST['pwd']);
 		$EMAIL = htmlspecialchars($_POST['email']);
 
-		$userDAO= new UserDAO();
+		$userDAO= new ChercheurDAO();
 		$UserID= $userDAO -> creerUser($NOM, $PRENOM, $PWD, $EMAIL);
 		header('Refresh:0; url=index.php?page=connexion');
 	}

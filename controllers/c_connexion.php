@@ -31,7 +31,7 @@ if (isset($_POST['email']) && !empty($_POST['email']))
 	
 	if (isset($_POST['password']) && !empty($_POST['password']))
 	{
-			$uDao = new UserDAO();
+			$uDao = new ChercheurDAO();
 			$userBD = $uDao->getUserByUsername($EMAIL);
 			if (!$userBD) $alert=choixAlert('erreur_id');
 			if (!isset($_POST['password']) || $_POST['password']!=$userBD->getPwd()) $alert = choixAlert('erreur_mdp');
