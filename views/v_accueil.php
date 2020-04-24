@@ -16,6 +16,7 @@
     </div>  
   </aside>
   <div id="publi_container" class="d-flex justify-content-center flex-column ml-3">
+    <h1>Dernières publications</h1>
     <div class="publi m-4 rounded-lg p-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore fugiat autem eveniet molestiae sint corporis, perspiciatis officiis, quia soluta, illum nisi reiciendis iure recusandae harum corrupti veritatis omnis! Porro, ipsum?</div>
     <div class="publi m-4 rounded-lg p-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus repudiandae, culpa libero fugiat dolorem iusto accusantium quidem laborum eaque nemo reprehenderit voluptates consectetur laboriosam, corrupti ab dolore animi doloribus vero.</div>
     <div class="publi m-4 rounded-lg p-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit, ex exercitationem. Facere assumenda molestiae ipsa corrupti commodi dolorem, rem ex vero sapiente ab deleniti maxime harum accusamus tempore. Aperiam, doloribus!</div>
