@@ -31,7 +31,7 @@
 						<a class="nav-link" href="index.php">Accueil<span class="sr-only">(current)</span></a>
 					</li>
 					<li class="nav-item mx-3">
-						<a class="nav-link" href="#">Toutes les publications</span></a>
+						<a class="nav-link" href="#">Toutes les publications</a>
 					</li>
 					<?php if(isset($_SESSION['logged'])) { ?>
 					<li class="nav-item mx-3">

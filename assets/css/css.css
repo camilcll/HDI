@@ -35,6 +35,7 @@ section {
   width: 100vw!important;
   height: auto;
   min-height: 100vh;
+  max-height: none;
   overflow: hidden;
 }
 
@@ -48,11 +49,13 @@ section {
 
 #second {
   width: 100vw!important;
-  height: 100vh;
+  height: 100%!important;
 }
 
 aside{
-  height: 100%;
+  position: -webkit-sticky;
+  position: sticky;
+  height: 100vh;
   width: 20em;
 }
 
@@ -68,6 +71,10 @@ aside{
   width: 100%!important;
   height: 70%!important;
   box-shadow: 0 1rem 1rem rgba(0,0,0,0.25), 0 1rem 1rem rgba(0,0,0,0.22)!important;
+}
+
+#publi_container {
+  overflow-y: scroll;
 }
 
 .publi {
