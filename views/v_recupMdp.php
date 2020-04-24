@@ -18,7 +18,7 @@
             <div class="form-container sign-in-container">
                 <form method="post" action="index.php?page=recupMdp">
                     <h1> Récupération de votre mot de passe </h1>
-                    <input name="email" type="email" placeholder="Email"/>
+                    <input name="recupEmail" type="email" placeholder="Email"/>
                     <button class="valider"> Valider </button>
                 </form>
 
