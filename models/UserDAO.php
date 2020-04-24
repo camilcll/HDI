@@ -5,22 +5,22 @@ require_once(PATH_ENTITY . 'User.php');
 
 class UserDAO extends DAO {
 	
-    public function connexion($LOGIN, $PWD) {
+    public function connexion($EMAIL, $PWD) {
 		
-		$ligne = $this -> queryRow("SELECT * FROM CHERCHEUR WHERE LOGIN = ? AND PWD = ?", array($LOGIN, $PWD));
+		$ligne = $this -> queryRow("SELECT * FROM CHERCHEUR WHERE EMAIL = ? AND PWD = ?", array($EMAIL, $PWD));
 		if ($ligne) {
-			return new User($ligne['ID_CHERCHEUR'], $ligne['NOM'], $ligne['PRENOM'], $ligne['LOGIN'], $ligne['PWD'], $ligne['EMAIL']);
+			return new User($ligne['ID_CHERCHEUR'], $ligne['NOM'], $ligne['PRENOM'], $ligne['PWD'], $ligne['EMAIL']);
 		}
 		else {
 			return false;
         }
     }
     
-    public function getUserByUsername($LOGIN) {
+    public function getUserByUsername($EMAIL) {
 		
-		$ligne = $this -> queryRow("SELECT * FROM CHERCHEUR WHERE LOGIN = ? ", array($LOGIN));
+		$ligne = $this -> queryRow("SELECT * FROM CHERCHEUR WHERE EMAIL = ? ", array($EMAIL));
 		if ($ligne) {
-			return new User($ligne['ID_CHERCHEUR'], $ligne['NOM'], $ligne['PRENOM'], $ligne['LOGIN'], $ligne['PWD'], $ligne['EMAIL']);
+			return new User($ligne['ID_CHERCHEUR'], $ligne['NOM'], $ligne['PRENOM'], $ligne['PWD'], $ligne['EMAIL']);
 		
 		}
 		else {
@@ -31,7 +31,7 @@ class UserDAO extends DAO {
 		
 		$ligne = $this -> queryRow("SELECT LOGIN FROM CHERCHEUR WHERE ID_CHERCHEUR = ? ", array($id));
 		if ($ligne) {
-            return new User($ligne['ID_CHERCHEUR'], $ligne['NOM'], $ligne['PRENOM'], $ligne['LOGIN'], $ligne['PWD'], $ligne['EMAIL']);
+            return new User($ligne['ID_CHERCHEUR'], $ligne['NOM'], $ligne['PRENOM'], $ligne['PWD'], $ligne['EMAIL']);
 		}
 		else {
 			return false;
@@ -42,7 +42,7 @@ class UserDAO extends DAO {
 		
 		$ligne = $this -> queryRow("SELECT * FROM CHERCHEUR WHERE ID_CHERCHEUR = ?", array($id));
 		if ($ligne) {
-			return new User($ligne['ID_CHERCHEUR'], $ligne['NOM'], $ligne['PRENOM'], $ligne['LOGIN'], $ligne['PWD'], $ligne['EMAIL']);
+			return new User($ligne['ID_CHERCHEUR'], $ligne['NOM'], $ligne['PRENOM'], $ligne['PWD'], $ligne['EMAIL']);
 		}
 		else {
 			return false;
