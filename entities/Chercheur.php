@@ -1,6 +1,6 @@
 <?php
 
-class User {
+class Chercheur {
 	
 	private $_ID_CHERCHEUR;
 	private $_NOM;

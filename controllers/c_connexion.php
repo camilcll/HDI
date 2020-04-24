@@ -1,7 +1,7 @@
 <?php
-require_once(PATH_MODELS . 'UserDAO.php');
+require_once(PATH_MODELS . 'ChercheurDAO.php');
 require_once(PATH_MODELS . 'DAO.php');
-require_once(PATH_ENTITY . 'User.php');
+require_once(PATH_ENTITY . 'Chercheur.php');
 
 /*if (isset($_POST['identifiant']))
 {

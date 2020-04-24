@@ -28,7 +28,7 @@ define('MOTDEPASSE','Mot De Passe');
 define('ERREUR_IDENTIFIANT','');
 define('CONNEXION_OK','Vous etes connecte(e)');
 define('DECONNEXION_OK','Vous etes deconnecte(e)');
-define('CONNEXION_VIDE','Remplir la case vide!');
+define('CONNEXION_VIDE','Remplir le/les champ(s) vide(nt) !');
 
 define('TRICHER_PAGE', 'Erreur, pour acceder a la page');
 

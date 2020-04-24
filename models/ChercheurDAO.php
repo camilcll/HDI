@@ -1,15 +1,15 @@
 <?php
 
 require_once(PATH_MODELS . 'DAO.php');
-require_once(PATH_ENTITY . 'User.php');
+require_once(PATH_ENTITY . 'Chercheur.php');
 
-class UserDAO extends DAO {
+class ChercheurDAO extends DAO {
 	
     public function connexion($EMAIL, $PWD) {
 		
 		$ligne = $this -> queryRow("SELECT * FROM CHERCHEUR WHERE EMAIL = ? AND PWD = ?", array($EMAIL, $PWD));
 		if ($ligne) {
-			return new User($ligne['ID_CHERCHEUR'], $ligne['NOM'], $ligne['PRENOM'], $ligne['PWD'], $ligne['EMAIL']);
+			return new Chercheur($ligne['ID_CHERCHEUR'], $ligne['NOM'], $ligne['PRENOM'], $ligne['PWD'], $ligne['EMAIL']);
 		}
 		else {
 			return false;
@@ -20,7 +20,7 @@ class UserDAO extends DAO {
 		
 		$ligne = $this -> queryRow("SELECT * FROM CHERCHEUR WHERE EMAIL = ? ", array($EMAIL));
 		if ($ligne) {
-			return new User($ligne['ID_CHERCHEUR'], $ligne['NOM'], $ligne['PRENOM'], $ligne['PWD'], $ligne['EMAIL']);
+			return new Chercheur($ligne['ID_CHERCHEUR'], $ligne['NOM'], $ligne['PRENOM'], $ligne['PWD'], $ligne['EMAIL']);
 		
 		}
 		else {
@@ -31,7 +31,7 @@ class UserDAO extends DAO {
 		
 		$ligne = $this -> queryRow("SELECT LOGIN FROM CHERCHEUR WHERE ID_CHERCHEUR = ? ", array($id));
 		if ($ligne) {
-            return new User($ligne['ID_CHERCHEUR'], $ligne['NOM'], $ligne['PRENOM'], $ligne['PWD'], $ligne['EMAIL']);
+            return new Chercheur($ligne['ID_CHERCHEUR'], $ligne['NOM'], $ligne['PRENOM'], $ligne['PWD'], $ligne['EMAIL']);
 		}
 		else {
 			return false;
@@ -42,7 +42,7 @@ class UserDAO extends DAO {
 		
 		$ligne = $this -> queryRow("SELECT * FROM CHERCHEUR WHERE ID_CHERCHEUR = ?", array($id));
 		if ($ligne) {
-			return new User($ligne['ID_CHERCHEUR'], $ligne['NOM'], $ligne['PRENOM'], $ligne['PWD'], $ligne['EMAIL']);
+			return new Chercheur($ligne['ID_CHERCHEUR'], $ligne['NOM'], $ligne['PRENOM'], $ligne['PWD'], $ligne['EMAIL']);
 		}
 		else {
 			return false;
