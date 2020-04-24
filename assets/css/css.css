@@ -118,3 +118,11 @@ div#slider figure {
   text-align: left;
   animation: 30s slidy infinite;
 }
+
+footer a{
+  text-decoration: none;
+  font-size: medium!important;
+}
+footer p{
+  font-size: medium;
+}
