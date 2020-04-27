@@ -7,7 +7,7 @@ require_once(PATH_ENTITY . 'Chercheur.php');
     $recupEmail = htmlspecialchars ($_POST['recupEmail']);
 
     $userBD = new ChercheurDAO(DEBUG);
-    $chercheur = $userBD->getUtilisateurById($userBD);
+    $chercheur = $userBD->recupEmail($userBD);
     
     if ($utilisateur != null){
         $utilisateurUserId = $utilisateur->getIdUtilisateur();

@@ -60,7 +60,7 @@ class ChercheurDAO extends DAO {
 		return $userID;
 	}
 	
-	public function getEmail($email)
+	public function recupEmail($email)
 	{
 		//recuperation de l'email
 		$ligne = $this -> queryRow("SELECT * FROM CHERCHEUR WHERE EMAIL = ?", array($email));

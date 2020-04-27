@@ -43,7 +43,7 @@
 					</li>
 					<?php if(isset($_SESSION['logged'])) { ?>
 					<li class="nav-item mx-3">
-						<a class="nav-link" href="#">Paramètres</a>
+						<a class="nav-link" href="index.php?page=parametre">Paramètres</a>
 					</li>
 					<?php } ?>
 					
@@ -52,7 +52,7 @@
 							<?php if(isset($_SESSION['logged'])) { ?>
 								<li <?php echo ($page=='deconnexion' ? 'class="active"':'')?>>
 									<a href="index.php?page=deconnexion" class="p-0 rounded">
-										<button class="btn m-0 rounded" type="submit"><?= MENU_DECONNEXION ?></button>
+										<button class="btn m-0 rounded" type="submit"><?=MENU_DECONNEXION ?></button>
 									</a>
 								</li>
 							<?php }else {  ?>	

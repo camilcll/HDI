@@ -3,6 +3,11 @@
   color: black;
   background-color: #fff;
 }
+body{
+	margin: 0;
+	padding: 0;
+	background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.02));
+}
 
 ::-webkit-scrollbar {
   width: .6em;
@@ -30,6 +35,8 @@ a, button{
 a {
   text-decoration: none;
 }
+
+
 
 section {
   width: 100vw!important;
