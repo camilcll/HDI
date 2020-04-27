@@ -6,7 +6,8 @@
 
 <link href="<?= PATH_CSS ?>settings.css" rel="stylesheet">
 
-<div id="para" class="d-flex justify-content-around">
+
+<div class="container py-5">
     <form  method="post" action="index.php?page=parametre" name="formParam">
         <ul class="nav nav-tabs">
         <li class="nav-item">
@@ -44,6 +45,7 @@
         <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mt-5" type="submit">Modifier</button>
 
     </form>
+</div>
     <div class="flex justify-content-center align-items-center">
         <div class="left d-flex justify-content-center">
             <div class="profile">
@@ -83,7 +85,7 @@
             </div>
         </div>
     </div>
-</div>
+
 
 <script>/**
  * Profile picture
