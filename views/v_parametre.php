@@ -38,20 +38,10 @@
             </div>
 
         </div>
-<<<<<<< HEAD
-    </div>
-
-    </div>
-    <button style="margin-top: 30px"class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Modifier</button>
-
-</form>
-
-=======
         <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mt-5" type="submit">Modifier</button>
 
     </form>
 </div>
->>>>>>> ca1cb5b66352c33c3e9c1342ce9cade6f7d24973
 
 
 <?php require_once(PATH_VIEWS.'footer.php');?>
