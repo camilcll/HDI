@@ -41,17 +41,6 @@
 
 </form>
 
-<style  type="text/css">
-   
-   .formParam{
-       position:relative;
-   }
-  .form-label-group {
-	position: relative;
-	margin-bottom: 1rem;
-  }
-  
-  
-</style>
+
 
 <?php require_once(PATH_VIEWS.'footer.php');?>
