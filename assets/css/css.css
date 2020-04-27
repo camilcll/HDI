@@ -17,6 +17,7 @@
 
 html, body{
   overflow-x: hidden;
+  scroll-behavior: smooth!important;
 }
 
 .navbar{
@@ -31,6 +32,12 @@ a {
   text-decoration: none;
 }
 
+#scrllDown{
+  background-color: #99182c!important;
+  position: absolute;
+  bottom: 10;
+  right: 10;
+}
 
 
 section {
@@ -43,10 +50,15 @@ section {
 
 #main{
   width: 100vw!important;
-  height: 100vh;
-  background-image: url("../images/bg-accueil.png");
+  height: 89vh;
+  /*background-image: url("../images/bg-accueil.png");*/
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+#main iframe{
+  width: 100%;
+  height: 100%;
 }
 
 #second {
