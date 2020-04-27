@@ -99,3 +99,15 @@ header button {
   color:#848888!important;
   text-transform: lowercase!important;
 }
+
+
+
+#para{
+  width: 100%;
+  height: 100vh;
+}
+
+#para form {
+  width: 50%;
+  height: 100%;
+}
