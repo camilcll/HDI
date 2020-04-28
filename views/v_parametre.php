@@ -83,11 +83,11 @@
 
                 <div class="form-label-group m-3" id="pwd" style="display:none;">
                     <p> Veuillez saisir votre ancien mot de passe </p>
-                    <input type="password" class="form-control" name="ancien"/>
+                    <input type="text" class="form-control" name="ancien" value=""/>
                     <p> Entrer le nouveau mot de passe</p>
-                    <input type="password" class="form-control" name="nouveau1"/>
+                    <input type="password" class="form-control" name="nouveau1" value=""/>
                     <p> Confitmer le nouveau mot de passe</p>
-                    <input type="password" class="form-control" name="nouveau2"/>
+                    <input type="password" class="form-control" name="nouveau2" value=""/>
                 </div>
             
             <!-- partie panneau de configuration -->   
