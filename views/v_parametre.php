@@ -19,34 +19,7 @@
         </li>
 
         </ul>
-        <div id="myTabContent" class="tab-content">
-            <div class="tab-pane fade show active py-4 px-4 ml-3" id="profile">
-                <div class="form-label-group m-3">
-                    <p>Nom</p>
-                    <input type="text" name="nom" id="" class="form-control" placeholder="Nom de l'utilisateur" required autofocus>
-                </div>
-                <div class="form-label-group m-3">
-                    <p>Prenom</p>
-                    <input type="text" name="prenom" id="" class="form-control" placeholder="Prenom de l'utilisateur" required autofocus>
-                </div>
-                <div class="form-label-group m-3">
-                    <p>Mail </p>
-                    <input type="mail" name="email" id="" class="form-control" placeholder="Adresse mail" required autofocus>
-                </div>
-            
-                
-            </div>
-            <div class="tab-pane fade py-4 px-4" id="config">
-                <div class="form-group-group">
-                </div>
-            </div>
-
-        </div>
-        <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mt-5" type="submit">Modifier</button>
-
-    </form>
-</div>
-    <div class="flex justify-content-center align-items-center">
+        <div class="flex justify-content-center align-items-center">
         <div class="left d-flex justify-content-center">
             <div class="profile">
                 <div class="photo">
@@ -85,6 +58,34 @@
             </div>
         </div>
     </div>
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade show active py-4 px-4 ml-3" id="profile">
+                <div class="form-label-group m-3">
+                    <p>Nom</p>
+                    <input type="text" name="nom" id="" class="form-control" placeholder="Nom de l'utilisateur" required autofocus>
+                </div>
+                <div class="form-label-group m-3">
+                    <p>Prenom</p>
+                    <input type="text" name="prenom" id="" class="form-control" placeholder="Prenom de l'utilisateur" required autofocus>
+                </div>
+                <div class="form-label-group m-3">
+                    <p>Mail </p>
+                    <input type="mail" name="email" id="" class="form-control" placeholder="Adresse mail" required autofocus>
+                </div>
+            
+                
+            </div>
+            <div class="tab-pane fade py-4 px-4" id="config">
+                <div class="form-group-group">
+                </div>
+            </div>
+
+        </div>
+        <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mt-5" type="submit">Modifier</button>
+
+    </form>
+</div>
+    
 
 
 <script>/**
