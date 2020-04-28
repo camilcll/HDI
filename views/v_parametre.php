@@ -77,7 +77,7 @@
                     <input type="mail" name="email" id="" value="<?=$user->getEmail() ?>" class="form-control" placeholder="Adresse mail" required autofocus>
                 </div>
                 <div>
-                    <img src="<?= PATH_IMAGES ?>/key.PNG" style="width: 25px;height: 25px;"> 
+                    <img onclick="javascript:visibilite('pwd'); return false;" src="<?= PATH_IMAGES ?>/key.PNG" style="width: 25px;height: 25px;"> 
                     <a href="" onclick="javascript:visibilite('pwd'); return false;" ><label style="font-size:14px;">Mot de Passe </label></a>
                 </div>
 
