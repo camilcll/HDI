@@ -76,7 +76,19 @@
                     <p>Mail </p>
                     <input type="mail" name="email" id="" value="<?=$user->getEmail() ?>" class="form-control" placeholder="Adresse mail" required autofocus>
                 </div>
-                <button> Modifier le mot de passe </button>
+                <div>
+                    <img src="<?= PATH_IMAGES ?>/key.PNG" style="width: 25px;height: 25px;"> 
+                    <a href="" onclick="javascript:visibilite('pwd'); return false;" ><label style="font-size:14px;">Mot de Passe </label></a>
+                </div>
+
+                <div class="form-label-group m-3" id="pwd" style="display:none;">
+                    <p> Veuillez saisir votre ancien mot de passe </p>
+                    <input type="password" class="form-control" name="ancien"/>
+                    <p> Entrer le nouveau mot de passe</p>
+                    <input type="password" class="form-control" name="nouveau1"/>
+                    <p> Confitmer le nouveau mot de passe</p>
+                    <input type="password" class="form-control" name="nouveau2"/>
+                </div>
             
             <!-- partie panneau de configuration -->   
             </div>
@@ -96,6 +108,21 @@
  * @author Daniel Salvagni <danielsalvagni@gmail.com>
  */
 
+ /*  fonction visibilité pour le password */
+ function visibilite(thingId)
+    {
+        var targetElement;
+        targetElement = document.getElementById(thingId) ;
+        if (targetElement.style.display == "none")
+            {
+                targetElement.style.display = "" ;
+            } else {
+                targetElement.style.display = "none" ;
+            }
+    }
+
+
+ 
 /**
  * Turn the globals into local variables.
  */
