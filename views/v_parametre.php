@@ -10,56 +10,60 @@
 <div class="container py-5">
     <form  method="post" action="index.php?page=parametre" name="formParam">
         <ul class="nav nav-tabs">
-        <li class="nav-item">
+        <li class="active">
             <a class="nav-link active" data-toggle="tab" href="#profile">Profile</a>
         </li>
 
-        <li class="nav-item">
+        <li class="">
             <a class="nav-link" data-toggle="tab" href="#config">Panneau de configuration</a>
         </li>
 
         </ul>
-        <div class="flex justify-content-center align-items-center">
-        <div class="left d-flex justify-content-center">
-            <div class="profile">
-                <div class="photo">
-                    <input type="file" name="photo" accept="image/*">
-                    <div class="photo__helper">
-                        <div class="photo__frame photo__frame--circle">
-                            <canvas class="photo__canvas"></canvas>
-                            <div class="message is-empty">
-                                <p class="message--desktop">Drop your photo here or browse your computer.</p>
-                                <p class="message--mobile">Tap here to select your picture.</p>
-                            </div>
-                            <div class="message is-loading">
-                                <i class="fa fa-2x fa-spin fa-spinner"></i>
-                            </div>
-                            <div class="message is-dragover">
-                                <i class="fa fa-2x fa-cloud-upload"></i>
-                                <p>Drop your photo</p>
-                            </div>
-                            <div class="message is-wrong-file-type">
-                                <p>Only images allowed.</p>
-                                <p class="message--desktop">Drop your photo here or browse your computer.</p>
-                                <p class="message--mobile">Tap here to select your picture.</p>
-                            </div>
-                            <div class="message is-wrong-image-size">
-                                <p>Your photo must be larger than 350px.</p>
+        
+
+        <div id="myTabContent" class="tab-content">
+            <!-- partie profile -->
+            <div class="tab-pane fade in active" id="profile">
+            <div class="flex justify-content-center align-items-center">
+            <div class="left d-flex justify-content-center">
+                <div class="profile">
+                    <div class="photo">
+                        <input type="file" name="Photo" accept="image/*">
+                        <div class="photo__helper">
+                            <div class="photo__frame photo__frame--circle">
+                                <canvas class="photo__canvas"></canvas>
+                                <div class="message is-empty">
+                                    <p class="message--desktop">Drop your photo here or browse your computer.</p>
+                                    <p class="message--mobile">Tap here to select your picture.</p>
+                                </div>
+                                <div class="message is-loading">
+                                    <i class="fa fa-2x fa-spin fa-spinner"></i>
+                                </div>
+                                <div class="message is-dragover">
+                                    <i class="fa fa-2x fa-cloud-upload"></i>
+                                    <p>Drop your photo</p>
+                                </div>
+                                <div class="message is-wrong-file-type">
+                                    <p>Only images allowed.</p>
+                                    <p class="message--desktop">Drop your photo here or browse your computer.</p>
+                                    <p class="message--mobile">Tap here to select your picture.</p>
+                                </div>
+                                <div class="message is-wrong-image-size">
+                                    <p>Your photo must be larger than 350px.</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="photo__options hide">
-                        <div class="photo__zoom">
-                            <input type="range" class="zoom-handler">
-                        </div><a href="javascript:;" class="remove"><i class="fa fa-trash"></i></a>
+                        <div class="photo__options hide">
+                            <div class="photo__zoom">
+                                <input type="range" class="zoom-handler">
+                            </div><a href="javascript:;" class="remove"><i class="fa fa-trash"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-        <div id="myTabContent" class="tab-content">
-            <div class="tab-pane fade show active py-4 px-4 ml-3" id="profile">
+
                 <div class="form-label-group m-3">
                     <p>Nom</p>
                     <input type="text" name="nom" id="" value="<?=$user->getNom() ?>" class="form-control" placeholder="Nom de l'utilisateur" required autofocus>
@@ -72,8 +76,9 @@
                     <p>Mail </p>
                     <input type="mail" name="email" id="" value="<?=$user->getEmail() ?>" class="form-control" placeholder="Adresse mail" required autofocus>
                 </div>
+                <button> Modifier le mot de passe </button>
             
-                
+            <!-- partie panneau de configuration -->   
             </div>
             <div class="tab-pane fade py-4 px-4" id="config">
                 <div class="form-group-group">
