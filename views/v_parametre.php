@@ -23,7 +23,7 @@
         <div class="left d-flex justify-content-center">
             <div class="profile">
                 <div class="photo">
-                    <input type="file" accept="image/*">
+                    <input type="file" name="photo" accept="image/*">
                     <div class="photo__helper">
                         <div class="photo__frame photo__frame--circle">
                             <canvas class="photo__canvas"></canvas>
@@ -62,15 +62,15 @@
             <div class="tab-pane fade show active py-4 px-4 ml-3" id="profile">
                 <div class="form-label-group m-3">
                     <p>Nom</p>
-                    <input type="text" name="nom" id="" class="form-control" placeholder="Nom de l'utilisateur" required autofocus>
+                    <input type="text" name="nom" id="" value="<?=$user->getNom() ?>" class="form-control" placeholder="Nom de l'utilisateur" required autofocus>
                 </div>
                 <div class="form-label-group m-3">
                     <p>Prenom</p>
-                    <input type="text" name="prenom" id="" class="form-control" placeholder="Prenom de l'utilisateur" required autofocus>
+                    <input type="text" name="prenom" id="" value="<?=$user->getPrenom() ?>"class="form-control" placeholder="Prenom de l'utilisateur" required autofocus>
                 </div>
                 <div class="form-label-group m-3">
                     <p>Mail </p>
-                    <input type="mail" name="email" id="" class="form-control" placeholder="Adresse mail" required autofocus>
+                    <input type="mail" name="email" id="" value="<?=$user->getEmail() ?>" class="form-control" placeholder="Adresse mail" required autofocus>
                 </div>
             
                 
@@ -85,8 +85,6 @@
 
     </form>
 </div>
-    
-
 
 <script>/**
  * Profile picture

@@ -3,25 +3,6 @@ require_once(PATH_MODELS . 'ChercheurDAO.php');
 require_once(PATH_MODELS . 'DAO.php');
 require_once(PATH_ENTITY . 'Chercheur.php');
 
-/*if (isset($_POST['identifiant']))
-{
-	if($_POST['identifiant']=LOGADMIN)
-	{
-		if (password_verify($_POST['password'],MDPADMIN))
-		{
-			$alert=choixAlert('ok_connexion');
-			$_SESSION['logged']=true;
-		}
-		else
-		{
-			$alert=choixAlert('erreur_mdp');
-		}
-	}
-	else
-	{
-		$alert=choixAlert('erreur_id');
-	}
-}*/
 
 
 if (isset($_POST['email']) && !empty($_POST['email']))
@@ -33,15 +14,19 @@ if (isset($_POST['email']) && !empty($_POST['email']))
 	{
 			$uDao = new ChercheurDAO();
 			$userBD = $uDao->getUserByUsername($EMAIL);
+			$chercheur=$userBD->getIdChercheur();
 			if (!$userBD) $alert=choixAlert('erreur_id');
 			if (!isset($_POST['password']) || $_POST['password']!=$userBD->getPwd()) $alert = choixAlert('erreur_mdp');
 			else {
 				$alert = choixAlert('ok_connexion');
 				$_SESSION['logged'] = true;
+				$_SESSION['id']=$userBD->getIdChercheur();
+				//header('Refresh:0; url=index.php?id='.$chercheur.'page=accueil');
 			}
 
 			//$identite=$userBD->getUsername();
 		}
+	
   
 }
 

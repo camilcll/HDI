@@ -14,7 +14,23 @@ class ChercheurDAO extends DAO {
 		else {
 			return false;
         }
-    }
+	}
+	
+	public function getById($id)
+	
+	{
+		$res= $this->queryRow('SELECT * FROM CHERCHEUR WHERE ID_CHERCHEUR=?', array($id));
+		if($res ===false)
+		{
+			$chercheur=null;
+		
+		}
+		else{
+			$chercheur=new Chercheur($res['ID_CHERCHEUR'],$res['NOM'],$res['PRENOM'],$res['PWD'],$res['EMAIL']);
+			
+		}
+		return $chercheur;
+	}
     
     public function getUserByUsername($EMAIL) {
 		
@@ -36,7 +52,8 @@ class ChercheurDAO extends DAO {
 		else {
 			return false;
         }
-    }
+	}
+	
     
     public function getUserById($id) {
 		
@@ -70,6 +87,19 @@ class ChercheurDAO extends DAO {
 		else {
 			return false;
         }
+	}
+	public function modifierChercheur($nom,$prenom,$email)
+	{
+		/*$photoDAO = new PhotoDAO();
+		$photoID = $photoDAO -> modifierPhoto($nomFich);*/
+
+		$id = $_SESSION['id'];
+
+
+		// mettre à jour un vip
+        $res = $this -> _requete('UPDATE CHERCHEUR 
+ 									set NOM =?,PRENOM=?,EMAIL=? WHERE ID_CHERCHEUR=?', array($nom,$prenom,$email,$id));
+
 	}
 
 }
