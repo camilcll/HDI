@@ -15,7 +15,7 @@
         </li>
 
         <li class="">
-            <a class="nav-link" data-toggle="tab" href="#config">Panneau de configuration</a>
+            <a class="nav-link" data-toggle="tab" href="#autre">Autre</a>
         </li>
 
         </ul>
@@ -92,7 +92,7 @@
             
             <!-- partie panneau de configuration -->   
             </div>
-            <div class="tab-pane fade py-4 px-4" id="config">
+            <div class="tab-pane fade py-4 px-4" id="autre">
                 <div class="form-group-group">
                 </div>
             </div>

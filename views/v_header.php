@@ -45,6 +45,13 @@
 					<li class="nav-item mx-3">
 						<a class="nav-link" href="index.php?page=parametre">Paramètres</a>
 					</li>
+					<?php if($_SESSION['id'] == 1){ ?>
+					<li class="nav-item mx-3">
+						<a class="nav-link" href="index.php?page=panneauConfig">Panneau de configuration </a>
+					</li>
+
+					<?php } ?>
+					
 					<?php } ?>
 					
 					</ul>
