@@ -33,7 +33,7 @@
 					<li class="nav-item mx-3">
 						<a class="nav-link" href="index.php?page=toutesPublications">Toutes les publications</a>
 					</li>
-					<?php if(isset($_SESSION['logged'])) { ?>
+					<?php if(isset($_SESSION['logged']) && $_SESSION['id']!=1) { ?>
 					<li class="nav-item mx-3">
 						<a class="nav-link" href="#">Mes publications</a>
 					</li>
