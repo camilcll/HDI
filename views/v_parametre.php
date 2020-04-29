@@ -5,6 +5,7 @@
 <?php require_once(PATH_VIEWS.'alert.php');?>
 
 <link href="<?= PATH_CSS ?>settings.css" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
 <div class="container py-5">
