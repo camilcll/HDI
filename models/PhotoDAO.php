@@ -1,6 +1,8 @@
 <?php
 require_once(PATH_MODELS.'DAO.php');
 require_once(PATH_ENTITY.'Photo.php');
+require_once(PATH_MODELS . 'ChercheurDAO.php');
+require_once(PATH_ENTITY . 'Chercheur.php');
 
 class PhotoDAO extends DAO {
 
@@ -63,8 +65,9 @@ class PhotoDAO extends DAO {
 
 	public function modifierPhoto($nomFich)
 	{
+        $id=$_SESSION['id'];
         // Modifier la photo
-        $this -> queryBdd("UPDATE from PHOTO set nomFich=?", array($nomFich));
+        $this -> queryBdd("UPDATE from PHOTO set nomFich=? WHERE photoId = ?" , array($id));
 
 	}
 	

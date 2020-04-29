@@ -2,6 +2,8 @@
 
 require_once(PATH_MODELS . 'DAO.php');
 require_once(PATH_ENTITY . 'Chercheur.php');
+require_once(PATH_MODELS . 'PhotoDAO.php');
+require_once(PATH_ENTITY . 'Photo.php');
 
 class ChercheurDAO extends DAO {
 	

@@ -26,14 +26,13 @@ define('PATH_LIB','./lib/');
 define('PATH_MODELS','./models/');
 define('PATH_VIEWS','./views/v_');
 define('PATH_TEXTES','./languages/');
-define('PATH_UPLOADS','./uploads/');
 
 
 //sous dossiers
 define('PATH_CSS', PATH_ASSETS.'css/');
 define('PATH_IMAGES', PATH_ASSETS.'images/');
 define('PATH_SCRIPTS', PATH_ASSETS.'scripts/');
-define('PATH_AVATAR', PATH_UPLOADS. 'avatar/');
+define('PATH_AVATAR', PATH_IMAGES. 'Avatar/');
 
 //fichiers
 define('PATH_LOGO', PATH_IMAGES.'logo.png');

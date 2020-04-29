@@ -5,7 +5,6 @@
 <?php require_once(PATH_VIEWS.'alert.php');?>
 
 <link href="<?= PATH_CSS ?>settings.css" rel="stylesheet">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
 <div class="container py-5">
@@ -79,7 +78,7 @@
                 </div>
                 <div>
                     <img onclick="javascript:visibilite('pwd'); return false;" src="<?= PATH_IMAGES ?>/key.PNG" style="width: 25px;height: 25px;"> 
-                    <a href="" onclick="javascript:visibilite('pwd'); return false;" ><label style="font-size:14px;">Mot de Passe </label></a>
+                    <a href="" onclick="javascript:visibilite('pwd'); return false;" > <label style="font-size:14px;">Mot de Passe </label></a>
                 </div>
 
                 <div class="form-label-group m-3" id="pwd" style="display:none;">

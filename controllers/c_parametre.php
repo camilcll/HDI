@@ -10,6 +10,11 @@ if (isset($erreur)) {
     $alert = choixAlert($erreur);
 }
 
+if (!$_SESSION['logged']) {
+    header('Refresh:0; url=index.php?page=connexion');
+    exit();
+}
+
 
 if(isset($_SESSION['id'])){
 
@@ -27,10 +32,11 @@ if(isset($_SESSION['id'])){
 }*/
 
 
-if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['email'])) {
+if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['email']) ) {
     $prenom = htmlspecialchars($_POST['prenom']);
 	$nom = htmlspecialchars($_POST['nom']);
     $email = htmlspecialchars($_POST['email']);
+    //$nomFich = htmlspecialchars($_FILES['Photo']['name']);
 
             $userDAO= new ChercheurDAO();
             $userID= $userDAO-> modifierChercheur($nom, $prenom,$email);
@@ -71,6 +77,8 @@ if (isset($_POST['ancien']))
             }
 
     }
+
+    /*test*/
 
 
 	
