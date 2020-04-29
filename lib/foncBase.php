@@ -40,6 +40,12 @@ function choixAlert($message, $arg= null )
 		case 'erreur_id' :
 		  $alert['messageAlert'] = ERREUR_ID;
 		  break;
+		case 'ancien_non' :
+			$alert['messageAlert'] = ANCIEN_NON;
+			break;
+		case 'new_mdp_non' :
+			$alert['messageAlert'] = NEW_MDP_NON;
+			break;
 		case 'erreur_mdp' :
 		  $alert['messageAlert'] = ERREUR_MDP;
 		  break;
@@ -55,7 +61,11 @@ function choixAlert($message, $arg= null )
         case 'add_cat':
             $alert['messageAlert'] =TEXTE_FORM_CAT_SUCCESS;
             $alert["classAlert"] = "success";
-            break;
+			break;
+		case 'mdp_ok':
+			$alert['messageAlert'] =MDP_OK;
+			$alert["classAlert"] = "success";
+			break;
         case 'add_photo':
             $alert['messageAlert'] = TEXTE_FORM_PHOTO_SUCCESS;
             $alert["classAlert"] = "success";

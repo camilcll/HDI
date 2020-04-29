@@ -102,6 +102,12 @@ class ChercheurDAO extends DAO {
 
 	}
 
+	public function updatePwd($pwd)
+	{
+		$id = $_SESSION['id'];
+		$res = $this -> _requete('UPDATE CHERCHEUR set PWD =? WHERE ID_CHERCHEUR=?', array($pwd,$id));
+	}
+
 }
 
 ?>

@@ -25,14 +25,53 @@ if(isset($_SESSION['id'])){
 if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['email'])) {
     $prenom = htmlspecialchars($_POST['prenom']);
 	$nom = htmlspecialchars($_POST['nom']);
-	$email = htmlspecialchars($_POST['email']);
-	//$nomFich = htmlspecialchars($_FILES['Photo']['name']);
-	$id=$_SESSION['id'];
-    $userDAO= new ChercheurDAO();
-	$userId= $userDAO-> modifierChercheur($nom, $prenom,$email);
+    $email = htmlspecialchars($_POST['email']);
     
-    header('Refresh:0; url=index.php?page=parametre');
+    if (isset($_POST['ancien']))
+    {
+        $ancien=$_POST['ancien'];
+        if(!empty($ancien))
+            {
+                if( $ancien==$user->getPwd()){
+                    if (isset($_POST['nouveau1']) && isset($_POST['nouveau2']))
+                        {
+                            $n1=$_POST['nouveau1'];
+                            $n2=$_POST['nouveau2'];
+                            if(!empty($n1) && !empty($n2)){
+                                    
+                                    if ($n1==$n2)
+                                    {
+                                        if(empty($ancien))
+                                        {
+                                            $alert=choixAlert('new_mdp_non');
+                                        }else{
+                                            $userId= $userDAO-> modifierChercheur($nom, $prenom,$email);
+                                            $userId= $userDAO-> updatePwd($n1); 
+                                            $alert=choixAlert('mdp_ok');
+                                            header('Refresh:0; url=index.php?page=parametre'); 
+                                        }
+                                    }else{
+                                        $alert=choixAlert('new_mdp_non');
+                                    }
+                                }
+                        }
+                }
+            }
+
+    }else{
+
+    
+            //$nomFich = htmlspecialchars($_FILES['Photo']['name']);
+            $id=$_SESSION['id'];
+            $userDAO= new ChercheurDAO();
+            $userId= $userDAO-> modifierChercheur($nom, $prenom,$email);
+            
+            header('Refresh:0; url=index.php?page=parametre');
+
+    }
 }
+
+
 	
 	
 require_once(PATH_VIEWS.$page.'.php');
