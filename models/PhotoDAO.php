@@ -18,7 +18,7 @@ class PhotoDAO extends DAO {
 		{
 			foreach($res as $p)
 			{
-				$photos[$i]= new Photo($p['photoId'], $p['nomFich']);
+				$photos[$i]= new Photo($p['photoID'], $p['nomFich']);
 				$i++;
 				
 			}
@@ -32,42 +32,34 @@ class PhotoDAO extends DAO {
    public function getPhoto($id)
 		//retourne un tableau d'image
 	{
-		$i=0;
-		$res = $this->queryAll('select * from PHOTO where photoId=?', array ($id));
-		if($res ===false)
+
+		$res = $this->queryAll('select * from PHOTO where photoID=?', array ($id));
+		if(empty($res))
 		{
 			$photo=null;
 		
 		}
 		else{
-			$photo=new Photo($res[0]['photoId'], $res[0]['nomFich']);
+			$photo=new Photo($res[0][0], $res[0][1]);
 			
 		}
 		return $photo;
 	}
 
 	// Ajoute la photo en base et retourne son ID
-	public function ajouterPhoto($nomFich) {
-
-        // Récupération d'un identifiant libre
-        $res = $this -> queryRow('SELECT MAX(photoId) FROM Photo');
-        $photoId = $res['MAX(photoId)'] + 1;
-
+	public function ajouterPhoto($nomFich,$photoId) {
         // Ajoute la photo
-        $this -> queryBdd("INSERT INTO PHOTO(photoId, nomFich) VALUES (?, ?)", array($photoId, $nomFich));
-        return $photoId;
-
+        return $this -> queryBdd("INSERT INTO PHOTO(photoID, nomFich) VALUES (?, ?)", array($photoId, $nomFich));
     }
 	
 	public function supprimerPhoto($id) {
-		return $this -> _requete("DELETE FROM PHOTO WHERE photoId = ?", array($id));
+		return $this -> _requete("DELETE * FROM PHOTO WHERE photoID = ?", array($id));
 	}
 
-	public function modifierPhoto($nomFich)
+	public function modifierPhoto($nomFich,$id)
 	{
-        $id=$_SESSION['id'];
         // Modifier la photo
-        $this -> queryBdd("UPDATE from PHOTO set nomFich=? WHERE photoId = ?" , array($id));
+        return $this -> queryBdd("UPDATE `PHOTO` SET `nomFich`=? WHERE `photoID`=?" , array($nomFich,$id));
 
 	}
 	
