@@ -22,14 +22,55 @@ if(isset($_SESSION['id'])){
     $userDAO= new ChercheurDAO();
     $user= $userDAO->getUserById($id);
     $user1=$userDAO->getUserById($id);
+    $photo = new PhotoDAO();
+    $avatar = $photo->getPhoto($id);
 }
 
-/*if(isset($_FILES['Photo'])){
-    $dossier = PATH_AVATAR;
-    $fichier = basename($_FILES['Photo']['name']);
-    move_uploaded_file($_FILES['Photo']['tmp_name'], $dossier . $fichier);
-    
-}*/
+if(!empty($_FILES['avatar'])){
+    $uploadir = PATH_AVATAR;
+    $uploadfile = 'u_'.$id.'_avatar';
+    $taille_maxi = 500000;
+    $taille = filesize($_FILES['avatar']['tmp_name']);
+    $extensions = array('.png', '.gif', '.jpg', '.jpeg' ,'.jfif','.webp');
+    $extension = strtolower('.'.pathinfo($_FILES['avatar']['name'],PATHINFO_EXTENSION)); 
+
+    if(!in_array($extension, $extensions)) //Si l'extension n'est pas dans le tableau
+    {
+        $erreur = 'Vous devez uploader un fichier de type png, gif, jpg, jpeg, jfif ou webp';
+    }
+    if($taille>$taille_maxi)
+    {
+        $erreur = 'Le fichier est trop gros, nous acceptons les fichiers inferieurs a 500ko';
+    }
+    if(!isset($erreur)) //S'il n'y a pas d'erreur, on upload
+    {   
+        if($avatar===null)
+        {   
+            $uploadfile = $uploadfile.$extension;
+            if (move_uploaded_file($_FILES['avatar']['tmp_name'], $uploadir.$uploadfile)) {
+                $photoID = $photo-> ajouterPhoto($uploadfile,$id);
+            } else {
+                echo "Erreur upload";
+            }
+        }
+        else{
+            $oldAvatarPath = $avatar->getNomFich();
+            echo $oldAvatarPath."<br><br>";
+            $newAvatarPath = $uploadir.$uploadfile.$extension;
+            echo $newAvatarPath."<br><br>";
+            $uploadfile=$uploadfile.'.'.pathinfo($oldAvatarPath,PATHINFO_EXTENSION);
+            if (move_uploaded_file($_FILES['avatar']['tmp_name'],$uploadir.$uploadfile)) {
+                rename($uploadir.$uploadfile,$newAvatarPath);
+                $uploadfile = pathinfo($uploadfile,PATHINFO_FILENAME).$extension;
+                echo $uploadfile."<br><br>";
+                echo $photo-> modifierPhoto($uploadfile,$id);
+                
+            } else {
+                echo "Erreur upload";
+            }
+        }
+    }
+}
 
 
 if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['email']) ) {
@@ -40,7 +81,7 @@ if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['email']) ) 
 
             $userDAO= new ChercheurDAO();
             $userID= $userDAO-> modifierChercheur($nom, $prenom,$email);
-            
+            #print_r($_FILES);
             header('Refresh:0; url=index.php?page=parametre');
 
     
