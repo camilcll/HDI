@@ -18,10 +18,8 @@
 		<script type="text/javascript" src="<?= PATH_SCRIPTS ?>jquery-3.1.1.js"></script>
 		<script type="text/javascript" src="<?= PATH_SCRIPTS ?>jquery.validate.min.js"></script>
 		<script type="text/javascript" src="<?= PATH_SCRIPTS ?>monjs.js"></script>
-<<<<<<< HEAD
 		<script type="text/javascript" src="<?= PATH_SCRIPTS ?>main.js"></script>
 
->>>>>>> 7b39aa627ac730ed3707e0c3e841f7331149c4cf
 	</head> 
 	<body>
 		<!-- En-tête -->
