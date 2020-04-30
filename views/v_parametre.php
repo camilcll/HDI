@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
+
 <div class="container py-5">
     <form  method="post" action="index.php?page=parametre" enctype="multipart/form-data">
         <ul class="nav nav-tabs">
@@ -28,7 +29,7 @@
               <?php
 
               if($avatar !== null){
-                echo '<img src="'.PATH_AVATAR .$avatar->getNomFich().'" alt="avatar">';
+                echo '<img src="'.PATH_AVATAR .$avatar->getNomFich().'" alt="avatar" class="rounded">';
               }
               else{
                 echo '<i class="fa fa-user-circle-o"></i>';
@@ -75,7 +76,7 @@
             </div>
 
         </div>
-        <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mt-5" type="submit">Modifier</button>
+        <button class="btn btn-lg btn-primary btn-login text-uppercase font-weight-bold m-5" type="submit">Modifier</button>
 
     </form>
 </div>

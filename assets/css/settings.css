@@ -15,4 +15,5 @@ input[type="file"] {
   width: auto;
   height: auto;
   max-width: 18vw;
+  max-height: 70%;
 }
