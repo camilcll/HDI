@@ -51,6 +51,8 @@ class PhotoDAO extends DAO {
         // Ajoute la photo
         return $this -> queryBdd("INSERT INTO PHOTO(photoID, nomFich) VALUES (?, ?)", array($photoId, $nomFich));
     }
+
+    
 	
 	public function supprimerPhoto($id) {
 		return $this -> _requete("DELETE * FROM PHOTO WHERE photoID = ?", array($id));
