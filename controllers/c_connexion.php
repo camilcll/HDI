@@ -3,7 +3,7 @@ require_once(PATH_MODELS . 'ChercheurDAO.php');
 require_once(PATH_MODELS . 'DAO.php');
 require_once(PATH_ENTITY . 'Chercheur.php');
 
-
+$_SESSION['last_time']=time();
 
 if (isset($_POST['email']) && !empty($_POST['email']))
 {
@@ -20,6 +20,7 @@ if (isset($_POST['email']) && !empty($_POST['email']))
 				$alert = choixAlert('ok_connexion');
 				$_SESSION['logged'] = true;
 				$_SESSION['id']=$userBD->getIdChercheur();
+				$_SESSION['last_time']=time();
 				//header('Refresh:0; url=index.php?id='.$chercheur.'page=accueil');
 			}
 

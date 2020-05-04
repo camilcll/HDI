@@ -19,7 +19,12 @@
 		<script type="text/javascript" src="<?= PATH_SCRIPTS ?>jquery.validate.min.js"></script>
 		<script type="text/javascript" src="<?= PATH_SCRIPTS ?>monjs.js"></script>
 		<script type="text/javascript" src="<?= PATH_SCRIPTS ?>main.js"></script>
-
+		
+		<!-- 
+			rafraichir une page toutes les 5 secondes
+			<META HTTP-EQUIV="refresh" CONTENT="5;URL=index.php">
+			-->
+			<META HTTP-EQUIV="refresh" CONTENT="14400;URL=index.php">
 	</head> 
 	<body>
 		<!-- En-tête -->

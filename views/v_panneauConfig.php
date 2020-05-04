@@ -56,13 +56,20 @@
                     <p>Mail </p>
                     <input type="mail" name="email" id=""  class="form-control" placeholder="Adresse mail" required autofocus>
                 </div>
+                <div class="form-label-group m-3">
+                    <p>Password </p>
+                    <input type="password" name="pwd" id=""  class="form-control" placeholder="ex:1234" required autofocus>
+                </div>
+                <button class="btn btn-lg btn-primary btn-login text-uppercase font-weight-bold m-5" type="submit"> Ajouter </button>
             
             
             <!-- partie panneau de configuration -->   
             </div>
-            <div class="tab-pane fade py-4 px-4" id="supprimerU">
-                <div class="form-group-group">
-                    <p> autre</p>
+            <div class="pill-pane fade " id="supprimerU">
+                <div class="form-label-group m-3">
+                    <p>Password </p>
+                    <input type="password" name="pwd" id=""  class="form-control" placeholder="ex:1234" required autofocus>
+                </div>
                 </div>
             </div>
         </div>
