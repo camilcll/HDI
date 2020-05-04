@@ -26,34 +26,35 @@
         <div id="myTabContent" class="tab-content">
           <div class="d-flex justify-content-center align-items-center flex-column">
             <div id="pp" class="d-flex justify-content-center align-items-center bg-secondary rounded m-3 p-3">
+            <img id="avatarPreview" src="" alt="">
               <?php
 
               if($avatar !== null){
-                echo '<img src="'.PATH_AVATAR .$avatar->getNomFich().'" alt="avatar" class="rounded">';
+                echo '<img src="'.PATH_AVATAR .$avatar->getNomFich().'" alt="avatar" class="rounded rfp">';
               }
               else{
-                echo '<i class="fa fa-user-circle-o"></i>';
+                echo '<i class="fa fa-user-circle-o rfp"></i>';
               }
              ?> 
             </div>
             <input type="hidden" name="MAX_FILE_SIZE" value="500000" />
-            <label id="btnAvatar" class="btn btn-secondary m-3">
-              <input type="file" name="avatar" value="modifier" accept="image/*">
-              <i class="fa fa-upload"></i>
+            <label id="btnAvatar" class="btn btn-secondary m-3" onclick="hideOld()">
+              <input type="file" name="avatar" value="modifier" onchange="openFile(event)" accept="image/*">
+              <i class="fa fa-upload "></i>
               Charger un avatar
             </label>
           </div>
           <div class="form-label-group m-3">
             <p>Nom</p>
-            <input type="text" name="nom" id="" value="<?=$user->getNom() ?>" class="form-control" placeholder="Nom de l'utilisateur" required autofocus>
+            <input type="text" name="nom" value="<?=$user->getNom() ?>" class="form-control" placeholder="Nom de l'utilisateur" required autofocus>
           </div>
           <div class="form-label-group m-3">
             <p>Prenom</p>
-            <input type="text" name="prenom" id="" value="<?=$user->getPrenom() ?>"class="form-control" placeholder="Prenom de l'utilisateur" required autofocus>
+            <input type="text" name="prenom" value="<?=$user->getPrenom() ?>"class="form-control" placeholder="Prenom de l'utilisateur" required autofocus>
           </div>
           <div class="form-label-group m-3">
             <p>Mail </p>
-            <input type="mail" name="email" id="" value="<?=$user->getEmail() ?>" class="form-control" placeholder="Adresse mail" required autofocus>
+            <input type="mail" name="email" value="<?=$user->getEmail() ?>" class="form-control" placeholder="Adresse mail" required autofocus>
           </div>
           <div>
             <img onclick="javascript:visibilite('pwd'); return false;" src="<?= PATH_IMAGES ?>/key.PNG" style="width: 25px;height: 25px;"> 
@@ -79,6 +80,7 @@
         <button class="btn btn-lg btn-primary btn-login text-uppercase font-weight-bold m-5" type="submit">Modifier</button>
 
     </form>
+   
 </div>
 
 <?php require_once(PATH_VIEWS.'footer.php');?>

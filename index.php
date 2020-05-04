@@ -1,17 +1,4 @@
 <?php
-/*
- * MODULE DE PHP
- * Index du site
- *
- * Copyright 2016, Eric Dufour
- * http://techfacile.fr
- *
- * Licensed under the MIT license:
- * http://www.opensource.org/licenses/MIT
- */
-
-// Initialisation des paramètres du site
-
 session_name('p1804059');
 session_start();
 require_once('./config/configuration.php');

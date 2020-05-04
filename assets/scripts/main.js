@@ -7,3 +7,20 @@ function visibilite(thingId) {
         targetElement.style.display = "none";
     }
 }
+
+
+var openFile = function (event) {
+    var input = event.target;
+
+    var reader = new FileReader();
+    reader.onload = function () {
+        var dataURL = reader.result;
+        var output = document.getElementById('avatarPreview');
+        output.src = dataURL;
+    };
+    reader.readAsDataURL(input.files[0]);
+};
+
+function hideOld() {
+    $('.rfp').hide();
+}

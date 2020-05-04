@@ -55,15 +55,15 @@ if(!empty($_FILES['avatar'])){
         }
         else{
             $oldAvatarPath = $avatar->getNomFich();
-            echo $oldAvatarPath."<br><br>";
+            //echo $oldAvatarPath."<br><br>";
             $newAvatarPath = $uploadir.$uploadfile.$extension;
-            echo $newAvatarPath."<br><br>";
+            //echo $newAvatarPath."<br><br>";
             $uploadfile=$uploadfile.'.'.pathinfo($oldAvatarPath,PATHINFO_EXTENSION);
             if (move_uploaded_file($_FILES['avatar']['tmp_name'],$uploadir.$uploadfile)) {
                 rename($uploadir.$uploadfile,$newAvatarPath);
                 $uploadfile = pathinfo($uploadfile,PATHINFO_FILENAME).$extension;
-                echo $uploadfile."<br><br>";
-                echo $photo-> modifierPhoto($uploadfile,$id);
+                //echo $uploadfile."<br><br>";
+                $photo-> modifierPhoto($uploadfile,$id);
                 
             } else {
                 echo "Erreur upload";
@@ -81,7 +81,6 @@ if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['email']) ) 
 
             $userDAO= new ChercheurDAO();
             $userID= $userDAO-> modifierChercheur($nom, $prenom,$email);
-            #print_r($_FILES);
             header('Refresh:0; url=index.php?page=parametre');
 
     
