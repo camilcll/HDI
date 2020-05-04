@@ -3,6 +3,21 @@
 <!--  Zone message d'alerte -->
 <?php require_once(PATH_VIEWS.'alert.php');?>
 
+<?php
+if( isset($_SESSION['id']))
+{
+  if((time() - $_SESSION['last_time']) > 14400) //Time in Seconds
+  {
+    header('Refresh:0; url=index.php?page=deconnexion');
+    
+  }
+  else{
+    $_SESSION['last_time']= time();
+  }
+}
+
+?>
+
 
 <a href="#publi_container"><button id="scrllDown" type="button" class="btn btn-dark">Voir les dernières publications</button></a>
 
