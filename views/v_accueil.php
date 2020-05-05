@@ -6,7 +6,7 @@
 <?php
 if( isset($_SESSION['id']))
 {
-  if((time() - $_SESSION['last_time']) > 14400) //Time in Seconds
+  if((time() - $_SESSION['last_time']) > 3600) //Time in Seconds
   {
     header('Refresh:0; url=index.php?page=deconnexion');
     
