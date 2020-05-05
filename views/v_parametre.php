@@ -45,19 +45,23 @@ if( isset($_SESSION['id']))
               <?php
 
               if($avatar !== null){
-                echo '<img src="'.PATH_AVATAR .$avatar->getNomFich().'" alt="avatar" class="rounded rfp">';
+                echo '<img src="'.PATH_AVATAR .$avatar->getNomFich().'" alt="avatar" class="rounded rfp" id="avatarpp">';
               }
               else{
-                echo '<i class="fa fa-user-circle-o rfp"></i>';
+                echo '<i id="noUser" class="fa fa-user-circle-o rfp"></i>';
               }
              ?> 
             </div>
+            <input id="tid" type="hidden" name="tid" value=""/>
             <input type="hidden" name="MAX_FILE_SIZE" value="500000" />
-            <label id="btnAvatar" class="btn btn-secondary m-3" onclick="hideOld()">
-              <input type="file" name="avatar" value="modifier" onchange="openFile(event)" accept="image/*">
-              <i class="fa fa-upload "></i>
-              Charger un avatar
-            </label>
+            <div class="d-flex justify-content-around align-items-center">
+              <label id="btnAvatar" class="btn btn-secondary m-3"">
+                <input type="file" name="avatar" value="modifier" onchange="openFile(event)" accept="image/*">
+                <i class="fa fa-upload "></i>
+                Charger un avatar
+              </label>
+              <i id="trash" class="fa fa-trash-o" onclick="sendTrash(<?=$user->getIdChercheur()?>)"></i>
+            </div>
           </div>
           <div class="form-label-group m-3">
             <p>Nom</p>
