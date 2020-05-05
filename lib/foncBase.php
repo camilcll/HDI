@@ -21,6 +21,10 @@ function choixAlert($message, $arg= null )
 			$alert['classAlert']= 'success';
 		    $alert['messageAlert'] =CONNEXION_OK;
 		   break;
+		case 'ajout_ok' :
+			$alert['classAlert']= 'success';
+		    $alert['messageAlert'] =AJOUT_OK;
+		   break;
 		case 'ok_deconnexion' :
 			$alert['classAlert']='success';
 			$alert['messageAlert']= DECONNEXION_OK;

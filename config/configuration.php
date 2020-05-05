@@ -37,6 +37,7 @@ define('PATH_AVATAR', PATH_UPLOADS. 'avatar/');
 
 //fichiers
 define('PATH_LOGO', PATH_IMAGES.'logo.png');
+define('PATH_DELETE', PATH_IMAGES.'delete.jpg');
 define('PATH_MAIL', PATH_IMAGES.'mail.jpg');
 define('PATH_FAX', PATH_IMAGES.'fax.png');
 define('PATH_APPEL', PATH_IMAGES.'appel.png');

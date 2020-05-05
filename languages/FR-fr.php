@@ -37,6 +37,7 @@ define('TRICHER_PAGE', 'Erreur, pour acceder a la page');
 define('NEW_MDP_NON','Votre ancien ou votre nouveau mdp mot de passe ne correspond pas');
 define('ANCIEN_NON','Votre ancien ou votre nouveau mdp mot de passe ne correspond pas');
 define('MDP_OK','Votre mot de passe a été validé');
+define('AJOUT_OK',"L'utilisateur a bien été ajouté");
 
 define('TEXTE_SELECTED_PHOTOS'," photo(s) selectionnée(s)");
 define('TEXTE_FORM_CAT_SUCCESS',"Categorie ajoutée !");

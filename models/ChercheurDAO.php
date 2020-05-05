@@ -19,7 +19,6 @@ class ChercheurDAO extends DAO {
 	}
 	
 	public function getById($id)
-	
 	{
 		$res= $this->queryRow('SELECT * FROM CHERCHEUR WHERE ID_CHERCHEUR=?', array($id));
 		if($res ===false)
@@ -32,6 +31,26 @@ class ChercheurDAO extends DAO {
 			
 		}
 		return $chercheur;
+	}
+
+	public function getChercheur()
+		//retourne un tableau d'image
+	{
+		$i=0;
+		$res = $this->queryAll('select * from CHERCHEUR');
+		if($res == false)
+			$chercheurs=array();
+		else
+		{
+			foreach($res as $v)
+			{
+				$chercheurs[$i]= new CHERCHEUR($v['ID_CHERCHEUR'],$v['NOM'],$v['PRENOM'],$v['PWD'],$v['EMAIL']);
+				$i++;
+				
+			}
+			return $chercheurs;
+		}
+		return null;
 	}
     
     public function getUserByUsername($EMAIL) {
@@ -108,6 +127,13 @@ class ChercheurDAO extends DAO {
 	{
 		$id = $_SESSION['id'];
 		$res = $this -> _requete('UPDATE CHERCHEUR set PWD =? WHERE ID_CHERCHEUR=?', array($pwd,$id));
+	}
+
+	public function supprimerChercheur($id) 
+	{
+			// Suppression d'un vip dans la base
+			$req = $this->_requete('DELETE FROM CHERCHEUR WHERE ID_CHERCHEUR='.$id);
+		
 	}
 
 }

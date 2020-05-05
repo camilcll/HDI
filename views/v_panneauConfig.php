@@ -17,42 +17,22 @@ if( isset($_SESSION['id']))
 }
 
 ?>
-<h1 style="margin-bottom: 30px;">Panneau de configuration</h1> 
 
 
-
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
-    <!-- <ul class="nav nav-pills flex-column">
-        <li class="nav-item"><a href="#ajouterU" class="nav-link active" data-target="allSection" data-toggle="pill" >Ajouter un utilisateur</a></li>
-        <li class="nav-item"><a href="#supprimerU" >Supprimer un utilisateur</a></li>
-        <li class="nav-item"><a href="#ajouterP">Ajouter une publication</a></li>
-        <li class="nav-item"><a href="#supprimer P">Supprimer une publication</a></li>
-    </ul>
-
-
-    <div id="myPillContent" class="pill-content">
-            <div class="pill-pane fade in active" id="ajouterU">
-                    <p>test</p>
-            </div>
-            <div class="pill-pane fade in active" id="supprimerU">
-                    <p>supppppp</p>
-            </div>
-    </div> -->
-
-    <div class="container py-5" style="margin-top: -300px;">
-    <form  method="post" action="index.php?page=parametre" name="formParam">
-        <ul class="nav nav-pills flex-column" style="float:left">
-            <li class="active"><a href="#ajouterU" class="nav-link active"  data-toggle="pill" >Ajouter un utilisateur</a></li>
-            <li><a class="nav-link" data-toggle="pill" href="#supprimerU" >Supprimer un utilisateur</a></li>
-            <li><a class="nav-link" data-toggle="pill" href="#ajouterP">Ajouter une publication</a></li>
-            <li><a class="nav-link" data-toggle="pill" href="#supprimer P">Supprimer une publication</a></li>
+    <div class="container py-5" >
+    <form  method="post" action="index.php?page=panneauConfig" name="formParam">
+        <ul class="nav nav-tabs" >
+            <li class="active"><a href="#ajouterU" class="nav-link active"  data-toggle="tab" >Ajouter un utilisateur</a></li>
+            <li><a class="nav-link" data-toggle="tab" href="#supprimerU" >Supprimer un utilisateur</a></li>
+            <li><a class="nav-link" data-toggle="tab" href="#ajouterP">Ajouter une publication</a></li>
+            <li><a class="nav-link" data-toggle="tab" href="#supprimer P">Supprimer une publication</a></li>
 
         </ul>
         
 
-        <div id="myTabContent" class="pill-content" style="margin:390px; font-size:14px;">
+        <div id="myTabContent" class="tab-content" >
             <!-- partie profile -->
-            <div class="pill-pane fade in active" id="ajouterU">
+            <div class="tab-pane fade in active" id="ajouterU">
             
 
                 <div class="form-label-group m-3">
@@ -76,10 +56,27 @@ if( isset($_SESSION['id']))
             
             <!-- partie panneau de configuration -->   
             </div>
-            <div class="pill-pane fade " id="supprimerU">
+            <div class="tab-pane fade " id="supprimerU">
                 <div class="form-label-group m-3">
-                    <p>Password </p>
-                    <input type="password" name="pwd" id=""  class="form-control" placeholder="ex:1234" required autofocus>
+                <?php
+                    if($user!=null){
+                        echo '<div class = "row"><table class="table"><thead class="thead-dark"><tr><th scope="col">ID</th><th scope="col">Nom</th><th scope="col">Prénom</th><th> </th></tr></thead><tbody>';
+                        foreach ($user as $users) {
+                            echo '<tr><td>'.$users->getIdChercheur().'</td>';
+                            echo '<td>'.$users->getNom().'</td>';
+                            echo '<td>'.$users->getPrenom().'</td>';
+                            echo '<td><a href="index.php?page=supprimerUser"> <img style="width:30px; length:30px;"   src="'.PATH_DELETE.'"></a></td></tr>';
+                        }
+                        echo '</tbody></table></div>';
+                    
+                    }else{ ?>
+                        <script>alert("<?php echo htmlspecialchars('Aucun VIP ne correspond à cette recherche', ENT_QUOTES); ?>")</script>
+                        <?php
+                        header('Refresh:0; url=index.php');
+                    } 
+                    
+                ?>
+              
                 </div>
                 </div>
             </div>
