@@ -62,10 +62,15 @@ if( isset($_SESSION['id']))
                     if($user!=null){
                         echo '<div class = "row"><table class="table"><thead class="thead-dark"><tr><th scope="col">ID</th><th scope="col">Nom</th><th scope="col">Prénom</th><th> </th></tr></thead><tbody>';
                         foreach ($user as $users) {
-                            echo '<tr><td>'.$users->getIdChercheur().'</td>';
-                            echo '<td>'.$users->getNom().'</td>';
-                            echo '<td>'.$users->getPrenom().'</td>';
-                            echo '<td><a href="index.php?page=supprimerUser"> <img style="width:30px; length:30px;"   src="'.PATH_DELETE.'"></a></td></tr>';
+
+                            echo '<td><a href="index.php?page=detailUser&id=';
+                            echo $users->getIdChercheur();
+                            echo '" style="display:block;width:100%;height:100%" >'.$users->getIdChercheur().'</a></td>';
+                            echo '<td><a href="index.php?page=detailUser&id=';
+                            echo $users->getIdChercheur();
+                            echo '" style="display:block;width:100%;height:100%;">'.$users->getNom().'</a></td><td><a href="index.php?page=detailUser&id=';
+                            echo $users->getIdChercheur();
+                            echo '" style="display:block;width:100%;height:100%">'.$users->getPrenom().'</a></tr>';
                         }
                         echo '</tbody></table></div>';
                     
