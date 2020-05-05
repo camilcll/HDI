@@ -48,13 +48,14 @@ if( isset($_SESSION['id']))
                 echo '<img src="'.PATH_AVATAR .$avatar->getNomFich().'" alt="avatar" class="rounded rfp" id="avatarpp">';
               }
               else{
-                echo '<i class="fa fa-user-circle-o rfp"></i>';
+                echo '<i id="noUser" class="fa fa-user-circle-o rfp"></i>';
               }
              ?> 
             </div>
+            <input id="tid" type="hidden" name="tid" value=""/>
             <input type="hidden" name="MAX_FILE_SIZE" value="500000" />
             <div class="d-flex justify-content-around align-items-center">
-              <label id="btnAvatar" class="btn btn-secondary m-3" onclick="hideOld()">
+              <label id="btnAvatar" class="btn btn-secondary m-3"">
                 <input type="file" name="avatar" value="modifier" onchange="openFile(event)" accept="image/*">
                 <i class="fa fa-upload "></i>
                 Charger un avatar

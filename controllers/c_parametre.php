@@ -26,8 +26,10 @@ if(isset($_SESSION['id'])){
     $avatar = $photo->getPhoto($id);
 }
 
-if(isset($_POST['tid'])){
-    echo "bon";
+if(!empty($_REQUEST['tid'])){
+    $tid = htmlspecialchars($_POST['tid']);
+    unlink(glob(PATH_AVATAR.'u_'.$tid.'_avatar.*')[0]);
+    $photo->supprimerPhoto($tid);
 }
 
 
@@ -86,6 +88,7 @@ if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['email']) ) 
 
             $userDAO= new ChercheurDAO();
             $userID= $userDAO-> modifierChercheur($nom, $prenom,$email);
+            
             header('Refresh:0; url=index.php?page=parametre');
 
     

@@ -10,6 +10,7 @@ function visibilite(thingId) {
 
 
 var openFile = function (event) {
+    $('.rfp').hide();
     var input = event.target;
 
     var reader = new FileReader();
@@ -21,20 +22,16 @@ var openFile = function (event) {
     reader.readAsDataURL(input.files[0]);
 };
 
-function hideOld() {
-    $('.rfp').hide();
-}
 
 
 function sendTrash(id) {
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            $("#avatarpp").hide();
-            $("#avatarPreview").hide();
-            $("#pp").append('<i class="fa fa-user-circle-o"></i>');
-        }
-    };
-    xmlhttp.open("POST", "index.php?page=parametre?tid=" + id, true);
-    xmlhttp.send();
+    if(document.getElementById("noUser") == null){
+        $("#tid").val(id);
+        $("#avatarpp").hide();
+        $("#avatarPreview").hide();
+        $("#pp").append('<i id="noUser" class="fa fa-user-circle-o rfp"></i>');
+    }
+    else{
+        return;
+    }     
 }

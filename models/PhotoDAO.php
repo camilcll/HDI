@@ -55,7 +55,7 @@ class PhotoDAO extends DAO {
     
 	
 	public function supprimerPhoto($id) {
-		return $this -> _requete("DELETE * FROM PHOTO WHERE photoID = ?", array($id));
+		return $this -> _requete("DELETE FROM PHOTO WHERE photoID = ?", array($id));
 	}
 
 	public function modifierPhoto($nomFich,$id)
