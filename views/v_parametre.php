@@ -4,6 +4,21 @@
 <!--  Zone message d'alerte -->
 <?php require_once(PATH_VIEWS.'alert.php');?>
 
+<?php
+if( isset($_SESSION['id']))
+{
+  if((time() - $_SESSION['last_time']) > 3600) //Time in Seconds
+  {
+    header('Refresh:0; url=index.php?page=deconnexion');
+    
+  }
+  else{
+    $_SESSION['last_time']= time();
+  }
+}
+
+?>
+
 <link href="<?= PATH_CSS ?>settings.css" rel="stylesheet">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
