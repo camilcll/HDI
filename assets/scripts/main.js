@@ -24,3 +24,17 @@ var openFile = function (event) {
 function hideOld() {
     $('.rfp').hide();
 }
+
+
+function sendTrash(id) {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            $("#avatarpp").hide();
+            $("#avatarPreview").hide();
+            $("#pp").append('<i class="fa fa-user-circle-o"></i>');
+        }
+    };
+    xmlhttp.open("POST", "index.php?page=parametre?tid=" + id, true);
+    xmlhttp.send();
+}

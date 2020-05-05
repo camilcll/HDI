@@ -26,6 +26,11 @@ if(isset($_SESSION['id'])){
     $avatar = $photo->getPhoto($id);
 }
 
+if(isset($_POST['tid'])){
+    echo "bon";
+}
+
+
 if(!empty($_FILES['avatar'])){
     $uploadir = PATH_AVATAR;
     $uploadfile = 'u_'.$id.'_avatar';
