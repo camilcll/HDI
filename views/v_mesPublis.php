@@ -18,8 +18,6 @@ if( isset($_SESSION['id']))
 
 ?>
 
-<div>
-    
-</div>
+<button class=pull-right name="depot"> <a href="index.php?page=depot"> Déposer </a> </button>
 
 <?php require_once(PATH_VIEWS.'footer.php'); ?>

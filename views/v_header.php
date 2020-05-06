@@ -42,7 +42,7 @@
 					</li>
 					<?php if(isset($_SESSION['logged']) && $_SESSION['id']!=1) { ?>
 					<li class="nav-item mx-3">
-						<a class="nav-link" href="#">Mes publications</a>
+						<a class="nav-link" href="index.php?page=mesPublis">Mes publications</a>
 					</li>
 					<?php } ?>
 					<li  class="nav-item mx-3">
