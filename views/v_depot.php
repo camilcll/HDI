@@ -28,36 +28,36 @@ if( isset($_SESSION['id']))
     <div class="form-group row">
         <label class=" col-md-3 control-label required" for="type"> Type de document </label>
         <div class="col-md-9">
-            <select name="type" class="form-control input-sm" >
+            <select name="type" id="type" class="form-control input-sm" onchange="changementType();" >
                 <option selected="selected" ></option>
                 <optgroup label="Publications">
-                    <option>Article dans une revue</option>
-                    <option>Communication dans un congrès</option>
-                    <option>Poster</option>
-                    <option>Ouvrage (y compris édition critique et traduction)</option>
-                    <option>Chapitre d'ouvrage</option>
-                    <option>Direction d'ouvrage, Proceedings, Dossier</option>
-                    <option>Brevet</option>
-                    <option>Autre publication</option>
+                    <option value="article">Article dans une revue</option>
+                    <option value="comm">Communication dans un congrès</option>
+                    <option value="poster">Poster</option>
+                    <option value="ouvrage">Ouvrage (y compris édition critique et traduction)</option>
+                    <option value="chapOuvrage">Chapitre d'ouvrage</option>
+                    <option value="directionOuvrage">Direction d'ouvrage, Proceedings, Dossier</option>
+                    <option value="brevet">Brevet</option>
+                    <option value="autrePub">Autre publication</option>
                 </optgroup>
 
                 <optgroup label="Documents non publiés">
-                    <option>Pré-publication, Document de travail</option>
-                    <option>Rapport</option>
+                    <option value="prePub">Pré-publication, Document de travail</option>
+                    <option value="rapport">Rapport</option>
                 </optgroup>
 
                 <optgroup label="Travaux universitaires">
-                    <option>Thèse</option>
-                    <option>HDR</option>
-                    <optino>Cours</option>
+                    <option value="these">Thèse</option>
+                    <option value="hdr">HDR</option>
+                    <optino value="cours">Cours</option>
                 </optgroup>
 
                 <optgroup label="Données de recherche">
-                    <option>Image</option>
-                    <option>Vidéo</option>
-                    <option>Son</option>
-                    <option>Carte</option>
-                    <option>Logiciel</option>
+                    <option value="image">Image</option>
+                    <option value="video">Vidéo</option>
+                    <option value="son">Son</option>
+                    <option value="carte">Carte</option>
+                    <option value="logiciel">Logiciel</option>
                 </optgroup>
             </select>
         </div>
@@ -605,6 +605,23 @@ if( isset($_SESSION['id']))
         </div>
     </div>
 
+<!-- Resume -->
+    <div class="form-group row  meta-complete" id="abstract-element" style="display: none;">
+        <label class="col-md-3 control-label optional" for="abstract">Résumé</label>
+        <div class="col-md-9">
+            <span class="help-block">Vous pouvez renseigner le résumé en plusieurs langues : choisir la langue et cliquer sur + pour ajouter une nouvelle langue</span>
+                <div class="textarea-group" style="margin-bottom : 10px;">
+                    <textarea name="abstract[en]" class="meta-complete form-control input-sm" id="abstract" lang="en" style="border-bottom-right-radius: 0; " rows="9" cols="80" hasshiftvalue=""></textarea>
+                        
+                </div>
+                <div class="textarea-group" style="margin-bottom : 10px;">
+                    <textarea name="abstract[fr]" class="meta-complete form-control input-sm" id="abstract" lang="fr" style="border-bottom-right-radius: 0; " rows="9" cols="80" hasshiftvalue=""></textarea>
+                        
+                </div>
+        </div>
+    </div>
+
+<!-- Langue document -->
     <div class="from-group row" id="language-element">
         <label class="col-md-3 control-label required" for="language">
             Langue du document
@@ -799,11 +816,12 @@ if( isset($_SESSION['id']))
         </div>
     </div>
 
+
     <div class="form-group row  meta-complete" id="researchdata-element" style="display: none;">
         <label class="col-md-3 control-label optional" for="researchdata">Données associées</label>
         <div class="col-md-9"><span class="help-block">Ajoutez l'identifiant <a href="http://www.doi.org/" target="_blank">DOI</a> fourni par l'entrepôt où vos données sont archivées.</span>
             <div class="input-group" style="margin-bottom : 10px;">
-                <input name="researchdata[]" class="meta-complete form-control input-sm" id="researchdata" style=" " type="text" value="" relpublicdirpath="../../../public" pathdir="/sites/HalInstances/hal/production/vendor/ccsd/library/Ccsd/Form/Element"><span class="input-group-btn"><button class="btn btn-sm btn-primary" style="border-top-left-radius:0; border-bottom-left-radius:0; height: 30px; padding-top:0; padding-bottom: 0;" onclick='fct5eb3d1b4d6f85(this, "researchdata");' type="button" data-original-title="Ajouter" data-toggle="tooltip" data-placement="right"><i class="glyphicon glyphicon-plus"></i></button></span></div>
+                <input name="researchdata[]" class="meta-complete form-control input-sm" id="researchdata" style=" " type="text" value="" ><span class="input-group-btn"><button class="btn btn-sm btn-primary" style="border-top-left-radius:0; border-bottom-left-radius:0; height: 30px; padding-top:0; padding-bottom: 0;" onclick='fct5eb3d1b4d6f85(this, "researchdata");' type="button" data-original-title="Ajouter" data-toggle="tooltip" data-placement="right"><i class="glyphicon glyphicon-plus"></i></button></span></div>
             </div>
         </div>
         <div class="form-group row  meta-complete" id="writingDate-id-element" style="display: none;">
@@ -814,7 +832,7 @@ if( isset($_SESSION['id']))
             </div>
         </div>
         <div class="form-group row  meta-complete" id="licence-element" style="display: none;">
-        <label class="col-md-3 control-label optional" for="licence">Licence</label>
+            <label class="col-md-3 control-label optional" for="licence">Licence</label>
             <div class="col-md-9">
                 <select name="licence" class="meta-complete form-control input-sm" id="licence">
                     <option value=""></option>
@@ -831,8 +849,412 @@ if( isset($_SESSION['id']))
                     <option value="http://hal.archives-ouvertes.fr/licences/publicDomain/">Domaine public</option>
                 </select>
             </div>
+        </div>
     </div>
 
+<!-- Mots clés -->
+    <div class="form-group row  meta-complete" id="keyword-element" style="display: none;"><label class="col-md-3 control-label optional" for="keyword">Mots-clés</label>
+        <div class="col-md-9"><span class="help-block"> Les caractères "," (virgule) et ";" (point-virgule) peuvent être utilisés pour séparer une liste de mots-clés.</span>
+            <div class="input-group" style="margin-bottom : 10px;">
+                <input name="keyword[en][]" class="meta-complete form-control input-sm" id="keyword" lang="en" style=" " type="text" value="" hasshiftvalue="" data-keyword="1" attr-autocomplete="keyword_s">
+                <input name="keyword[fr][]" class="meta-complete form-control input-sm" id="keyword" lang="fr" style=" " type="text" value="" hasshiftvalue="" data-keyword="1" attr-autocomplete="keyword_s">
+            </div>
+        </div>
+    </div>
+
+<!-- Licence -->
+    <div class="form-group row  meta-complete" id="licence-element" style="display:none;"><label class="col-md-3 control-label optional" for="licence">Licence</label>
+        <div class="col-md-9">
+            <select name="licence" class="meta-complete form-control input-sm" id="licence">
+                <option value=""></option>
+                <option value="http://creativecommons.org/licenses/by/">CC BY - Paternité</option>
+                <option value="http://creativecommons.org/licenses/by-nc/">CC BY NC - Paternité - Pas d'utilisation commerciale</option>
+                <option value="http://creativecommons.org/licenses/by-nd/">CC BY ND - Paternité - Pas de modifications</option>
+                <option value="http://creativecommons.org/licenses/by-sa/">CC BY SA - Paternité - Partage selon les Conditions Initiales</option>
+                <option value="http://creativecommons.org/licenses/by-nc-nd/">CC BY NC ND - Paternité - Pas d'utilisation commerciale - Pas de modification</option>
+                <option value="http://creativecommons.org/licenses/by-nc-sa/">CC BY NC SA - Paternité - Pas d'utilisation commerciale - Partage selon les Conditions Initiales</option>
+                <option value="http://creativecommons.org/choose/mark/">NC - Marque du Domaine Public</option>
+                <option value="http://creativecommons.org/publicdomain/zero/1.0/">CC0 - Transfert dans le Domaine Public</option>
+                <option value="http://hal.archives-ouvertes.fr/licences/etalab/">ETALAB - Licence Ouverte</option>
+                <option value="http://hal.archives-ouvertes.fr/licences/copyright/">Copyright (Tous droits réservés)</option>
+                <option value="http://hal.archives-ouvertes.fr/licences/publicDomain/">Domaine public</option>
+            </select>
+        </div>
+    </div>
+<!-- Nom revue -->
+    <div class="form-group row " id="journal-element" style="display: none;">
+        <label class="col-md-3 control-label required" for="journal">Nom de la revue</label>
+        <div class="col-md-9">
+            <input name="journal" class="form-control input-sm" id="journal" type="text" value="" >
+        </div>
+    </div>
+<!-- titre ouvrage -->
+<div class="form-group row " id="bookTitle-element" style="display: none;">
+        <label class="col-md-3 control-label required" for="bookTitle">Titre de l'ouvrage<span class="icon-required">  *</span></label>
+            <div class="col-md-9">
+                <textarea name="bookTitle" class="form-control input-sm" id="bookTitle" rows="2" cols="80"></textarea>
+            </div>
+    </div>
+<!-- Date pub article -->
+    <div class="form-group row " id="date-id-element"  style="display: none;">
+        <label class="col-md-3 control-label required" for="date-id">Date de publication</label>
+        <div class="col-md-9">
+            <div class="input-group">
+                <input type="date" name="date">
+            </div>
+        </div>
+    </div>
+<!-- Date pub direction -->
+<div class="form-group row " id="date-pub-direction"  style="display: none;">
+        <label class="col-md-3 control-label required" for="date-id">Date de publication</label>
+        <div class="col-md-9">
+            <div class="input-group">
+                <input type="date" name="date">
+            </div>
+        </div>
+    </div>
+
+<!-- Date pub ouvrage -->
+    <div class="form-group row " id="date-pub-ouvrage"  style="display: none;">
+        <label class="col-md-3 control-label required" for="date-id">Date de publication</label>
+        <div class="col-md-9">
+            <div class="input-group">
+                <input type="date" name="date">
+            </div>
+        </div>
+    </div>
+<!-- Date pub chap ouvrage -->
+    <div class="form-group row " id="date-pub-chap-ouvrage"  style="display: none;">
+        <label class="col-md-3 control-label required" for="date-id">Date de publication</label>
+        <div class="col-md-9">
+            <div class="input-group">
+                <input type="date" name="date">
+            </div>
+        </div>
+    </div>
+
+<!-- A paraitre article-->
+    <div class="form-group row " id="inPress-element"  style="display: none;">
+        <label class="col-md-3 control-label" for="inPress">A paraître</label>
+            <div class="col-md-9"><span class="help-block">Si vous choisissez l'option "A paraître", la date de publication ne sera plus obligatoire</span>
+                <input name="inPress" type="hidden" value="0"><input name="inPress" class="form-control input-sm" id="inPress" type="checkbox" value="1">
+            </div>
+    </div>
+<!-- A paraitre ouvrage-->
+    <div class="form-group row " id="inPress-ouvrage"  style="display: none;">
+        <label class="col-md-3 control-label" for="inPress">A paraître</label>
+            <div class="col-md-9"><span class="help-block">Si vous choisissez l'option "A paraître", la date de publication ne sera plus obligatoire</span>
+                <input name="inPress" type="hidden" value="0"><input name="inPress" class="form-control input-sm" id="inPress" type="checkbox" value="1">
+            </div>
+    </div>
+<!-- A paraitre chap ouvrage-->
+    <div class="form-group row " id="inPress-chap-ouvrage"  style="display: none;">
+        <label class="col-md-3 control-label" for="inPress">A paraître</label>
+            <div class="col-md-9"><span class="help-block">Si vous choisissez l'option "A paraître", la date de publication ne sera plus obligatoire</span>
+                <input name="inPress" type="hidden" value="0"><input name="inPress" class="form-control input-sm" id="inPress" type="checkbox" value="1">
+            </div>
+    </div>
+<!-- A paraitre direction-->
+<div class="form-group row " id="inPress-direction"  style="display: none;">
+        <label class="col-md-3 control-label" for="inPress">A paraître</label>
+            <div class="col-md-9"><span class="help-block">Si vous choisissez l'option "A paraître", la date de publication ne sera plus obligatoire</span>
+                <input name="inPress" type="hidden" value="0"><input name="inPress" class="form-control input-sm" id="inPress" type="checkbox" value="1">
+            </div>
+    </div>
+<!-- Titre du congres -->
+    <div class="form-group row " id="conferenceTitle-element" style="display: none;">
+        <label class="col-md-3 control-label required" for="conferenceTitle">Titre du congrès<span class="icon-required">  *</span></label>
+            <div class="col-md-9">
+                <input name="conferenceTitle" class="form-control input-sm" id="conferenceTitle" type="text" value="">
+            </div>
+    </div>
+<!-- date debut congres -->
+    <div class="form-group row " id="congres-date-id-element"  style="display: none;">
+        <label class="col-md-3 control-label required" for="date-id">Date début congrès</label>
+        <div class="col-md-9">
+            <div class="input-group">
+                <input type="date" name="date">
+            </div>
+        </div>
+    </div>
+<!-- ville congres -->
+    <div class="form-group row " id="city-element" style="display: none;">
+        <label class="col-md-3 control-label required" for="city">Ville</label>
+            <div class="col-md-9">
+                <input name="city" class="form-control input-sm" id="city" type="text" value="">
+            </div>
+    </div>
+
+<!-- pays congres -->
+    <div class="form-group row " id="country-element" style="display: none;">
+        <label class="col-md-3 control-label required" for="country">Pays</label>
+            <div class="col-md-9">
+                <select name="country" class="form-control input-sm" id="country">
+                    <option value=""></option>
+                    <option value="af">Afghanistan</option>
+                    <option value="za">Afrique du Sud</option>
+                    <option value="al">Albanie</option>
+                    <option value="dz">Algérie</option>
+                    <option value="de">Allemagne</option>
+                    <option value="ad">Andorre</option>
+                    <option value="ao">Angola</option>
+                    <option value="ai">Anguilla</option>
+                    <option value="aq">Antarctique</option>
+                    <option value="ag">Antigua-et-Barbuda</option>
+                    <option value="an">Antilles néerlandaises</option>
+                    <option value="sa">Arabie saoudite</option>
+                    <option value="ar">Argentine</option>
+                    <option value="am">Arménie</option>
+                    <option value="aw">Aruba</option>
+                    <option value="au">Australie</option>
+                    <option value="at">Autriche</option>
+                    <option value="az">Azerbaïdjan</option>
+                    <option value="bs">Bahamas</option>
+                    <option value="bh">Bahreïn</option>
+                    <option value="bd">Bangladesh</option>
+                    <option value="bb">Barbade</option>
+                    <option value="be">Belgique</option>
+                    <option value="bz">Belize</option>
+                    <option value="bj">Bénin</option>
+                    <option value="bm">Bermudes</option>
+                    <option value="bt">Bhoutan</option>
+                    <option value="by">Biélorussie</option>
+                    <option value="bo">Bolivie</option>
+                    <option value="ba">Bosnie-Herzégovine</option>
+                    <option value="bw">Botswana</option>
+                    <option value="br">Brésil</option>
+                    <option value="bn">Brunéi Darussalam</option>
+                    <option value="bg">Bulgarie</option>
+                    <option value="bf">Burkina Faso</option>
+                    <option value="bi">Burundi</option>
+                    <option value="kh">Cambodge</option>
+                    <option value="cm">Cameroun</option>
+                    <option value="ca">Canada</option>
+                    <option value="cv">Cap-Vert</option>
+                    <option value="ea">Ceuta et Melilla</option>
+                    <option value="cl">Chili</option>
+                    <option value="cn">Chine</option>
+                    <option value="cy">Chypre</option>
+                    <option value="co">Colombie</option>
+                    <option value="km">Comores</option>
+                    <option value="cg">Congo-Brazzaville</option>
+                    <option value="cd">Congo-Kinshasa</option>
+                    <option value="kp">Corée du Nord</option>
+                    <option value="kr">Corée du Sud</option>
+                    <option value="cr">Costa Rica</option>
+                    <option value="ci">Côte d’Ivoire</option>
+                    <option value="hr">Croatie</option>
+                    <option value="cu">Cuba</option>
+                    <option value="cw">Curaçao</option>
+                    <option value="dk">Danemark</option>
+                    <option value="dg">Diego Garcia</option>
+                    <option value="dj">Djibouti</option>
+                    <option value="dm">Dominique</option>
+                    <option value="eg">Égypte</option>
+                    <option value="sv">El Salvador</option>
+                    <option value="ae">Émirats arabes unis</option>
+                    <option value="ec">Équateur</option>
+                    <option value="er">Érythrée</option>
+                    <option value="es">Espagne</option>
+                    <option value="ee">Estonie</option>
+                    <option value="va">État de la Cité du Vatican</option>
+                    <option value="fm">États fédérés de Micronésie</option>
+                    <option value="us">États-Unis</option>
+                    <option value="et">Éthiopie</option>
+                    <option value="fj">Fidji</option>
+                    <option value="fi">Finlande</option>
+                    <option selected="selected" value="fr">France</option>
+                    <option value="ga">Gabon</option>
+                    <option value="gm">Gambie</option>
+                    <option value="ge">Géorgie</option>
+                    <option value="gs">Géorgie du Sud et les Îles Sandwich du Sud</option>
+                    <option value="gh">Ghana</option>
+                    <option value="gi">Gibraltar</option>
+                    <option value="gr">Grèce</option>
+                    <option value="gd">Grenade</option>
+                    <option value="gl">Groenland</option>
+                    <option value="gp">Guadeloupe</option>
+                    <option value="gu">Guam</option>
+                    <option value="gt">Guatemala</option>
+                    <option value="gg">Guernesey</option>
+                    <option value="gn">Guinée</option>
+                    <option value="gw">Guinée-Bissau</option>
+                    <option value="gq">Guinée équatoriale</option>
+                    <option value="gy">Guyana</option>
+                    <option value="gf">Guyane française</option>
+                    <option value="ht">Haïti</option>
+                    <option value="hn">Honduras</option>
+                    <option value="hu">Hongrie</option>
+                    <option value="bv">Île Bouvet</option>
+                    <option value="cx">Île Christmas</option>
+                    <option value="cp">Île Clipperton</option>
+                    <option value="ac">Île de l’Ascension</option>
+                    <option value="im">Île de Man</option>
+                    <option value="nf">Île Norfolk</option>
+                    <option value="ax">Îles Åland</option>
+                    <option value="ky">Îles Caïmans</option>
+                    <option value="ic">Îles Canaries</option>
+                    <option value="cc">Îles Cocos (Keeling)</option>
+                    <option value="ck">Îles Cook</option>
+                    <option value="fo">Îles Féroé</option>
+                    <option value="hm">Îles Heard et MacDonald</option>
+                    <option value="fk">Îles Malouines</option>
+                    <option value="mp">Îles Mariannes du Nord</option>
+                    <option value="mh">Îles Marshall</option>
+                    <option value="um">Îles mineures éloignées des États-Unis</option>
+                    <option value="sb">Îles Salomon</option>
+                    <option value="tc">Îles Turques-et-Caïques</option>
+                    <option value="vg">Îles Vierges britanniques</option>
+                    <option value="vi">Îles Vierges des États-Unis</option>
+                    <option value="in">Inde</option>
+                    <option value="id">Indonésie</option>
+                    <option value="iq">Irak</option>
+                    <option value="ir">Iran</option>
+                    <option value="ie">Irlande</option>
+                    <option value="is">Islande</option>
+                    <option value="il">Israël</option>
+                    <option value="it">Italie</option>
+                    <option value="jm">Jamaïque</option>
+                    <option value="jp">Japon</option>
+                    <option value="je">Jersey</option>
+                    <option value="jo">Jordanie</option>
+                    <option value="kz">Kazakhstan</option>
+                    <option value="ke">Kenya</option>
+                    <option value="kg">Kirghizistan</option>
+                    <option value="ki">Kiribati</option>
+                    <option value="xk">Kosovo</option>
+                    <option value="kw">Koweït</option>
+                    <option value="la">Laos</option>
+                    <option value="re">La Réunion</option>
+                    <option value="ls">Lesotho</option>
+                    <option value="lv">Lettonie</option>
+                    <option value="lb">Liban</option>
+                    <option value="lr">Libéria</option>
+                    <option value="ly">Libye</option>
+                    <option value="li">Liechtenstein</option>
+                    <option value="lt">Lituanie</option>
+                    <option value="lu">Luxembourg</option>
+                    <option value="mk">Macédoine</option>
+                    <option value="mg">Madagascar</option>
+                    <option value="my">Malaisie</option>
+                    <option value="mw">Malawi</option>
+                    <option value="mv">Maldives</option>
+                    <option value="ml">Mali</option>
+                    <option value="mt">Malte</option>
+                    <option value="ma">Maroc</option>
+                    <option value="mq">Martinique</option>
+                    <option value="mu">Maurice</option>
+                    <option value="mr">Mauritanie</option>
+                    <option value="yt">Mayotte</option>
+                    <option value="mx">Mexique</option>
+                    <option value="md">Moldavie</option>
+                    <option value="mc">Monaco</option>
+                    <option value="mn">Mongolie</option>
+                    <option value="me">Monténégro</option>
+                    <option value="ms">Montserrat</option>
+                    <option value="mz">Mozambique</option>
+                    <option value="mm">Myanmar</option>
+                    <option value="na">Namibie</option>
+                    <option value="nr">Nauru</option>
+                    <option value="np">Népal</option>
+                    <option value="ni">Nicaragua</option>
+                    <option value="ne">Niger</option>
+                    <option value="ng">Nigéria</option>
+                    <option value="nu">Niue</option>
+                    <option value="no">Norvège</option>
+                    <option value="nc">Nouvelle-Calédonie</option>
+                    <option value="nz">Nouvelle-Zélande</option>
+                    <option value="om">Oman</option>
+                    <option value="ug">Ouganda</option>
+                    <option value="uz">Ouzbékistan</option>
+                    <option value="pk">Pakistan</option>
+                    <option value="pw">Palaos</option>
+                    <option value="pa">Panama</option>
+                    <option value="pg">Papouasie-Nouvelle-Guinée</option>
+                    <option value="py">Paraguay</option>
+                    <option value="nl">Pays-Bas</option>
+                    <option value="bq">Pays-Bas caribéens</option>
+                    <option value="pe">Pérou</option>
+                    <option value="ph">Philippines</option>
+                    <option value="pn">Pitcairn</option>
+                    <option value="pl">Pologne</option>
+                    <option value="pf">Polynésie française</option>
+                    <option value="pr">Porto Rico</option>
+                    <option value="pt">Portugal</option>
+                    <option value="qa">Qatar</option>
+                    <option value="hk">R.A.S. chinoise de Hong Kong</option>
+                    <option value="mo">R.A.S. chinoise de Macao</option>
+                    <option value="zz">région indéterminée</option>
+                    <option value="cf">République centrafricaine</option>
+                    <option value="do">République dominicaine</option>
+                    <option value="cz">République tchèque</option>
+                    <option value="ro">Roumanie</option>
+                    <option value="gb">Royaume-Uni</option>
+                    <option value="ru">Russie</option>
+                    <option value="rw">Rwanda</option>
+                    <option value="eh">Sahara occidental</option>
+                    <option value="bl">Saint-Barthélemy</option>
+                    <option value="sh">Sainte-Hélène</option>
+                    <option value="lc">Sainte-Lucie</option>
+                    <option value="kn">Saint-Kitts-et-Nevis</option>
+                    <option value="sm">Saint-Marin</option>
+                    <option value="mf">Saint-Martin (partie française)</option>
+                    <option value="sx">Saint-Martin (partie néerlandaise)</option>
+                    <option value="pm">Saint-Pierre-et-Miquelon</option>
+                    <option value="vc">Saint-Vincent-et-les Grenadines</option>
+                    <option value="ws">Samoa</option>
+                    <option value="as">Samoa américaines</option>
+                    <option value="st">Sao Tomé-et-Principe</option>
+                    <option value="sn">Sénégal</option>
+                    <option value="rs">Serbie</option>
+                    <option value="sc">Seychelles</option>
+                    <option value="sl">Sierra Leone</option>
+                    <option value="sg">Singapour</option>
+                    <option value="sk">Slovaquie</option>
+                    <option value="si">Slovénie</option>
+                    <option value="so">Somalie</option>
+                    <option value="sd">Soudan</option>
+                    <option value="ss">Soudan du Sud</option>
+                    <option value="lk">Sri Lanka</option>
+                    <option value="se">Suède</option>
+                    <option value="ch">Suisse</option>
+                    <option value="sr">Suriname</option>
+                    <option value="sj">Svalbard et Jan Mayen</option>
+                    <option value="sz">Swaziland</option>
+                    <option value="sy">Syrie</option>
+                    <option value="tj">Tadjikistan</option>
+                    <option value="tw">Taïwan</option>
+                    <option value="tz">Tanzanie</option>
+                    <option value="td">Tchad</option>
+                    <option value="tf">Terres australes françaises</option>
+                    <option value="io">Territoire britannique de l’océan Indien</option>
+                    <option value="ps">Territoires palestiniens</option>
+                    <option value="th">Thaïlande</option>
+                    <option value="tl">Timor oriental</option>
+                    <option value="tg">Togo</option>
+                    <option value="tk">Tokelau</option>
+                    <option value="to">Tonga</option>
+                    <option value="tt">Trinité-et-Tobago</option>
+                    <option value="ta">Tristan da Cunha</option>
+                    <option value="tn">Tunisie</option>
+                    <option value="tm">Turkménistan</option>
+                    <option value="tr">Turquie</option>
+                    <option value="tv">Tuvalu</option>
+                    <option value="ua">Ukraine</option>
+                    <option value="uy">Uruguay</option>
+                    <option value="vu">Vanuatu</option>
+                    <option value="ve">Venezuela</option>
+                    <option value="vn">Vietnam</option>
+                    <option value="wf">Wallis-et-Futuna</option>
+                    <option value="ye">Yémen</option>
+                    <option value="zm">Zambie</option>
+                    <option value="zw">Zimbabwe</option>
+                </select>
+            </div>
+    </div>
+
+
+<!-- Auteur -->
     <div>
             <div class="row">
                 <div class="input-group add-authors-div" id="aut_new">
@@ -842,6 +1264,8 @@ if( isset($_SESSION['id']))
 
             </div>
     </div>
+
+
 
     <style>
         .tree{
