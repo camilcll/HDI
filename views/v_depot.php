@@ -28,7 +28,7 @@ if( isset($_SESSION['id']))
     <div class="form-group row">
         <label class=" col-md-3 control-label required" for="type"> Type de document </label>
         <div class="col-md-9">
-            <select name="type" id="type" class="form-control input-sm" onchange="changementType();" >
+            <select name="type" id="type" class="form-control input-sm" onchange="" >
                 <option selected="selected" ></option>
                 <optgroup label="Publications">
                     <option value="article">Article dans une revue</option>
