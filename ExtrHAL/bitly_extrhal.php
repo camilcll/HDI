@@ -25,7 +25,7 @@ function bitly_v4_shorten($url) {
 	$long_url = $url;
 
 	# you'll need an auth token from bit.ly, make an account first
-	$auth_token = 'your_auth_token';
+	$auth_token = '59523dfd1c890a52e02d44a4fefb847e0a3a13ad';
 
 	# setup basic curl options
 	$ch = curl_init();
