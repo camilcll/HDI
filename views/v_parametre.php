@@ -75,6 +75,10 @@ if( isset($_SESSION['id']))
             <p>Mail </p>
             <input type="mail" name="email" value="<?=$user->getEmail() ?>" class="form-control" placeholder="Adresse mail" required autofocus>
           </div>
+          <div class="form-label-group m-3">
+            <p>Renseignez votre id Hal</p>
+            <input type="text" name="idHal" class="form-control" placeholder="idHal" required autofocus>
+          </div>
           <div>
             <img onclick="javascript:visibilite('pwd'); return false;" src="<?= PATH_IMAGES ?>key.png" style="width: 25px;height: 25px;"> 
             <a href="" onclick="javascript:visibilite('pwd'); return false;" ><label style="font-size:14px;">Mot de Passe </label></a>
@@ -88,14 +92,14 @@ if( isset($_SESSION['id']))
             <p> Confitmer le nouveau mot de passe</p>
             <input type="password" class="form-control" name="nouveau2" value=""/>
           </div>
-            <!-- partie panneau de configuration -->   
+              
         </div>
             <div class="tab-pane fade py-4 px-4" id="autre">
                 <div class="form-group-group">
                 </div>
             </div>
 
-        </div>
+        
         <button class="btn btn-lg btn-primary btn-login text-uppercase font-weight-bold m-5" type="submit">Modifier</button>
 
     </form>
