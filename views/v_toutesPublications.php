@@ -18,33 +18,44 @@ if( isset($_SESSION['id']))
 
 ?>
 
-<div id="allPublis" class="d-flex justify-content-around align-items-center flex-column">
-    <div id="filterContainer">
 
+<div id="allPublis" class="d-flex justify-content-around align-items-center flex-column">
+  <div id="filterContainer">
+
+  </div>
+  <div id="publi_container_tt" class="pagination-container" >
+    <div data-page="1" >
+          <div class="publi m-4 rounded-lg p-3">udjc</div>
     </div>
-    <div id="publi_container_tt" class="d-flex justify-content-center align-items-center flex-column p-2">
-        <div class="publi m-4 rounded-lg p-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore fugiat autem eveniet molestiae sint corporis, perspiciatis officiis, quia soluta, illum nisi reiciendis iure recusandae harum corrupti veritatis omnis! Porro, ipsum?</div>
-        <div class="publi m-4 rounded-lg p-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus repudiandae, culpa libero fugiat dolorem iusto accusantium quidem laborum eaque nemo reprehenderit voluptates consectetur laboriosam, corrupti ab dolore animi doloribus vero.</div>
-        <div class="publi m-4 rounded-lg p-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit, ex exercitationem. Facere assumenda molestiae ipsa corrupti commodi dolorem, rem ex vero sapiente ab deleniti maxime harum accusamus tempore. Aperiam, doloribus!</div>
-        <div class="publi m-4 rounded-lg p-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab nisi corporis, nihil fuga veritatis, possimus tenetur architecto cumque voluptatibus, corrupti dolorem porro at! Nisi, aut. Cumque assumenda suscipit cupiditate recusandae.</div>
-        <div class="publi m-4 rounded-lg p-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, neque amet. Vero, deserunt sit placeat perspiciatis facere quo doloribus quae commodi reiciendis deleniti officiis, labore doloremque repudiandae autem? Expedita, perspiciatis!</div>
-        <div class="publi m-4 rounded-lg p-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet voluptatem quidem nisi optio incidunt, quam amet perferendis tempora quas cum deleniti quae totam est, odit impedit nemo blanditiis. Alias, rerum!</div>
-        <div class="publi m-4 rounded-lg p-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus deleniti pariatur tenetur nostrum dolores ipsum qui quibusdam similique odit officia eligendi reprehenderit ducimus alias possimus molestias, ea, ad cumque iusto?</div>
-        <div class="publi m-4 rounded-lg p-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi nulla eligendi sequi nihil, eum ipsa corporis ab repellendus sint ratione nisi non dolor voluptates natus explicabo corrupti minima voluptatum qui.</div>
-        <div class="publi m-4 rounded-lg p-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, repellendus similique? Excepturi, veniam error? Doloribus fuga totam odit provident fugiat saepe quam, sit, aliquam eos, fugit recusandae voluptate beatae aliquid?</div>
-        <div class="publi m-4 rounded-lg p-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque rerum odit saepe obcaecati iste incidunt voluptates repudiandae sint consequuntur officia et ea voluptate quisquam praesentium culpa expedita, quidem eum fugit!</div>
-        <div class="publi m-4 rounded-lg p-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore fugiat autem eveniet molestiae sint corporis, perspiciatis officiis, quia soluta, illum nisi reiciendis iure recusandae harum corrupti veritatis omnis! Porro, ipsum?</div>
-        <div class="publi m-4 rounded-lg p-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus repudiandae, culpa libero fugiat dolorem iusto accusantium quidem laborum eaque nemo reprehenderit voluptates consectetur laboriosam, corrupti ab dolore animi doloribus vero.</div>
-        <div class="publi m-4 rounded-lg p-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit, ex exercitationem. Facere assumenda molestiae ipsa corrupti commodi dolorem, rem ex vero sapiente ab deleniti maxime harum accusamus tempore. Aperiam, doloribus!</div>
-        <div class="publi m-4 rounded-lg p-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab nisi corporis, nihil fuga veritatis, possimus tenetur architecto cumque voluptatibus, corrupti dolorem porro at! Nisi, aut. Cumque assumenda suscipit cupiditate recusandae.</div>
-        <div class="publi m-4 rounded-lg p-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, neque amet. Vero, deserunt sit placeat perspiciatis facere quo doloribus quae commodi reiciendis deleniti officiis, labore doloremque repudiandae autem? Expedita, perspiciatis!</div>
-        <div class="publi m-4 rounded-lg p-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet voluptatem quidem nisi optio incidunt, quam amet perferendis tempora quas cum deleniti quae totam est, odit impedit nemo blanditiis. Alias, rerum!</div>
-        <div class="publi m-4 rounded-lg p-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus deleniti pariatur tenetur nostrum dolores ipsum qui quibusdam similique odit officia eligendi reprehenderit ducimus alias possimus molestias, ea, ad cumque iusto?</div>
-        <div class="publi m-4 rounded-lg p-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi nulla eligendi sequi nihil, eum ipsa corporis ab repellendus sint ratione nisi non dolor voluptates natus explicabo corrupti minima voluptatum qui.</div>
-        <div class="publi m-4 rounded-lg p-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, repellendus similique? Excepturi, veniam error? Doloribus fuga totam odit provident fugiat saepe quam, sit, aliquam eos, fugit recusandae voluptate beatae aliquid?</div>
-        <div class="publi m-4 rounded-lg p-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque rerum odit saepe obcaecati iste incidunt voluptates repudiandae sint consequuntur officia et ea voluptate quisquam praesentium culpa expedita, quidem eum fugit!</div>
+    <div data-page="2" style="display:none;">
+        <div class="publi m-4 rounded-lg p-3">qqqqqqq</div>
     </div>
+    <div data-page="3" style="display:none;">
+        <div class="publi m-4 rounded-lg p-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde exercitationem enim quae tempore quam nihil suscipit eius nisi expedita laudantium in culpa delectus reprehenderit illo voluptatum maiores velit, quidem atque!</div>
+    </div>
+    <div data-page="4" style="display:none;">
+        <div class="publi m-4 rounded-lg p-3">bjsw</div>
+    </div>
+    <div data-page="5" style="display:none;">
+        <div class="publi m-4 rounded-lg p-3">skwswkkwkw</div>
+    </div>
+
+    <div id="pgContainer" class="pagination pagination-centered pagination-large">
+      <nav class="d-flex justify-content-center align-items-center" aria-label="Page navigation example">  
+        <ul class="page_control pagination pagination-centered pagination-large pg-blue">
+            <li class="page-item " data-page="-" tabindex="-1" ><a class="page-link" href="#" >&lt;</a></li>
+            <li class="page-item active" data-page="1"><a class="page-link" href="#" >1<span class="sr-only">(current)</span></a></li>
+            <li class="page-item " data-page="2"><a class="page-link" href="#" >2</a></li>
+            <li class="page-item " data-page="3"><a class="page-link" href="#" >3</a></li>
+            <li class="page-item " data-page="4"><a class="page-link" href="#" >4</a></li>
+            <li class="page-item " data-page="5"><a class="page-link" href="#" >5</a></li>
+            <li class="page-item " data-page="+"><a class="page-link" href="#" >&gt;</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
 </div>
+
 
 <!--  Pied de page -->
 <?php require_once(PATH_VIEWS.'footer.php'); ?>
