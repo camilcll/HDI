@@ -19,12 +19,22 @@ if (!$_SESSION['logged']) {
 if(isset($_SESSION['id'])){
 
     $id=$_SESSION['id'];
+
+    if(isset($_POST['idHal']))
+    {
+        $_SESSION['idHal']=$_POST['idHal'];
+    }
+
     $userDAO= new ChercheurDAO();
     $user= $userDAO->getUserById($id);
     $user1=$userDAO->getUserById($id);
     $photo = new PhotoDAO();
     $avatar = $photo->getPhoto($id);
+
+
 }
+
+
 
 if(!empty($_REQUEST['tid'])){
     $tid = htmlspecialchars($_POST['tid']);
