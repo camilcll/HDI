@@ -23,7 +23,8 @@ $(document).ready(function () {
     $.getJSON('https://api.archives-ouvertes.fr/search/?q=manuel+cobian&fl=*&sort=producedDate_tdate+desc', function (data) {
         console.log($(data.response.docs)[0]);
         (data.response.docs).forEach(element => {
-            $("#mespub_container").append('<div class="publi m-4 rounded-lg p-3">' + element["citationFull_s"] + '.' +'</div>')
+            $("#mespub_container").append(
+              ' <tr><td style="vertical-align: middle"><input name="" id="" value="" type="checkbox" class="checkbox-docid"></td><td colspan="2"><div class="publi m-4 rounded-lg p-3">' + element["citationFull_s"] + '.' +'</div></td></tr>')
         });
         
     });
@@ -33,9 +34,11 @@ $(document).ready(function () {
 
 <button class=pull-right name="depot"> <a href="index.php?page=depot"> Déposer </a> </button>
 
-<div id="mespub_container" class="d-flex justify-content-center align-items-center flex-column ml-3">
+<div  class="d-flex justify-content-center align-items-center flex-column ml-3">
     <h1>Mes publications </h1>
-    
+    <table class="table table-hover"><tbody id="mespub_container"> 
+
+    </tbody></table>
   </div>
 
 <?php require_once(PATH_VIEWS.'footer.php'); ?>
