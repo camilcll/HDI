@@ -77,7 +77,7 @@ if( isset($_SESSION['id']))
           </div>
           <div class="form-label-group m-3">
             <p>Renseignez votre id Hal</p>
-            <input type="text" name="idHal" class="form-control" placeholder="idHal" required autofocus>
+            <input type="text" id="idhal" name="idhal" value="<?=$user->getIdHal() ?>" class="form-control" placeholder="idHal" required autofocus>
           </div>
           <div>
             <img onclick="javascript:visibilite('pwd'); return false;" src="<?= PATH_IMAGES ?>key.png" style="width: 25px;height: 25px;"> 

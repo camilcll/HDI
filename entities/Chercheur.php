@@ -7,13 +7,15 @@ class Chercheur {
 	private $_PRENOM;
 	private $_PWD;
 	private $_EMAIL;
+	private $_IDHAL;
 	
-	public function __construct($ID_CHERCHEUR, $NOM, $PRENOM ,$PWD ,$EMAIL ) {
+	public function __construct($ID_CHERCHEUR, $NOM, $PRENOM ,$PWD ,$EMAIL, $IDHAL ) {
 		$this -> _ID_CHERCHEUR = $ID_CHERCHEUR;
 		$this -> _NOM = $NOM;
 		$this -> _PRENOM = $PRENOM;
 		$this -> _PWD = $PWD;
 		$this -> _EMAIL = $EMAIL;
+		$this -> _IDHAL = $IDHAL;
 	}
 
 	public function getIdChercheur() {
@@ -33,6 +35,10 @@ class Chercheur {
 	
 	public function getEmail() {
 		return htmlspecialchars($this -> _EMAIL);
+	}
+
+	public function getIdHal() {
+		return htmlspecialchars($this -> _IDHAL);
 	}
 	
 

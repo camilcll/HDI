@@ -20,9 +20,9 @@ if(isset($_SESSION['id'])){
 
     $id=$_SESSION['id'];
 
-    if(isset($_POST['idHal']))
+    if(isset($_POST['idhal']))
     {
-        $_SESSION['idHal']=$_POST['idHal'];
+        $_SESSION['idhal']=$_POST['idhal'];
     }
 
     $userDAO= new ChercheurDAO();
@@ -90,14 +90,15 @@ if(!empty($_FILES['avatar'])){
 }
 
 
-if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['email']) ) {
+if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['email']) && isset($_POST['idhal']) ) {
     $prenom = htmlspecialchars($_POST['prenom']);
 	$nom = htmlspecialchars($_POST['nom']);
     $email = htmlspecialchars($_POST['email']);
+    $idhal = htmlspecialchars($_POST['idhal']);
     //$nomFich = htmlspecialchars($_FILES['Photo']['name']);
 
             $userDAO= new ChercheurDAO();
-            $userID= $userDAO-> modifierChercheur($nom, $prenom,$email);
+            $userID= $userDAO-> modifierChercheur($nom, $prenom,$email,$idhal);
             
             header('Refresh:0; url=index.php?page=parametre');
 

@@ -15,12 +15,12 @@ if( isset($_SESSION['id']))
     $_SESSION['last_time']= time();
   }
 }
-
+  
 ?>
 <script>
-$(document).ready(function () {
+$(document).ready(function () { 
     
-    $.getJSON('https://api.archives-ouvertes.fr/search/?q=manuel+cobian&fl=*&sort=producedDate_tdate+desc', function (data) {
+    $.getJSON('https://api.archives-ouvertes.fr/search/?q=authIdHal_s:manuel-cobian&fl=*&sort=producedDate_tdate+desc', function (data) {
         console.log($(data.response.docs)[0]);
         (data.response.docs).forEach(element => {
             $("#mespub_container").append(
