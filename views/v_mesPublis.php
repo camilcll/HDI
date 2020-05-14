@@ -20,7 +20,7 @@ if( isset($_SESSION['id']))
 <script>
 $(document).ready(function () { 
     
-    $.getJSON('https://api.archives-ouvertes.fr/search/?q=authIdHal_s:manuel-cobian&fl=*&sort=producedDate_tdate+desc', function (data) {
+    $.getJSON('https://api.archives-ouvertes.fr/search/?q=authIdHal_s:<?php echo $_SESSION['idhal']?>&fl=*&sort=producedDate_tdate+desc', function (data) {
         console.log($(data.response.docs)[0]);
         (data.response.docs).forEach(element => {
             $("#mespub_container").append(

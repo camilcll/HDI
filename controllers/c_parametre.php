@@ -34,7 +34,11 @@ if(isset($_SESSION['id'])){
 
 }
 
-
+$idh= $user -> getIdHal();
+if($idh != NULL)
+{
+    $_SESSION['idhal']=$user -> getIdHal();
+}
 
 if(!empty($_REQUEST['tid'])){
     $tid = htmlspecialchars($_POST['tid']);
