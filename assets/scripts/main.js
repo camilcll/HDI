@@ -39,7 +39,8 @@ function sendTrash(id) {
 
 function formatJSONCit(){
     let dataCit = [];
-    $.getJSON('https://api.archives-ouvertes.fr/search/?q=collCode_s:LTDS&fl=*&sort=producedDate_tdate+desc', function (data) {
+    $("#publi_container_tt").html('<p id="pLoadCit" class="publi m-5 rounded-lg p-3">Loading data from api.archives-ouvertes.fr ...<p>');
+    $.getJSON('https://api.archives-ouvertes.fr/search/?q=collCode_s:LTDS&fl=*&rows=100000&sort=producedDate_tdate+desc', function (data) {
             (data.response.docs).forEach(element => {
                 dataCit.push({ citation: element["citationFull_s"] });
             });
@@ -58,6 +59,7 @@ function updateTtPub(data = null) {
     container.pagination({
         dataSource: data,
         pageSize: 10,
+        className: "paginationjs-big",
         callback: function (data, pagination) {
             var dataHtml = '';
             

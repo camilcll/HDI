@@ -20,12 +20,12 @@ if( isset($_SESSION['id']))
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.5/pagination.min.js"></script>
 
-<div id="allPublis" class="d-flex justify-content-around align-items-center flex-column">
-  <div id="filterContainer">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.5/pagination.css">
 
-  </div>
-  <div id="publi_container_tt" class="" ></div>
-  <div id="pagination" class="pagination"></div>
+<div id="allPublis" class="d-flex justify-content-around align-items-center flex-column">
+  <div id="filterContainer"></div>
+  <div id="publi_container_tt" class="d-flex flex-column align-items-center"></div>
+  <div id="pagination" class="m-3 mb-5"></div>
 </div>
 
 <!--  Pied de page -->

@@ -87,7 +87,8 @@ aside{
 .publi {
   background-color: #fff;
   width: 90%;
-  height: 7em;
+  height: 7em!important;
+  min-height: 7em;
   box-shadow: 0 1rem 1rem rgba(0,0,0,0.25), 0 1rem 1rem rgba(0,0,0,0.22);
   font-size: medium;
 }
@@ -102,7 +103,24 @@ aside{
   width: 100vw;
   height: 100vh;
   min-height: fit-content;
+  
 }
+
+#pLoadCit {
+  font-size: xx-large;
+  height: 5em;
+  color: white;
+  background-color: #99182c;
+  text-align: center;
+  vertical-align: middle;
+
+}
+
+.paginationjs .paginationjs-pages li.active>a {
+  color: #fff!important;
+  background-color: #99182c!important;
+}
+
 
 
 footer a{
