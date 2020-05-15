@@ -18,13 +18,19 @@ if( isset($_SESSION['id']))
   
 ?>
 <script>
+  function extraire()
+  {
+
+  }
+</script>
+<script>
 $(document).ready(function () { 
     
     $.getJSON('https://api.archives-ouvertes.fr/search/?q=authIdHal_s:<?php echo $_SESSION['idhal']?>&fl=*&sort=producedDate_tdate+desc', function (data) {
         console.log($(data.response.docs)[0]);
         (data.response.docs).forEach(element => {
             $("#mespub_container").append(
-              ' <tr><td style="vertical-align: middle"><input name="" id="" value="" type="checkbox" class="checkbox-docid"></td><td colspan="2"><div class="publi m-4 rounded-lg p-3">' + element["citationFull_s"] + '.' +'</div></td></tr>')
+              ' <tr><td style="vertical-align: middle"><input name="" id="" value="" type="checkbox" class="checkbox-docid"></td><td colspan="2"><div onclick="extraire()" class="publi m-4 rounded-lg p-3">' + element["citationFull_s"] + '.' +'</div></td></tr>')
         });
         
     });
