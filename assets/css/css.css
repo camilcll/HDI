@@ -94,11 +94,11 @@ aside{
 }
 
 .publi:hover{
-  border: 0.5rem solid #99182c;
+  border: 0.5rem solid #54c00c;
 }
 
 .publiSelected {
-   border: 0.2rem solid #99182c;
+   border: 0.2rem solid #54c00c;
 }
 
 #publi_container a {
