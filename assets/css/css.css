@@ -109,9 +109,42 @@ aside{
 
 #publi_container_tt{
   width: 100vw;
-  height: 100vh;
+  max-height: 100vh;
   min-height: fit-content;
   
+}
+
+#publi_container_tt button{
+  position: absolute;
+  top: 10em;
+  right: 1em;
+  width: 5rem;
+  height: auto;
+}
+
+#filterContainer{
+  width:100vw;
+  max-height: 50vh;
+}
+#inputContainer{
+  max-width: 60%;
+  min-width: fit-content;
+}
+
+#inputContainer *{
+  font-size: medium!important;
+}
+
+#inputContainer input{
+  width: fit-content;
+}
+
+#dateInput{
+  width: 60%;
+}
+
+#dateInput .input-group{
+  width: 60%;
 }
 
 #pLoadCit {
