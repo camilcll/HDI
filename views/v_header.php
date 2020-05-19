@@ -23,6 +23,7 @@
 		<script type="text/javascript" src="<?= PATH_SCRIPTS ?>monjs.js"></script>
 		<script type="text/javascript" src="<?= PATH_SCRIPTS ?>main.js"></script>
 		<script type="text/javascript" src="<?= PATH_SCRIPTS ?>depot.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 		
 		<!-- 
 			rafraichir une page toutes les 5 secondes
