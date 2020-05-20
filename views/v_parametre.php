@@ -27,19 +27,18 @@ if( isset($_SESSION['id']))
 <div class="container py-5">
     <form  method="post" action="index.php?page=parametre" enctype="multipart/form-data">
         <ul class="nav nav-tabs">
-        <li class="active">
-            <a class="nav-link active" data-toggle="tab" href="#profile">Profile</a>
-        </li>
+          <li class="active">
+              <a class="nav-link active" data-toggle="tab" href="#profile">Profile</a>
+          </li>
 
-        <li class="">
-            <a class="nav-link" data-toggle="tab" href="#info">Informations complémentaires</a>
-        </li>
-
+          <li class="">
+              <a class="nav-link" data-toggle="tab" href="#info">Informations complémentaires</a>
+          </li>
         </ul>
         
 
       <div id="myTabContent" class="tab-content">
-        <div id="profile" class="tab-pane fade in active">
+        <div id="profile" class="tab-pane active">
         <!-- partie avatar -->
           <div class="d-flex justify-content-center align-items-center flex-column">
             <div id="pp" class="d-flex justify-content-center align-items-center bg-secondary rounded m-3 p-3">
@@ -66,7 +65,7 @@ if( isset($_SESSION['id']))
             </div>
           </div>
 
-          <!-- partie form -->
+        <!-- partie form profile -->
           <div class="form-label-group m-3">
             <p>Nom</p>
             <input type="text" name="nom" value="<?=$user->getNom() ?>" class="form-control" placeholder="Nom de l'utilisateur" required autofocus>
@@ -108,7 +107,7 @@ if( isset($_SESSION['id']))
         </div>
         <!-- partie info comple -->
 
-        <div class="tab-pane fade py-4 px-4" id="info">
+        <div id="info" class="tab-pane" >
             <div class="form-group-group">
               <div class="form-label-group m-3">
                 <p>Renseignez votre équipe de recherche</p>
@@ -124,13 +123,10 @@ if( isset($_SESSION['id']))
                 <p>Renseignez votre groupe</p>
                 <input type="text" id="groupe" name="groupe"  class="form-control" placeholder="ex: jj">
               </div>
-              <div class="form-label-group m-3">
-                
-              </div>
             </div>
         </div>
 
-      </div>
+      </div> <!-- fin div tab mycontent-->
         
 
     </form>
