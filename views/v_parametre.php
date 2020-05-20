@@ -81,7 +81,7 @@ if( isset($_SESSION['id']))
           <div class="form-label-group m-3">
             <p>Renseignez votre id Hal</p>
             <input type="text" id="idhal" name="idhal" value="<?=$user->getIdHal() ?>" class="form-control" placeholder="idHal" required autofocus>
-            <label> <a href="https://hal.archives-ouvertes.fr/user" >Pas encore d'idhal, créer s'en un </a></label>
+            <label> <a href="https://hal.archives-ouvertes.fr/user" target="_blank" >Pas encore d'idhal, créer s'en un </a></label>
           </div>
           <div class="form-label-group m-3">
             <p>Renseignez votre id ORCID</p>

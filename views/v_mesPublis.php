@@ -17,7 +17,7 @@ if( isset($_SESSION['id']))
 }
   
 ?>
-<script>
+<script> 
   function extraire()
   {
 
