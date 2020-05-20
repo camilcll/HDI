@@ -109,6 +109,9 @@ if( isset($_SESSION['id']))
 
         <div id="info" class="tab-pane" >
             <div class="form-group-group">
+              <div class="d-flex justify-content-center align-items-center flex-column">
+                <img src="<?= PATH_IMAGES ?>info.PNG" style="width:15%;">
+              </div>
               <div class="form-label-group m-3">
                 <p>Renseignez votre équipe de recherche</p>
                 <SELECT class="form-control" name="forequipe" >
