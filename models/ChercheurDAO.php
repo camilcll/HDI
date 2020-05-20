@@ -27,7 +27,7 @@ class ChercheurDAO extends DAO {
 		
 		}
 		else{
-			$chercheur=new Chercheur($res['ID_CHERCHEUR'],$res['NOM'],$res['PRENOM'],$res['PWD'],$res['EMAIL'],$res['IDHAL']);
+			$chercheur=new Chercheur($res['ID_CHERCHEUR'],$res['NOM'],$res['PRENOM'],$res['PWD'],$res['EMAIL'],$res['IDHAL'], $res['ORCID_ID']);
 			
 		}
 		return $chercheur;
@@ -44,7 +44,7 @@ class ChercheurDAO extends DAO {
 		{
 			foreach($res as $v)
 			{
-				$chercheurs[$i]= new CHERCHEUR($v['ID_CHERCHEUR'],$v['NOM'],$v['PRENOM'],$v['PWD'],$v['EMAIL'],$v['IDHAL']);
+				$chercheurs[$i]= new CHERCHEUR($v['ID_CHERCHEUR'],$v['NOM'],$v['PRENOM'],$v['PWD'],$v['EMAIL'],$v['IDHAL'], $v['ORCID_ID']);
 				$i++;
 				
 			}
@@ -57,7 +57,7 @@ class ChercheurDAO extends DAO {
 		
 		$ligne = $this -> queryRow("SELECT * FROM CHERCHEUR WHERE EMAIL = ? ", array($EMAIL));
 		if ($ligne) {
-			return new Chercheur($ligne['ID_CHERCHEUR'], $ligne['NOM'], $ligne['PRENOM'], $ligne['PWD'], $ligne['EMAIL'], $ligne['IDHAL']);
+			return new Chercheur($ligne['ID_CHERCHEUR'], $ligne['NOM'], $ligne['PRENOM'], $ligne['PWD'], $ligne['EMAIL'], $ligne['IDHAL'], $ligne['ORCID_ID']);
 		
 		}
 		else {
@@ -68,7 +68,7 @@ class ChercheurDAO extends DAO {
 		
 		$ligne = $this -> queryRow("SELECT LOGIN FROM CHERCHEUR WHERE ID_CHERCHEUR = ? ", array($id));
 		if ($ligne) {
-            return new Chercheur($ligne['ID_CHERCHEUR'], $ligne['NOM'], $ligne['PRENOM'], $ligne['PWD'], $ligne['EMAIL'], $ligne['IDHAL']);
+            return new Chercheur($ligne['ID_CHERCHEUR'], $ligne['NOM'], $ligne['PRENOM'], $ligne['PWD'], $ligne['EMAIL'], $ligne['IDHAL'], $ligne['ORCID_ID']);
 		}
 		else {
 			return false;
@@ -80,7 +80,7 @@ class ChercheurDAO extends DAO {
 		
 		$ligne = $this -> queryRow("SELECT * FROM CHERCHEUR WHERE ID_CHERCHEUR = ?", array($id));
 		if ($ligne) {
-			return new Chercheur($ligne['ID_CHERCHEUR'], $ligne['NOM'], $ligne['PRENOM'], $ligne['PWD'], $ligne['EMAIL'], $ligne['IDHAL']);
+			return new Chercheur($ligne['ID_CHERCHEUR'], $ligne['NOM'], $ligne['PRENOM'], $ligne['PWD'], $ligne['EMAIL'], $ligne['IDHAL'], $ligne['ORCID_ID']);
 		}
 		else {
 			return false;
@@ -103,7 +103,7 @@ class ChercheurDAO extends DAO {
 		//recuperation de l'email
 		$ligne = $this -> queryRow("SELECT * FROM CHERCHEUR WHERE EMAIL = ?", array($email));
 		if ($ligne) {
-			return new Chercheur($ligne['ID_CHERCHEUR'], $ligne['NOM'], $ligne['PRENOM'], $ligne['PWD'], $ligne['EMAIL'], $ligne['IDHAL']);
+			return new Chercheur($ligne['ID_CHERCHEUR'], $ligne['NOM'], $ligne['PRENOM'], $ligne['PWD'], $ligne['EMAIL'], $ligne['IDHAL'], $ligne['ORCID_ID']);
 		}
 		else {
 			return false;
@@ -115,6 +115,7 @@ class ChercheurDAO extends DAO {
 		$photoID = $photoDAO -> modifierPhoto($nomFich);*/
 
 		$id = $_SESSION['id'];
+		
 
 
 		// mettre à jour un vip
@@ -127,6 +128,11 @@ class ChercheurDAO extends DAO {
 	{
 		$id = $_SESSION['id'];
 		$res = $this -> _requete('UPDATE CHERCHEUR set PWD =? WHERE ID_CHERCHEUR=?', array($pwd,$id));
+	}
+	public function updateOrcid($orcid)
+	{
+		$id = $_SESSION['id'];
+		$res = $this -> _requete('UPDATE CHERCHEUR set ORCID_ID =? WHERE ID_CHERCHEUR=?', array($orcid,$id));
 	}
 
 	public function supprimerChercheur($id) 

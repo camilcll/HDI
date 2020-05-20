@@ -8,14 +8,16 @@ class Chercheur {
 	private $_PWD;
 	private $_EMAIL;
 	private $_IDHAL;
+	private $_ORCID_ID;
 	
-	public function __construct($ID_CHERCHEUR, $NOM, $PRENOM ,$PWD ,$EMAIL, $IDHAL ) {
+	public function __construct($ID_CHERCHEUR, $NOM, $PRENOM ,$PWD ,$EMAIL, $IDHAL, $ORCID_ID ) {
 		$this -> _ID_CHERCHEUR = $ID_CHERCHEUR;
 		$this -> _NOM = $NOM;
 		$this -> _PRENOM = $PRENOM;
 		$this -> _PWD = $PWD;
 		$this -> _EMAIL = $EMAIL;
 		$this -> _IDHAL = $IDHAL;
+		$this -> _ORCID_ID = $ORCID_ID;
 	}
 
 	public function getIdChercheur() {
@@ -41,7 +43,9 @@ class Chercheur {
 		return htmlspecialchars($this -> _IDHAL);
 	}
 	
-
+	public function getOrcidId() {
+		return htmlspecialchars($this -> _ORCID_ID);
+	}
 	
 }
 

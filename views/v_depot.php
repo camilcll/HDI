@@ -49,7 +49,7 @@ if( isset($_SESSION['id']))
 
 <div class="render">
 
-<form method="post" action="#">
+<form method="post" action="/my-handling-form-page">
 
 
     <div class="form-group row">

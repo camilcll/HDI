@@ -101,11 +101,20 @@ if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['email']) &&
     $idhal = htmlspecialchars($_POST['idhal']);
     //$nomFich = htmlspecialchars($_FILES['Photo']['name']);
 
+    
             $userDAO= new ChercheurDAO();
             $userID= $userDAO-> modifierChercheur($nom, $prenom,$email,$idhal);
             
             header('Refresh:0; url=index.php?page=parametre');
 
+    
+}
+
+if( isset($_POST['orcid'])){
+    $orcid = htmlspecialchars($_POST['orcid']);
+    $userDAO= new ChercheurDAO();
+    $userID= $userDAO-> updateOrcid($orcid);
+    header('Refresh:0; url=index.php?page=parametre');
     
 }
 
