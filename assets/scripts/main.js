@@ -78,7 +78,8 @@ function updateLastPub() {
 
     $.getJSON('https://api.archives-ouvertes.fr/search/?q=collCode_s:LTDS%20AND%20docType_s:*%20AND%20NOT%20popularLevel_s:1%20AND%20(producedDate_tdate:[' + oldDate + 'T00:00:00Z%20TO%20' + newDate + 'T00:00:00Z]%20OR%20publicationDate_tdate:[' + oldDate + 'T00:00:00Z%20TO%20' + newDate + 'T00:00:00Z])%20AND%20submittedDate_tdate:[' + oldDate + 'T00:00:00Z%20TO%20' + newDate + 'T00:00:00Z]&rows=10&fl=*&sort=submittedDate_tdate%20desc&wt=json', function (data) {
         (data.response.docs).forEach(element => {
-            $("#publi_container").append('<div id="' + element['halId_s'] + '" class="publi m-4 rounded-lg p-3" onclick="selectPub(this)">' + element["citationFull_s"] + '.' + '</div>')
+            $("#publi_container").append('<div id="' + element['halId_s'] + '" class="publi m-4 rounded-lg p-3" onclick="selectPub(this)">' + element["citationFull_s"] + '.' + '<div class="mt-5" onclick="displayAb(this)"><a>Voir plus</a><p class="ab_content hidden">' + element["abstract_s"] +'</p></div></div>');
+            console.log(element["abstract_s"]);
         });
 
     });
@@ -88,8 +89,18 @@ function selectPub(el){
 
     console.log("ndbeh");
     $(el).toggleClass("publiSelected"); 
-    if (!$("#publi_container").find("button")){
-        $("#publi_container").append('<button type="submit"><i class="fa fa-download"></i></button>');
+    if (!$("#publi_container_tt").find("button")){
+        $("#publi_container_tt").append('<button type="submit"><i class="fa fa-download"></i></button>');
+    }
+}
+
+function displayAb(el){
+    if($(el).find(".ab_content").html() != "undefined"){
+        $(el).find(".ab_content").toggleClass("hidden");
+    }
+    else{
+        $(el).find(".ab_content").html("Aucun extrait disponible");
+        $(el).find(".ab_content").toggleClass("hidden");
     }
 }
 

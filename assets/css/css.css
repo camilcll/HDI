@@ -87,7 +87,7 @@ aside{
 .publi {
   background-color: #fff;
   width: 90%;
-  height: 7em!important;
+  height: auto;
   min-height: 7em;
   box-shadow: 0 1rem 1rem rgba(0,0,0,0.25), 0 1rem 1rem rgba(0,0,0,0.22);
   font-size: medium;
@@ -197,4 +197,8 @@ header button {
 
 #pgContainer{
   width: 100%;
+}
+
+.hidden{
+  display: none;
 }
