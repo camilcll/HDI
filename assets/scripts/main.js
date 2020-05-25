@@ -115,10 +115,10 @@ function filterHandler(el){
     if (el.value == "Equipe"){
         if(container.find("input").length!=0) {
             container.find("input").remove();
-            container.append('<input type="text" aria-label="Choix Equipe" class="form-control" placeholder="Entrer le nom de l\'Equipe">');
+            container.append('<select class="custom-select"><option selected>Choisir une equipe</option><option value="DySCo">DySCo</option><option value="GCD">GCD</option><option value="MMP">MMP</option><option value="TPCDI">TPCDI</option></select>');
         }
         else{
-            container.append('<input type="text" aria-label="Choix Equipe" class="form-control" placeholder="Entrer le nom de l\'Equipe">');
+            container.append('<select class="custom-select"><option selected>Choisir une equipe</option><option value="DySCo">DySCo</option><option value="GCD">GCD</option><option value="MMP">MMP</option><option value="TPCDI">TPCDI</option></select>');
             return;
         }
     }
