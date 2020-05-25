@@ -21,12 +21,12 @@ if( isset($_SESSION['id']))
 
 
 <div id="allPublis" class="d-flex justify-content-around align-items-center flex-column">
-  <div id="filterContainer" class="d-flex justify-content-center align-items-center flex-column">
+  <form method="post" action='index.php?page=toutesPublications' id="filterContainer" class="d-flex justify-content-center align-items-center flex-column">
     <div id="inputContainer" class="input-group m-3 d-flex">
       <div class="input-group-prepend">
         <label class="input-group-text" for="inputGroupSelect01">Trier par:</label>
       </div>
-      <select class="custom-select" id="inputGroupSelect01" onchange="filterHandler(this)">
+      <select name="select1" class="custom-select" id="inputGroupSelect01" onchange="filterHandler(this)">
         <option selected>...</option>
         <option value="Equipe">Equipe</option>
         <option value="Groupe">Groupe</option>
@@ -34,20 +34,21 @@ if( isset($_SESSION['id']))
       </select>
     </div>
     <div id="dateInput" class="d-flex justify-content-around align-items-center">
-      <div class="input-group mb-3">
+      <div class="input-group mb-3 d-flex">
         <div class="input-group-prepend">
           <span class="input-group-text" >Du:</span>
         </div>
         <input type="text" id="datepicker1" class="form-control" aria-label="datedbt">
       </div>
-      <div class="input-group mb-3">
+      <div class="input-group mb-3 d-flex">
         <div class="input-group-prepend">
           <span class="input-group-text" >Au:</span>
         </div>
         <input type="text" id="datepicker2" class="form-control" aria-label="datedbt">
       </div>
     </div>
-  </div>
+    <input class="btn btn-secondary" type="submit" value="FILTRER">
+</form>
   <form id="publi_container_tt" class="d-flex flex-column align-items-center">
   
   </form>
