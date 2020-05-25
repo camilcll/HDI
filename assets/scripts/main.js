@@ -42,10 +42,12 @@ function formatJSONCit(){
     $("#publi_container_tt").html('<p id="pLoadCit" class="publi m-5 rounded-lg p-3">Loading data from api.archives-ouvertes.fr ...<p>');
     $.getJSON('https://api.archives-ouvertes.fr/search/?q=collCode_s:LTDS&fl=*&rows=100000&sort=producedDate_tdate+desc', function (data) {
             (data.response.docs).forEach(element => {
-                dataCit.push({ citation: element["citationFull_s"], id: element["halId_s"] });
+                dataCit.push({ citation: element["citationFull_s"], id: element["halId_s"], abstract: element["abstract_s"]});
             });
+            console.log(dataCit);
             updateTtPub(dataCit);
     });
+    
 }
 
 function updateTtPub(data = null) {
@@ -64,7 +66,7 @@ function updateTtPub(data = null) {
             var dataHtml = '';
             
             $.each(data, function (index, item) {
-                dataHtml += '<div id="'+ item.id +'" class="publi m-4 rounded-lg p-3" onclick="selectPub(this)">' + item.citation + '</div>';
+                dataHtml += '<div id="' + item.id + '" class="publi m-4 rounded-lg p-3" onclick="selectPub(this)">' + item.citation + '<div class="mt-5" onclick="displayAb(this)"><a>Voir plus</a><p class="ab_content hidden">' + item.abstract +'</p></div></div>';
             });
             $("#publi_container_tt").html(dataHtml);
         }
@@ -79,7 +81,7 @@ function updateLastPub() {
     $.getJSON('https://api.archives-ouvertes.fr/search/?q=collCode_s:LTDS%20AND%20docType_s:*%20AND%20NOT%20popularLevel_s:1%20AND%20(producedDate_tdate:[' + oldDate + 'T00:00:00Z%20TO%20' + newDate + 'T00:00:00Z]%20OR%20publicationDate_tdate:[' + oldDate + 'T00:00:00Z%20TO%20' + newDate + 'T00:00:00Z])%20AND%20submittedDate_tdate:[' + oldDate + 'T00:00:00Z%20TO%20' + newDate + 'T00:00:00Z]&rows=10&fl=*&sort=submittedDate_tdate%20desc&wt=json', function (data) {
         (data.response.docs).forEach(element => {
             $("#publi_container").append('<div id="' + element['halId_s'] + '" class="publi m-4 rounded-lg p-3" onclick="selectPub(this)">' + element["citationFull_s"] + '.' + '<div class="mt-5" onclick="displayAb(this)"><a>Voir plus</a><p class="ab_content hidden">' + element["abstract_s"] +'</p></div></div>');
-            console.log(element["abstract_s"]);
+            //console.log(element["abstract_s"]);
         });
 
     });

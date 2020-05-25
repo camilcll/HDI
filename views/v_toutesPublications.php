@@ -19,7 +19,6 @@ if( isset($_SESSION['id']))
 ?>
 
 
-<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
 <div id="allPublis" class="d-flex justify-content-around align-items-center flex-column">
   <div id="filterContainer" class="d-flex justify-content-center align-items-center flex-column">
