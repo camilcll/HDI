@@ -88,8 +88,6 @@ function updateLastPub() {
 }
 
 function selectPub(el){
-
-    console.log("ndbeh");
     $(el).toggleClass("publiSelected"); 
     if (!$("#publi_container_tt").find("button")){
         $("#publi_container_tt").append('<button type="submit"><i class="fa fa-download"></i></button>');
@@ -114,17 +112,27 @@ function filterHandler(el){
     var container = $("#inputContainer");
     let bTest = container.find(".inner-select").length != 0 || container.find("input").length != 0;
     if (el.value == "Equipe"){
+        let eqp = ["Choisissez l'equipe","Dysco","GCD","MMP","TPCDI"];
         if (bTest) {
-            container.find(".inner-select").remove();
-            container.append('<select class="custom-select inner-select"><option selected>Choisir une equipe</option><option value="DySCo">DySCo</option><option value="GCD">GCD</option><option value="MMP">MMP</option><option value="TPCDI">TPCDI</option></select>');
+            container.append('<select name="equipe" class="custom-select inner-select">')
+            eqp.forEach(element => {
+
+                container.find(".inner-select").append('<option value="' + element + '">' + element + '</option>');
+            });
+            container.append('</select>');
         }
         else{
-            container.append('<select class="custom-select inner-select"><option selected>Choisir une equipe</option><option value="DySCo">DySCo</option><option value="GCD">GCD</option><option value="MMP">MMP</option><option value="TPCDI">TPCDI</option></select>');
+            container.append('<select name="equipe" class="custom-select inner-select">')
+            eqp.forEach(element => {
+
+                container.find(".inner-select").append('<option value="' + element + '">' + element + '</option>');
+            });
+            container.append('</select>')
             return;
         }
     }
     else if (el.value == "Groupe"){
-        let grp = ["VIAME","DISI","DNLCS","ID","GCM","OID","MNP","MMV","ComPETe","SFV","TFM"];
+        let grp = ["Choisissez le groupe","VIAME","DISI","DNLCS","ID","GCM","OID","MNP","MMV","ComPETe","SFV","TFM"];
         if(bTest) {
             container.find(".inner-select").remove();
             container.append('<select name="groupe" class="custom-select inner-select">')
@@ -132,7 +140,7 @@ function filterHandler(el){
                 
                 container.find(".inner-select").append('<option value="' + element + '">' + element +'</option>');
             });
-            container.append('</select>')
+            container.append('</select>');
             
         }
         else{
@@ -148,10 +156,10 @@ function filterHandler(el){
     else if (el.value == "Auteurs"){
         if(bTest) {
             container.find(".inner-select").remove();
-            container.append('<input type="text" aria-label="Choix Auteur" class="form-control inner-select" placeholder="Entrer le ou les noms d\'Auteurs">')
+            container.append('<input type="text" name="auteur" aria-label="Choix Auteur" class="form-control inner-select" placeholder="Entrer le ou les noms d\'Auteurs">')
         }
         else{
-            container.append('<input type="text" aria-label="Choix Auteur" class="form-control inner-select" placeholder="Entrer le ou les noms d\'Auteurs">')
+            container.append('<input type="text" name="auteur" aria-label="Choix Auteur" class="form-control inner-select" placeholder="Entrer le ou les noms d\'Auteurs">')
             return;
         }
     }else{
