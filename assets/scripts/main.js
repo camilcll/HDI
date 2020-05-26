@@ -153,17 +153,20 @@ function filterHandler(el){
 
 function dateTime(){
     $('#datepicker1').datepicker();
-    $('#datepicker1').datepicker("option", "dateFormat", "dd-mm-yy");
-    let date = $('#datepicker1').datepicker("getDate");
+    $('#datepicker1').datepicker("option", "dateFormat", "dd/mm/yy");
     $('#datepicker2').datepicker();
-    $('#datepicker2').datepicker("option", "minDate", -20);
-    $('#datepicker2').datepicker("option", "dateFormat", "dd-mm-yy");
-} 
+    $('#datepicker2').datepicker("option", "dateFormat", "dd/mm/yy");
+}
+
+function updateMinDate(){
+    let date = $('#datepicker1').datepicker("getDate");
+    $('#datepicker2').datepicker("option", "minDate", new Date(date.getFullYear(),date.getMonth(),date.getDate()));
+}
 
 $(document).ready(function () {
+    dateTime();
     updateLastPub();
     updateTtPub();
-    dateTime();
     
 });
 

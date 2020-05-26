@@ -18,7 +18,8 @@ if( isset($_SESSION['id']))
 
 ?>
 
-
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
 
 <div id="allPublis" class="d-flex justify-content-around align-items-center flex-column">
   <form method="post" action='index.php?page=toutesPublications' id="filterContainer" class="d-flex justify-content-center align-items-center flex-column">
@@ -34,13 +35,13 @@ if( isset($_SESSION['id']))
       </select>
     </div>
     <div id="dateInput" class="d-flex justify-content-around align-items-center">
-      <div class="input-group mb-3 d-flex">
+      <div class="input-group mb-3 mr-3 d-flex">
         <div class="input-group-prepend">
           <span class="input-group-text" >Du:</span>
         </div>
         <input type="text" id="datepicker1" class="form-control" aria-label="datedbt">
       </div>
-      <div class="input-group mb-3 d-flex">
+      <div class="input-group mb-3 ml-3 d-flex" onmouseover="updateMinDate()">
         <div class="input-group-prepend">
           <span class="input-group-text" >Au:</span>
         </div>
