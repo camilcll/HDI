@@ -27,7 +27,7 @@ if( isset($_SESSION['id']))
       <div class="input-group-prepend">
         <label class="input-group-text" for="inputGroupSelect01">Trier par:</label>
       </div>
-      <select name="select1" class="custom-select" id="inputGroupSelect01" onchange="filterHandler(this)">
+      <select name="typeTri" class="custom-select" id="inputGroupSelect01" onchange="filterHandler(this)">
         <option selected>...</option>
         <option value="Equipe">Equipe</option>
         <option value="Groupe">Groupe</option>
@@ -39,13 +39,13 @@ if( isset($_SESSION['id']))
         <div class="input-group-prepend">
           <span class="input-group-text" >Du:</span>
         </div>
-        <input type="text" id="datepicker1" class="form-control" aria-label="datedbt">
+        <input name="dateDbt" type="text" id="datepicker1" class="form-control" aria-label="datedbt">
       </div>
       <div class="input-group mb-3 ml-3 d-flex" onmouseover="updateMinDate()">
         <div class="input-group-prepend">
           <span class="input-group-text" >Au:</span>
         </div>
-        <input type="text" id="datepicker2" class="form-control" aria-label="datedbt">
+        <input name="dateFin" type="text" id="datepicker2" class="form-control" aria-label="datefin">
       </div>
     </div>
     <input class="btn btn-secondary" type="submit" value="FILTRER">

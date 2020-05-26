@@ -112,7 +112,7 @@ function filterHandler(el){
     var container = $("#inputContainer");
     let bTest = container.find(".inner-select").length != 0 || container.find("input").length != 0;
     if (el.value == "Equipe"){
-        let eqp = ["Choisissez l'equipe","Dysco","GCD","MMP","TPCDI"];
+        let eqp = ["Choisissez l'equipe","DySCo","GCD","MMP","TPCDI"];
         if (bTest) {
             container.append('<select name="equipe" class="custom-select inner-select">')
             eqp.forEach(element => {

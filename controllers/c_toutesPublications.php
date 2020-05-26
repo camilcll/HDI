@@ -12,9 +12,7 @@ if (!$_SESSION['logged']) {
     exit();
 }
 
-if(isset($_POST["select1"])){
-    
-}
+print_r($_POST);
 
 
 require_once(PATH_VIEWS.$page.'.php');
