@@ -48,8 +48,7 @@ define('TEXTE_FORM_INSCRIPTION_SUCCESS2',", redirection vers l'accueil en cours"
 
 define('TEXTE_PHOTO_DELETE_SUCCESS',"Photo supprimé");
 define('TEXTE_PHOTO_MODIF_SUCCESS',"Modification réussite");
-define('ERREUR_ID','Cet identifiant est inconnu.');
-define('ERREUR_MDP','Mot de passe incorrect!');
+define('ERREUR_ID','Votre identifiant ou votre mot de passe ne correspond pas.');
 define('TEXTE_FORM_CONNEXION_SUCCESS1',"Bienvenue ");
 define('TEXTE_FORM_CONNEXION_SUCCESS2',", redirection vers l'accueil en cours");
 
