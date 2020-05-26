@@ -103,7 +103,7 @@ if( isset($_SESSION['id']))
           </div>
 
 
-          <button class="btn btn-lg btn-primary btn-login text-uppercase font-weight-bold m-5" type="submit">Modifier</button>    
+          <button class="btn btn-lg btn-primary btn-login text-uppercase font-weight-bold m-5" id="pro" type="submit">Modifier</button>    
         </div>
         <!-- partie info comple -->
 
@@ -126,6 +126,8 @@ if( isset($_SESSION['id']))
                 <p>Renseignez votre groupe</p>
                 <input type="text" id="groupe" name="groupe"  class="form-control" placeholder="ex: jj">
               </div>
+
+              <button class="btn btn-lg btn-primary btn-login text-uppercase font-weight-bold m-5" id="infocom" type="submit">Modifier</button>
             </div>
         </div>
 

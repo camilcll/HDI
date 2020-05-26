@@ -14,16 +14,25 @@ if (isset($_POST['email']) && !empty($_POST['email']))
 	{
 			$uDao = new ChercheurDAO();
 			$userBD = $uDao->getUserByUsername($EMAIL);
-			if (!$userBD) $alert=choixAlert('erreur_id');
-			if (!isset($_POST['password']) || $_POST['password']!=$userBD->getPwd()) $alert = choixAlert('erreur_mdp');
+			if (!$userBD) 
+			{
+				$alert=choixAlert('erreur_id');
+				?>  <META HTTP-EQUIV="Refresh" CONTENT="1; URL=index.php?page=connexion"> <?php
+			}
+			else {
+			if (!isset($_POST['password']) || $_POST['password']!=$userBD->getPwd()) 
+			{
+				$alert = choixAlert('erreur_mdp');
+				?>  <META HTTP-EQUIV="Refresh" CONTENT="1; URL=index.php?page=connexion"> <?php
+			}
 			else {
 				$alert = choixAlert('ok_connexion');
 				$_SESSION['logged'] = true;
 				$_SESSION['id']=$userBD->getIdChercheur();
 				$_SESSION['last_time']=time();
-				//header('Refresh:0; url=index.php?id='.$chercheur.'page=accueil');
+				?>  <META HTTP-EQUIV="Refresh" CONTENT="2; URL=index.php"> <?php
 			}
-
+		}
 			//$identite=$userBD->getUsername();
 		}
 	

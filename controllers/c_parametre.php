@@ -16,6 +16,7 @@ if (!$_SESSION['logged']) {
 }
 
 
+
 if(isset($_SESSION['id'])){
 
     $id=$_SESSION['id'];
@@ -30,7 +31,6 @@ if(isset($_SESSION['id'])){
     $user1=$userDAO->getUserById($id);
     $photo = new PhotoDAO();
     $avatar = $photo->getPhoto($id);
-
 
 }
 
