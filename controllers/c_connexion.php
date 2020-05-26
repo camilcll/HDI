@@ -17,13 +17,13 @@ if (isset($_POST['email']) && !empty($_POST['email']))
 			if (!$userBD) 
 			{
 				$alert=choixAlert('erreur_id');
-				?>  <META HTTP-EQUIV="Refresh" CONTENT="1; URL=index.php?page=connexion"> <?php
+				?>  <META HTTP-EQUIV="Refresh" CONTENT="3; URL=index.php?page=connexion"> <?php
 			}
 			else {
 			if (!isset($_POST['password']) || $_POST['password']!=$userBD->getPwd()) 
 			{
-				$alert = choixAlert('erreur_mdp');
-				?>  <META HTTP-EQUIV="Refresh" CONTENT="1; URL=index.php?page=connexion"> <?php
+				$alert = choixAlert('erreur_id');
+				?>  <META HTTP-EQUIV="Refresh" CONTENT="3; URL=index.php?page=connexion"> <?php
 			}
 			else {
 				$alert = choixAlert('ok_connexion');
