@@ -1028,12 +1028,12 @@ if( isset($_SESSION['id']))
         </div>
 </div>
 <!-- Nom revue -->
-    <div class="form-group row " id="journal-element" style="display: none;">
-        <label class="col-md-3 control-label required" for="journal">Nom de la revue</label>
-        <div class="col-md-9">
-            <input name="journal" class="form-control input-sm" id="journal" type="text" value="" >
-        </div>
+<div class="form-group row meta-complete" id="journal-element" style="display: none;">
+    <label class="col-md-3 control-label required" for="journal">Nom de la revue</label>
+    <div class="col-md-9">
+        <input name="journal" class="form-control input-sm" id="journal" type="text" value="" >
     </div>
+</div>
 <!-- titre ouvrage -->
 <div class="form-group row " id="bookTitle-element" style="display: none;">
         <label class="col-md-3 control-label required" for="bookTitle">Titre de l'ouvrage<span class="icon-required">  *</span></label>
@@ -1042,7 +1042,7 @@ if( isset($_SESSION['id']))
             </div>
     </div>
 <!-- Date pub article -->
-    <div class="form-group row " id="date-id-element"  style="display: none;">
+    <div class="form-group row meta-complete" id="date-id-element"  style="display: none;">
         <label class="col-md-3 control-label required" for="date-id">Date de publication</label>
         <div class="col-md-9">
             <div class="input-group">
@@ -1051,7 +1051,7 @@ if( isset($_SESSION['id']))
         </div>
     </div>
 <!-- Date enregistrment video -->
-<div class="form-group row " id="date-enregistrement"  style="display: none;">
+<div class="form-group row meta-complete " id="date-enregistrement"  style="display: none;">
         <label class="col-md-3 control-label required" for="date-id">Date d'enregistrement</label>
         <div class="col-md-9">
             <div class="input-group">
@@ -1060,7 +1060,7 @@ if( isset($_SESSION['id']))
         </div>
 </div>
 <!-- Date enregistrment son -->
-<div class="form-group row " id="date-enregistrement-son"  style="display: none;">
+<div class="form-group row meta-complete" id="date-enregistrement-son"  style="display: none;">
         <label class="col-md-3 control-label required" for="date-id">Date d'enregistrement</label>
         <div class="col-md-9">
             <div class="input-group">
@@ -1069,7 +1069,7 @@ if( isset($_SESSION['id']))
         </div>
 </div>
 <!-- Date creation carte -->
-<div class="form-group row " id="date-creation"  style="display: none;">
+<div class="form-group row meta-complete" id="date-creation"  style="display: none;">
         <label class="col-md-3 control-label required" for="date-id">Date de création</label>
         <div class="col-md-9">
             <div class="input-group">
@@ -1092,7 +1092,7 @@ if( isset($_SESSION['id']))
             </div>
     </div>
 <!-- Date pub autre pub -->
-    <div class="form-group row " id="date-autre-pub"  style="display: none;">
+    <div class="form-group row meta-complete" id="date-autre-pub"  style="display: none;">
         <label class="col-md-3 control-label required" for="date-id">Date de publication</label>
         <div class="col-md-9">
             <div class="input-group">
@@ -1101,7 +1101,7 @@ if( isset($_SESSION['id']))
         </div>
     </div>
 <!-- Date pub direction -->
-<div class="form-group row " id="date-pub-direction"  style="display: none;">
+<div class="form-group row meta-complete" id="date-pub-direction"  style="display: none;">
         <label class="col-md-3 control-label required" for="date-id">Date de publication</label>
         <div class="col-md-9">
             <div class="input-group">
@@ -1111,7 +1111,7 @@ if( isset($_SESSION['id']))
     </div>
 
 <!-- Date pub ouvrage -->
-    <div class="form-group row " id="date-pub-ouvrage"  style="display: none;">
+    <div class="form-group row meta-complete" id="date-pub-ouvrage"  style="display: none;">
         <label class="col-md-3 control-label required" for="date-id">Date de publication</label>
         <div class="col-md-9">
             <div class="input-group">
@@ -1120,7 +1120,7 @@ if( isset($_SESSION['id']))
         </div>
     </div>
 <!-- Date pub chap ouvrage -->
-    <div class="form-group row " id="date-pub-chap-ouvrage"  style="display: none;">
+    <div class="form-group row meta-complete" id="date-pub-chap-ouvrage"  style="display: none;">
         <label class="col-md-3 control-label required" for="date-id">Date de publication</label>
         <div class="col-md-9">
             <div class="input-group">
@@ -1129,7 +1129,7 @@ if( isset($_SESSION['id']))
         </div>
     </div>
 <!-- Date prise de vue Image -->
-<div class="form-group row " id="date-prise-image"  style="display: none;">
+<div class="form-group row meta-complete" id="date-prise-image"  style="display: none;">
         <label class="col-md-3 control-label required" for="date-id">Date prise de vue</label>
         <div class="col-md-9">
             <div class="input-group">
@@ -1148,7 +1148,7 @@ if( isset($_SESSION['id']))
 </div>
 
 <!-- Date brevet -->
-<div class="form-group row " id="date-brevet"  style="display: none;">
+<div class="form-group row meta-complete" id="date-brevet"  style="display: none;">
         <label class="col-md-3 control-label required" for="date-id">Date</label>
         <div class="col-md-9">
             <div class="input-group">

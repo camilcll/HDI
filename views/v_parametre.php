@@ -17,6 +17,8 @@ if( isset($_SESSION['id']))
   }
 }
 
+
+
 ?>
 
 <link href="<?= PATH_CSS ?>settings.css" rel="stylesheet">

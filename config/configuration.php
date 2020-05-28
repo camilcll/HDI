@@ -8,6 +8,10 @@ const BD_DBNAME = 'p1804059';
 const BD_USER = 'p1804059';
 const BD_PWD = '367361';
 
+//identifiant admin sur hal
+const username = 'admin-portail';
+const password = 'admin-portail';
+
 // Langue du site
 const LANG ='FR-fr';
 
