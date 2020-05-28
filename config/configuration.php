@@ -31,6 +31,10 @@ define('PATH_TEXTES','./languages/');
 define('PATH_UPLOADS', './uploads/');
 
 
+
+
+
+
 //sous dossiers
 define('PATH_CSS', PATH_ASSETS.'css/');
 define('PATH_IMAGES', PATH_ASSETS.'images/');
