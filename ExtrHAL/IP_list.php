@@ -1,7 +1,7 @@
 <?php
 //Liste des IP autorisées
 $IP_aut = array(
-"xxx.xxx.xxx.xxx",
+"86.220.72.173",
 "yyy.yyy.yyy.yyy",
 "zzz.zzz.zzz.zzz."
 );

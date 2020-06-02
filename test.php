@@ -1,34 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form action="test.php" method="post" enctype="multipart/form-data">
-	<input type="hidden" name="MAX_FILE_SIZE" value="500000" />
-	Send this file: <input name="userfile" type="file" />
-    <button type="submit" >Send File</button>
-	</form>
-</body>
-</html>
-
 <?php
 
-if(!empty($_FILES['userfile'])){
+// create a new cURL resource
+$ch = curl_init();
+//print_r(curl_getinfo($ch));
+curl_setopt($ch, CURLOPT_URL, "https://api-preprod.archives-ouvertes.fr/sword/hal/");
+curl_setopt($ch, CURLOPT_VERBOSE, TRUE);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER,TRUE);
+curl_setopt($ch, CURLOPT_POST, TRUE);
+curl_setopt($ch, CURLOPT_USERNAME, "admin-portail");
+curl_setopt($ch, CURLOPT_USERPWD, "admin-portail");
+$headers = array("Content-Type:text/xml",
+"Authorization: Basic ZGFmZnk6c2VjZXJldA==", 
+"Packaging:http://purl.org/net/sword-types/AOfr",
+);
+curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+curl_setopt($ch, CURLOPT_POSTFIELDS, "./@test.xml");
 
-$uploaddir = './uploads/avatar/';
-$uploadfile = $uploaddir . 'user1.' . pathinfo($_FILES['userfile']['name'],PATHINFO_EXTENSION);
 
-
-if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
-    echo "File is valid, and was successfully uploaded.\n";
-} else {
-    echo "Possible file upload attack!\n";
-}
-
-echo 'Here is some more debugging info:';
-print_r($_FILES);
-}
+print_r(curl_getinfo($ch));
+print_r(curl_errno($ch));
+ if (curl_errno($ch)) 
+    {
+        // moving to display page to display curl errors
+          echo curl_errno($ch) ;
+          echo curl_error($ch);
+          echo "err";
+    } 
+    else 
+    {
+        //getting response from server
+        echo "pas err";
+        $response = curl_exec($ch);
+         print_r("reponse:".$response);
+         curl_close($ch);
+    }
 ?>
