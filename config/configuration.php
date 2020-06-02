@@ -13,11 +13,6 @@ const BD_PWD = '367361';
 // Langue du site
 const LANG ='FR-fr';
 
-//Connexion
-const LOGADMIN='kiki';
-const MDPADMIN='$2y$10$va9WuT947Hbgc9HYKZSZ7.7E1uXgLmW1AZKqzMzTcy4M9LCt0nIbu';
-const ADMIN='administrateur';
-const MDP='admin';
 
 
 //dossiers racines du site
