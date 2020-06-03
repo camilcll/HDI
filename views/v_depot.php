@@ -19,31 +19,31 @@ if( isset($_SESSION['id']))
 ?>
 
 <style>
-.collapsible {
-  cursor: pointer;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-}
+    .collapsible {
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    }
 
 
 
-.collapsible:after {
-  font-weight: bold;
-  float: left;
-  margin-left: 5px;
-}
+    .collapsible:after {
+    font-weight: bold;
+    float: left;
+    margin-left: 5px;
+    }
 
 
 
-.content {
-  padding: 0 18px;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-}
+    .content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    }
 </style>
 <h3> Dépôt </h3>
 
@@ -2735,6 +2735,8 @@ if( isset($_SESSION['id']))
             </div>
 </div>
 
+<button class="btn btn-lg btn-primary btn-login text-uppercase font-weight-bold m-5" id="pro" type="submit">Valider</button>  
+
 <style>
     .tree{
         padding:0px;
@@ -2791,4 +2793,8 @@ for (i = 0; i < coll.length; i++) {
   });
 }
 </script>
-<?php require_once(PATH_VIEWS.'footer.php'); ?>
+<?php 
+
+
+
+require_once(PATH_VIEWS.'footer.php'); ?>
