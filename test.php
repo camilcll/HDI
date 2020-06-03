@@ -1,37 +1,33 @@
 <?php
 
 // create a new cURL resource
-$ch = curl_init();
-//print_r(curl_getinfo($ch));
-curl_setopt($ch, CURLOPT_URL, "https://api-preprod.archives-ouvertes.fr/sword/hal/");
-curl_setopt($ch, CURLOPT_VERBOSE, TRUE);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER,TRUE);
-curl_setopt($ch, CURLOPT_POST, TRUE);
-curl_setopt($ch, CURLOPT_USERNAME, "admin-portail");
-curl_setopt($ch, CURLOPT_USERPWD, "admin-portail");
-$headers = array("Content-Type:text/xml",
-"Authorization: Basic ZGFmZnk6c2VjZXJldA==", 
-"Packaging:http://purl.org/net/sword-types/AOfr",
-);
-curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-curl_setopt($ch, CURLOPT_POSTFIELDS, "./@test.xml");
+function sendPub($xml){
+    $file = file_get_contents($xml, true);
 
+    // create a new cURL resource
+    $ch = curl_init();
+    //print_r(curl_getinfo($ch));
+    curl_setopt($ch, CURLOPT_URL, "https://api-preprod.archives-ouvertes.fr/sword/hal/");
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER,TRUE);
+    //curl_setopt($ch, CURLOPT_VERBOSE, TRUE);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER,FALSE);
+    curl_setopt($ch, CURLOPT_POST, TRUE);
+    $headers = array("Content-Type:text/xml",
+    "Authorization: Basic YWRtaW4tcG9ydGFpbDphZG1pbi1wb3J0YWls", 
+    "Packaging:http://purl.org/net/sword-types/AOfr",
+    );
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $file);
+    $response = curl_exec($ch);
+    print_r("reponse:".$response."\n\n\n");
+    print_r(curl_getinfo($ch));
+    echo "\nErrno:";
+    print_r(curl_errno($ch));
+    echo "\nError:";
+    print_r(curl_error($ch));
 
-print_r(curl_getinfo($ch));
-print_r(curl_errno($ch));
- if (curl_errno($ch)) 
-    {
-        // moving to display page to display curl errors
-          echo curl_errno($ch) ;
-          echo curl_error($ch);
-          echo "err";
-    } 
-    else 
-    {
-        //getting response from server
-        echo "pas err";
-        $response = curl_exec($ch);
-         print_r("reponse:".$response);
-         curl_close($ch);
-    }
+    curl_close($ch);
+}
+    
+sendPub("./test.xml");
 ?>
