@@ -1,7 +1,7 @@
 <?php
 
 // create a new cURL resource
-function sendPub($xml,$behalf=false,$ids){
+function sendPub($xml,$behalf=false,$ids=''){
     $file = file_get_contents($xml, true);
 
     // create a new cURL resource
@@ -32,5 +32,5 @@ function sendPub($xml,$behalf=false,$ids){
     curl_close($ch);
 }
     
-sendPub("./test.xml",true,"login|admin-portail2");
+sendPub("./test.xml");
 ?>
