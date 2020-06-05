@@ -1,5 +1,5 @@
 <?php
 
-echo password_hash("jeanbap", PASSWORD_DEFAULT);
+echo password_hash("Iut2020", PASSWORD_DEFAULT);
 
 ?>

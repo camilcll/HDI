@@ -9,7 +9,7 @@ class ChercheurDAO extends DAO {
 	
     public function connexion($EMAIL, $PWD) {
 		
-		$ligne = $this -> queryRow("SELECT * FROM CHERCHEUR WHERE EMAIL = ? AND PWD = ?", array($EMAIL, $PWD));
+		$ligne = $this -> queryRow("SELECT * FROM CHERCHEUR WHERE EMAIL = ? AND PWD = ?", array($EMAIL, sha1($PWD)));
 		if ($ligne) {
 			return new Chercheur($ligne['ID_CHERCHEUR'], $ligne['NOM'], $ligne['PRENOM'], $ligne['PWD'], $ligne['EMAIL']);
 		}
