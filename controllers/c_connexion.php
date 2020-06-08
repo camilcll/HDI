@@ -12,6 +12,8 @@ if (isset($_POST['email']) && !empty($_POST['email']))
 	
 	if (isset($_POST['password']) && !empty($_POST['password']))
 	{
+
+		    $password= sha1($_POST['password']);
 			$uDao = new ChercheurDAO();
 			$userBD = $uDao->getUserByUsername($EMAIL);
 			if (!$userBD) 
@@ -20,7 +22,7 @@ if (isset($_POST['email']) && !empty($_POST['email']))
 				?>  <META HTTP-EQUIV="Refresh" CONTENT="3; URL=index.php?page=connexion"> <?php
 			}
 			else {
-			if (!isset($_POST['password']) || $_POST['password']!=$userBD->getPwd()) 
+			if (!isset($_POST['password']) || $password!=$userBD->getPwd()) 
 			{
 				$alert = choixAlert('erreur_id');
 				?>  <META HTTP-EQUIV="Refresh" CONTENT="3; URL=index.php?page=connexion"> <?php

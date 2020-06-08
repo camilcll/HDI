@@ -17,7 +17,7 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['prenom']) && !
 		$alert = choixAlert('con_vide');
 		$NOM = htmlspecialchars($_POST['nom']);
 		$PRENOM = htmlspecialchars($_POST['prenom']);
-		$PWD = htmlspecialchars($_POST['pwd']);
+		$PWD = sha1(htmlspecialchars($_POST['pwd']));
 		$EMAIL = htmlspecialchars($_POST['email']);
 
 		$userDAO= new ChercheurDAO();
