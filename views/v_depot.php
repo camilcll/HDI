@@ -2735,6 +2735,11 @@ if( isset($_SESSION['id']))
             </div>
 </div>
 
+<button type="submit" id="br" class="btn btn-info">
+    <i class='fas fa-arrow-right'></i>
+    Sauvegarder en tant que brouillon
+ </button>
+
 <button class="btn btn-lg btn-primary btn-login text-uppercase font-weight-bold m-5" id="pro" type="submit">Valider</button>  
 
 <style>
