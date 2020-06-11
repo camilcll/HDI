@@ -1,4 +1,0 @@
-AuthName "Page � acc�s prot�g�"
-AuthType Basic
-AuthUserFile "/storage/ssd5/430/13600430/public_html/ExtrHAL/pvt/.htpasswd"
-Require valid-user 
