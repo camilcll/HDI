@@ -93,7 +93,7 @@ if( isset($_SESSION['id']))
             <label class="col-md-3 control-label optional" for="subTitle"> Sous-Titre </label>
         </div>
         <div class="textarea-group" style="margin-bottom:10px;">
-            <textarea name="title" class="form-control input-sm" style="border-bottom-right-radius:0;" rows="3" cols="80"></textarea>
+            <textarea name="soustitre" id="soustitre" class="form-control input-sm" style="border-bottom-right-radius:0;" rows="3" cols="80"></textarea>
         </div>
     </div>
 
@@ -1768,7 +1768,7 @@ if( isset($_SESSION['id']))
             <div class="row">
                 <div class="input-group add-authors-div" id="aut_new">
                     <span class="input-group-addon add-author-label">Ajouter un auteur : </span>
-                    <input class="form-control ui-autocomplete-input" id="searchAuthor" type="text" placeholder="Esteban Clarice" autocomplete="off">
+                    <input class="form-control ui-autocomplete-input" id="auteur" name="auteur" type="text" placeholder="Esteban Clarice" autocomplete="off">
                 </div>
 
             </div>

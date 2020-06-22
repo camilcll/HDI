@@ -10,7 +10,7 @@
 	);
 }
 	// Détruit toutes les variables de session
-	$_SESSION = array();
+	$_SESSION = array(); // $_SESSION est désormais un tableau vide, toutes les variables de session ont été supprimées
 	header('location:index.php');
 require_once(PATH_VIEWS.$page.'.php');
 ?>

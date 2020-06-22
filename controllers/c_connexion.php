@@ -22,20 +22,19 @@ if (isset($_POST['email']) && !empty($_POST['email']))
 				?>  <META HTTP-EQUIV="Refresh" CONTENT="3; URL=index.php?page=connexion"> <?php
 			}
 			else {
-			if (!isset($_POST['password']) || $password!=$userBD->getPwd()) 
-			{
-				$alert = choixAlert('erreur_id');
-				?>  <META HTTP-EQUIV="Refresh" CONTENT="3; URL=index.php?page=connexion"> <?php
+				if (!isset($_POST['password']) || $password!=$userBD->getPwd()) 
+				{
+					$alert = choixAlert('erreur_id');
+					?>  <META HTTP-EQUIV="Refresh" CONTENT="3; URL=index.php?page=connexion"> <?php
+				}
+				else {
+					$alert = choixAlert('ok_connexion');
+					$_SESSION['logged'] = true;
+					$_SESSION['id']=$userBD->getIdChercheur();
+					$_SESSION['last_time']=time();
+					?>  <META HTTP-EQUIV="Refresh" CONTENT="2; URL=index.php"> <?php
+				}
 			}
-			else {
-				$alert = choixAlert('ok_connexion');
-				$_SESSION['logged'] = true;
-				$_SESSION['id']=$userBD->getIdChercheur();
-				$_SESSION['last_time']=time();
-				?>  <META HTTP-EQUIV="Refresh" CONTENT="2; URL=index.php"> <?php
-			}
-		}
-			//$identite=$userBD->getUsername();
 		}
 	
   

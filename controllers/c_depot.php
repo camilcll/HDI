@@ -49,7 +49,7 @@ if(isset($_POST['br']))
                 'titre' => isset($_POST['titre'])? $_POST['titre'] : null,
                 'nomrevue' => isset($_POST['nomrevue'])? $_POST['nomrevue'] : null,
                 'date-article' => isset($_POST['date-article'])? $_POST['date-article'] : null,
-                'searchAuthor' => isset($_POST['searchAuthor'])? $_POST['searchAuthor'] : null,
+                'auteur' => isset($_POST['auteur'])? $_POST['auteur'] : null,
                 'researchData' => isset($_POST['researchData'])? $_POST['researchData'] : null,
                 'bookTitle' => isset($_POST['bookTitle'])? $_POST['bookTitle'] : null,
                 'date-chapOuvrage' => isset($_POST['date-chapOuvrage'])? $_POST['date-chapOuvrage'] : null,
