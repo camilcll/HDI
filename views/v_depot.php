@@ -1744,7 +1744,7 @@ if( isset($_SESSION['id']))
     Sauvegarder en tant que brouillon
  </button>
 
-<button class="btn btn-lg btn-primary btn-login text-uppercase font-weight-bold m-5" id="pro" type="submit">Valider</button>  
+<button class="btn btn-lg btn-primary btn-login text-uppercase font-weight-bold m-5" id="valider" name="valider" type="submit">Valider</button>  
 
 <style>
     .tree{

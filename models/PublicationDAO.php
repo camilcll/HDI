@@ -16,16 +16,12 @@ class PublicationDAO extends DAO {
         }
 	}
 
-	public function creerPublication($jsonString, $id_brouillon)
+	public function creerPublication($jsonString, $id_publication)
     {
-
-		$res = $this -> queryRow('SELECT MAX(id) FROM BROUILLON');
-		$ID = $res['MAX(id)'] + 1;
-
 		$id_chercheur= $_SESSION['id'];
     	// Ajout du brouillon en base
-		$this -> _requete("INSERT INTO BROUILLON (id_brouillon,id_chercheur, id, donnee) VALUES (?, ?, ?, ?)", array($id_brouillon, $id_chercheur, $ID, $jsonString));
-		return $id_brouillon;
+		$this -> _requete("INSERT INTO PUBLICATION (id_publication, contenu) VALUES (?, ?)", array($id_publication, $jsonString));
+		return $id_chercheur;
 	}
     
 }   
