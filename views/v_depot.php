@@ -644,11 +644,11 @@ if( isset($_SESSION['id']))
         <div class="col-md-9">
             <span class="help-block">Vous pouvez renseigner le résumé en plusieurs langues : choisir la langue et cliquer sur + pour ajouter une nouvelle langue</span>
                 <div class="textarea-group" style="margin-bottom : 10px;">
-                    <textarea name="abstract[en]" class="meta-complete form-control input-sm" id="abstract" lang="en" style="border-bottom-right-radius: 0; " rows="9" cols="80" hasshiftvalue=""></textarea>
+                    <textarea name="abstract[en]" class="meta-complete form-control input-sm" id="abstract1" lang="en" style="border-bottom-right-radius: 0; " rows="9" cols="80" hasshiftvalue=""></textarea>
                         
                 </div>
                 <div class="textarea-group" style="margin-bottom : 10px;">
-                    <textarea name="abstract[fr]" class="meta-complete form-control input-sm" id="abstract" lang="fr" style="border-bottom-right-radius: 0; " rows="9" cols="80" hasshiftvalue=""></textarea>
+                    <textarea name="abstract[fr]" class="meta-complete form-control input-sm" id="abstract2" lang="fr" style="border-bottom-right-radius: 0; " rows="9" cols="80" hasshiftvalue=""></textarea>
                         
                 </div>
         </div>
@@ -902,12 +902,12 @@ if( isset($_SESSION['id']))
         </div>
     </div>
 
-<!-- Mots clés -->
+<!-- Mots clés these -->
     <div class="form-group row  meta-complete" id="keyword-element" style="display: none;"><label class="col-md-3 control-label optional" for="keyword">Mots-clés</label>
         <div class="col-md-9"><span class="help-block"> Les caractères "," (virgule) et ";" (point-virgule) peuvent être utilisés pour séparer une liste de mots-clés.</span>
             <div class="input-group" style="margin-bottom : 10px;">
-                <input name="keyword[en][]" class="meta-complete form-control input-sm" id="keyword" lang="en" style=" " type="text" value="" hasshiftvalue="" data-keyword="1" attr-autocomplete="keyword_s">
-                <input name="keyword[fr][]" class="meta-complete form-control input-sm" id="keyword" lang="fr" style=" " type="text" value="" hasshiftvalue="" data-keyword="1" attr-autocomplete="keyword_s">
+                <input name="keyword[en][]" class="meta-complete form-control input-sm" id="keywordThese1" lang="en" style=" " type="text" value="" hasshiftvalue="" data-keyword="1" attr-autocomplete="keyword_s">
+                <input name="keyword[fr][]" class="meta-complete form-control input-sm" id="keywordThese2" lang="fr" style=" " type="text" value="" hasshiftvalue="" data-keyword="1" attr-autocomplete="keyword_s">
             </div>
         </div>
     </div>
@@ -916,8 +916,8 @@ if( isset($_SESSION['id']))
 <div class="form-group row  meta-complete" id="keywordHdr-element" style="display: none;"><label class="col-md-3 control-label optional" for="keyword">Mots-clés</label>
         <div class="col-md-9"><span class="help-block"> Les caractères "," (virgule) et ";" (point-virgule) peuvent être utilisés pour séparer une liste de mots-clés.</span>
             <div class="input-group" style="margin-bottom : 10px;">
-                <input name="keyword[en][]" class="meta-complete form-control input-sm" id="keyword" lang="en" style=" " type="text" value="" hasshiftvalue="" data-keyword="1" attr-autocomplete="keyword_s">
-                <input name="keyword[fr][]" class="meta-complete form-control input-sm" id="keyword" lang="fr" style=" " type="text" value="" hasshiftvalue="" data-keyword="1" attr-autocomplete="keyword_s">
+                <input name="keywordHdr1" class="meta-complete form-control input-sm" id="keywordHdr1" lang="en" style=" " type="text" value="" hasshiftvalue="" data-keyword="1" attr-autocomplete="keyword_s">
+                <input name="keywordHdr2" class="meta-complete form-control input-sm" id="keywordHdr2" lang="fr" style=" " type="text" value="" hasshiftvalue="" data-keyword="1" attr-autocomplete="keyword_s">
             </div>
         </div>
     </div>
@@ -953,7 +953,7 @@ if( isset($_SESSION['id']))
 <div class="form-group row " id="bookTitle-element" style="display: none;">
         <label class="col-md-3 control-label required" for="bookTitle">Titre de l'ouvrage<span class="icon-required">  *</span></label>
             <div class="col-md-9">
-                <textarea name="bookTitle" class="form-control input-sm" id="bookTitle" rows="2" cols="80"></textarea>
+                <textarea name="titreOuvrage" class="form-control input-sm" id="titreOuvrage" rows="2" cols="80"></textarea>
             </div>
     </div>
 <!-- Date pub article -->
@@ -961,7 +961,7 @@ if( isset($_SESSION['id']))
         <label class="col-md-3 control-label required" for="date-id">Date de publication</label>
         <div class="col-md-9">
             <div class="input-group">
-                <input type="date" name="date">
+                <input type="date" name="date-article" id="date-article">
             </div>
         </div>
     </div>
@@ -970,14 +970,14 @@ if( isset($_SESSION['id']))
     <div class="form-group row " id="journal-autre-pub" style="display: none;">
         <label class="col-md-3 control-label required" for="journal">Nom de la revue</label>
         <div class="col-md-9">
-            <input name="journal" class="form-control input-sm" id="journal" type="text" value="" >
+            <input name="journalAutre" class="form-control input-sm" id="journalAutre" type="text" value="" >
         </div>
     </div>
 <!-- titre ouvrage autre pub-->
 <div class="form-group row " id="bookTitle-autre-pub" style="display: none;">
         <label class="col-md-3 control-label required" for="bookTitle">Titre de l'ouvrage<span class="icon-required">  *</span></label>
             <div class="col-md-9">
-                <textarea name="bookTitle" class="form-control input-sm" id="bookTitle" rows="2" cols="80"></textarea>
+                <textarea name="bookTitleAutre" class="form-control input-sm" id="bookTitleAutre" rows="2" cols="80"></textarea>
             </div>
     </div>
 <!-- Date pub autre pub -->
@@ -985,7 +985,7 @@ if( isset($_SESSION['id']))
         <label class="col-md-3 control-label required" for="date-id">Date de publication</label>
         <div class="col-md-9">
             <div class="input-group">
-                <input type="date" name="date">
+                <input type="date" name="dateAutre" id="dateAutre">
             </div>
         </div>
     </div>
@@ -994,7 +994,7 @@ if( isset($_SESSION['id']))
         <label class="col-md-3 control-label required" for="date-id">Date de publication</label>
         <div class="col-md-9">
             <div class="input-group">
-                <input type="date" name="date">
+                <input type="date" name="dateDirection" id="dateDirection">
             </div>
         </div>
     </div>
@@ -1004,7 +1004,7 @@ if( isset($_SESSION['id']))
         <label class="col-md-3 control-label required" for="date-id">Date de publication</label>
         <div class="col-md-9">
             <div class="input-group">
-                <input type="date" name="date">
+                <input type="date" name="dateOuvrage" id="dateOuvrage">
             </div>
         </div>
     </div>
@@ -1013,7 +1013,7 @@ if( isset($_SESSION['id']))
         <label class="col-md-3 control-label required" for="date-id">Date de publication</label>
         <div class="col-md-9">
             <div class="input-group">
-                <input type="date" name="date">
+                <input type="date" name="dateChapOuvrage" id="dateChapOuvrage">
             </div>
         </div>
     </div>
@@ -1024,7 +1024,7 @@ if( isset($_SESSION['id']))
         <label class="col-md-3 control-label required" for="date-id">Date</label>
         <div class="col-md-9">
             <div class="input-group">
-                <input type="date" name="date">
+                <input type="date" name="dateBrevet" id="dateBrevet">
             </div>
         </div>
     </div>
@@ -1033,42 +1033,42 @@ if( isset($_SESSION['id']))
     <div class="form-group row " id="inPress-element"  style="display: none;">
         <label class="col-md-3 control-label" for="inPress">A paraître</label>
             <div class="col-md-9"><span class="help-block">Si vous choisissez l'option "A paraître", la date de publication ne sera plus obligatoire</span>
-                <input name="inPress" type="hidden" value="0"><input name="inPress" class="form-control input-sm" id="inPress" type="checkbox" value="1">
+                <input name="paraitreArticle"  type="hidden" value="0"><input name="paraitreArticle" class="form-control input-sm" id="paraitreArticle" type="checkbox" value="1">
             </div>
     </div>
 <!-- A paraitre ouvrage-->
     <div class="form-group row " id="inPress-ouvrage"  style="display: none;">
         <label class="col-md-3 control-label" for="inPress">A paraître</label>
             <div class="col-md-9"><span class="help-block">Si vous choisissez l'option "A paraître", la date de publication ne sera plus obligatoire</span>
-                <input name="inPress" type="hidden" value="0"><input name="inPress" class="form-control input-sm" id="inPress" type="checkbox" value="1">
+                <input name="paraitreOuvrage" type="hidden" value="0"><input name="paraitreOuvrage" class="form-control input-sm" id="paraitreOuvrage" type="checkbox" value="1">
             </div>
     </div>
 <!-- A paraitre chap ouvrage-->
     <div class="form-group row " id="inPress-chap-ouvrage"  style="display: none;">
         <label class="col-md-3 control-label" for="inPress">A paraître</label>
             <div class="col-md-9"><span class="help-block">Si vous choisissez l'option "A paraître", la date de publication ne sera plus obligatoire</span>
-                <input name="inPress" type="hidden" value="0"><input name="inPress" class="form-control input-sm" id="inPress" type="checkbox" value="1">
+                <input name="paraitreChapOuvrage" type="hidden" value="0"><input name="paraitreChapOuvrage" class="form-control input-sm" id="paraitreChapOuvrage" type="checkbox" value="1">
             </div>
     </div>
 <!-- A paraitre direction-->
     <div class="form-group row " id="inPress-direction"  style="display: none;">
         <label class="col-md-3 control-label" for="inPress">A paraître</label>
             <div class="col-md-9"><span class="help-block">Si vous choisissez l'option "A paraître", la date de publication ne sera plus obligatoire</span>
-                <input name="inPress" type="hidden" value="0"><input name="inPress" class="form-control input-sm" id="inPress" type="checkbox" value="1">
+                <input name="paraitreDirection" type="hidden" value="0"><input name="paraitreDirection" class="form-control input-sm" id="paraitreDirection" type="checkbox" value="1">
             </div>
     </div>
 <!-- Description autre pub-->
     <div class="form-group row " id="description-element" style="display: none;">
         <label class="col-md-3 control-label required" for="description">Description<span class="icon-required">  *</span></label>
             <div class="col-md-9">
-                <textarea name="description" class="form-control input-sm" id="description" rows="2" cols="80"></textarea>
+                <textarea name="descriptionAutre" id="descriptionAutre" class="form-control input-sm" id="description" rows="2" cols="80"></textarea>
             </div>
     </div>
 <!-- Type rapport -->
     <div class="form-group row " id="reportType-element" style="display: none;">
         <label class="col-md-3 control-label required" for="reportType">Type</label>
             <div class="col-md-9"><span class="help-block">Sélectionnez le type de votre rapport</span>
-                <select name="reportType" class="form-control input-sm" id="reportType">
+                <select name="reportType" id="reportType" class="form-control input-sm" id="reportType">
                     <option selected="selected" value="6">Rapport de recherche</option>
                     <option value="4">Rapport Technique</option>
                     <option value="2">Contrat</option>
@@ -1084,7 +1084,7 @@ if( isset($_SESSION['id']))
         <label class="col-md-3 control-label required" for="date-id">Date début congrès</label>
         <div class="col-md-9">
             <div class="input-group">
-                <input type="date" name="date">
+                <input type="date" name="dateRapport" id="dateRapport">
             </div>
         </div>
     </div>
@@ -1093,16 +1093,9 @@ if( isset($_SESSION['id']))
     <label class="col-md-3 control-label required" for="authorityInstitution">Institution</label>
         <div class="col-md-9">
             <div class="input-group" style="margin-bottom : 10px;">
-                <input name="authorityInstitution[]" class=" form-control input-sm" id="authorityInstitution" style=" " type="text" value=""  attr-autocomplete="authorityInstitution_s"><span class="input-group-btn"><button class="btn btn-sm btn-primary" style="border-top-left-radius:0; border-bottom-left-radius:0; height: 30px; padding-top:0; padding-bottom: 0;" onclick="addInstitu()" type="button" data-toggle="tooltip" data-original-title="Ajouter" data-placement="right"><i class="glyphicon glyphicon-plus"></i></button></span>
+                <input name="authorityInstitution1" class=" form-control input-sm" id="authorityInstitution1" style=" " type="text" value=""  attr-autocomplete="authorityInstitution_s">
             </div>
         </div>
-        <div id="institu">
-        </div>
-        <template id="institutionTemplate">
-            <div class="input-group" style="margin-bottom : 10px;" id="divInstitu">
-                <input name="authorityInstitution[]" class="form-control input-sm ui-autocomplete-input" id="authorityInstitution" style=" " type="text" value=""  attr-autocomplete="authorityInstitution_s" autocomplete="off"><button title="" class="btn btn-sm btn-primary" class=pull-right style="border-top-left-radius:0; border-bottom-left-radius:0; height: 30px; padding-top:0; padding-bottom: 0;" onclick="deleteInstitu(event)" type="button" data-toggle="tooltip" data-original-title="Supprimer" data-placement="right"><i class="glyphicon glyphicon-trash"></i></button>
-            </div>
-        </template>
         
 </div>
 
@@ -1111,16 +1104,9 @@ if( isset($_SESSION['id']))
     <label class="col-md-3 control-label required" for="authorityInstitution">Directeur de thése</label>
         <div class="col-md-9">
             <div class="input-group" style="margin-bottom : 10px;">
-                <input name="directeurThese[]" class=" form-control input-sm" id="directeurThese" style=" " type="text" value=""  attr-autocomplete="authorityInstitution_s"><span class="input-group-btn"><button class="btn btn-sm btn-primary" style="border-top-left-radius:0; border-bottom-left-radius:0; height: 30px; padding-top:0; padding-bottom: 0;" onclick="addDirect()" type="button" data-toggle="tooltip" data-original-title="Ajouter" data-placement="right"><i class="glyphicon glyphicon-plus"></i></button></span>
+                <input name="directeurThese1" class=" form-control input-sm" id="directeurThese1" style=" " type="text" value=""  attr-autocomplete="authorityInstitution_s">
             </div>
         </div>
-        <div id="direct">
-        </div>
-        <template id="directeurTemplate">
-            <div class="input-group" style="margin-bottom : 10px;" >
-                <input name="directeurThese[]" class="form-control input-sm ui-autocomplete-input" id="directeurThese" style=" " type="text" value=""  attr-autocomplete="authorityInstitution_s" autocomplete="off"><button title="" class="btn btn-sm btn-primary" class=pull-right style="border-top-left-radius:0; border-bottom-left-radius:0; height: 30px; padding-top:0; padding-bottom: 0;" onclick="deleteDirect(event)" type="button" data-toggle="tooltip" data-original-title="Supprimer" data-placement="right"><i class="glyphicon glyphicon-trash"></i></button>
-            </div>
-        </template>
         
 </div>
 <!-- Titre du congres -->
@@ -1144,7 +1130,7 @@ if( isset($_SESSION['id']))
     <label class="col-md-3 control-label required" for="date-id">Date soutenance</label>
     <div class="col-md-9">
         <div class="input-group">
-            <input type="date" name="date">
+            <input type="date" name="dateThese">
         </div>
     </div>
 </div>
@@ -1153,7 +1139,7 @@ if( isset($_SESSION['id']))
     <label class="col-md-3 control-label required" for="date-id">Date soutenance</label>
     <div class="col-md-9">
         <div class="input-group">
-            <input type="date" name="date">
+            <input type="date" name="dateHdr">
         </div>
     </div>
 </div>
@@ -1169,7 +1155,7 @@ if( isset($_SESSION['id']))
 <div class="form-group row " id="number-element" style="display: none;">
         <label class="col-md-3 control-label required" for="number">N° de brevet</label>
             <div class="col-md-9">
-                <input name="number" class="form-control input-sm" id="number" type="text" value="">
+                <input name="numberBrevet" id="numberBrevet" class="form-control input-sm" id="number" type="text" value="">
             </div>
     </div>
 <!-- pays congres -->
@@ -1444,16 +1430,9 @@ if( isset($_SESSION['id']))
     <label class="col-md-3 control-label required" for="authorityInstitution">Organisme de délivrance</label>
         <div class="col-md-9">
             <div class="input-group" style="margin-bottom : 10px;">
-                <input name="organismeDelivrance[]" class=" form-control input-sm" id="organismeDelivrance" style=" " type="text" value=""  attr-autocomplete="authorityInstitution_s"><span class="input-group-btn"><button class="btn btn-sm btn-primary" style="border-top-left-radius:0; border-bottom-left-radius:0; height: 30px; padding-top:0; padding-bottom: 0;" onclick="addOrga()" type="button" data-toggle="tooltip" data-original-title="Ajouter" data-placement="right"><i class="glyphicon glyphicon-plus"></i></button></span>
+                <input name="organismeDelivrance1" class=" form-control input-sm" id="organismeDelivrance1" style=" " type="text" value=""  attr-autocomplete="authorityInstitution_s">
             </div>
         </div>
-        <div id="orga">
-        </div>
-        <template id="organismeTemplate">
-            <div class="input-group" style="margin-bottom : 10px;" >
-                <input name="organismeDelivrance[]" class="form-control input-sm ui-autocomplete-input" id="organismeDelivrance" style=" " type="text" value=""  attr-autocomplete="authorityInstitution_s" autocomplete="off"><button title="" class="btn btn-sm btn-primary" class=pull-right style="border-top-left-radius:0; border-bottom-left-radius:0; height: 30px; padding-top:0; padding-bottom: 0;" onclick="deleteOrga(event)" type="button" data-toggle="tooltip" data-original-title="Supprimer" data-placement="right"><i class="glyphicon glyphicon-trash"></i></button>
-            </div>
-        </template>
         
 </div>
 <!-- Organisme délivrance hdr-->
@@ -1461,16 +1440,9 @@ if( isset($_SESSION['id']))
     <label class="col-md-3 control-label required" for="authorityInstitution">Organisme de délivrance</label>
         <div class="col-md-9">
             <div class="input-group" style="margin-bottom : 10px;">
-                <input name="organismeDelivranceHdr[]" class=" form-control input-sm" id="organismeDelivranceHdr" style=" " type="text" value=""  attr-autocomplete="authorityInstitution_s"><span class="input-group-btn"><button class="btn btn-sm btn-primary" style="border-top-left-radius:0; border-bottom-left-radius:0; height: 30px; padding-top:0; padding-bottom: 0;" onclick="addOrgaHdr()" type="button" data-toggle="tooltip" data-original-title="Ajouter" data-placement="right"><i class="glyphicon glyphicon-plus"></i></button></span>
+                <input name="organismeHdr1" class=" form-control input-sm" id="organismeHdr1" style=" " type="text" value=""  attr-autocomplete="authorityInstitution_s">
             </div>
         </div>
-        <div id="orga">
-        </div>
-        <template id="organismeTemplate">
-            <div class="input-group" style="margin-bottom : 10px;" >
-                <input name="organismeDelivranceHdr[]" class="form-control input-sm ui-autocomplete-input" id="organismeDelivranceHdr" style=" " type="text" value=""  attr-autocomplete="authorityInstitution_s" autocomplete="off"><button title="" class="btn btn-sm btn-primary" class=pull-right style="border-top-left-radius:0; border-bottom-left-radius:0; height: 30px; padding-top:0; padding-bottom: 0;" onclick="deleteOrgaHdr(event)" type="button" data-toggle="tooltip" data-original-title="Supprimer" data-placement="right"><i class="glyphicon glyphicon-trash"></i></button>
-            </div>
-        </template>
         
 </div>
 <!-- President jury hdr-->
@@ -1478,16 +1450,10 @@ if( isset($_SESSION['id']))
     <label class="col-md-3 control-label required" for="authorityInstitution">Président du jury</label>
         <div class="col-md-9">
             <div class="input-group" style="margin-bottom : 10px;">
-                <input name="presidentJury[]" class=" form-control input-sm" id="presidentJury" style=" " type="text" value=""  attr-autocomplete="authorityInstitution_s"><span class="input-group-btn"><button class="btn btn-sm btn-primary" style="border-top-left-radius:0; border-bottom-left-radius:0; height: 30px; padding-top:0; padding-bottom: 0;" onclick="addPre()" type="button" data-toggle="tooltip" data-original-title="Ajouter" data-placement="right"><i class="glyphicon glyphicon-plus"></i></button></span>
+                <input name="presidentJury1" class=" form-control input-sm" id="presidentJury1" style=" " type="text" value=""  attr-autocomplete="authorityInstitution_s">
             </div>
         </div>
-        <div id="pre">
-        </div>
-        <template id="presidentTemplate">
-            <div class="input-group" style="margin-bottom : 10px;" >
-                <input name="presidentJury[]" class="form-control input-sm ui-autocomplete-input" id="presidentJury" style=" " type="text" value=""  attr-autocomplete="authorityInstitution_s" autocomplete="off"><button title="" class="btn btn-sm btn-primary" class=pull-right style="border-top-left-radius:0; border-bottom-left-radius:0; height: 30px; padding-top:0; padding-bottom: 0;" onclick="deletePre(event)" type="button" data-toggle="tooltip" data-original-title="Supprimer" data-placement="right"><i class="glyphicon glyphicon-trash"></i></button>
-            </div>
-        </template>
+        
         
 </div>
 

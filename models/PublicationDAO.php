@@ -16,7 +16,7 @@ class PublicationDAO extends DAO {
         }
 	}
 
-	public function creerDonnee($jsonString, $id_brouillon)
+	public function creerPublication($jsonString, $id_brouillon)
     {
 
 		$res = $this -> queryRow('SELECT MAX(id) FROM BROUILLON');
