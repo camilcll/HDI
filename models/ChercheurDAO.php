@@ -111,16 +111,12 @@ class ChercheurDAO extends DAO {
 	}
 	public function modifierChercheur($nom,$prenom,$email,$idhal)
 	{
-		/*$photoDAO = new PhotoDAO();
-		$photoID = $photoDAO -> modifierPhoto($nomFich);*/
-
 		$id = $_SESSION['id'];
 		
-
-
-		// mettre à jour un vip
+		// mettre à jour un chercheur
         $res = $this -> _requete('UPDATE CHERCHEUR 
- 									set NOM =?,PRENOM=?,EMAIL=?,IDHAL=? WHERE ID_CHERCHEUR=?', array($nom,$prenom,$email,$idhal,$id));
+									 set NOM =?,PRENOM=?,EMAIL=?,IDHAL=? WHERE ID_CHERCHEUR=?', 
+									 array($nom,$prenom,$email,$idhal,$id));
 
 	}
 
