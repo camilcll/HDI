@@ -56,8 +56,9 @@ if( isset($_SESSION['id']))
             
             <!-- partie panneau de configuration -->   
             </div>
-            <div class="tab-pane fade " id="supprimerU">
+            <div class="tab-pane" id="supprimerU">
                 <div class="form-label-group m-3">
+                <p> test </p>
                 <?php
                     if($user!=null){
                         echo '<div class = "row"><table class="table"><thead class="thead-dark"><tr><th scope="col">ID</th><th scope="col">Nom</th><th scope="col">Prénom</th><th> </th></tr></thead><tbody>';
@@ -82,7 +83,6 @@ if( isset($_SESSION['id']))
                     
                 ?>
               
-                </div>
                 </div>
             </div>
         </div>

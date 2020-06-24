@@ -10,7 +10,7 @@ if (isset($erreur)) {
     $alert = choixAlert($erreur);
 }
 
-$userDAO= new ChercheurDAO(DEBUG);
+$userDAO= new ChercheurDAO();
 $user=$userDAO->getChercheur();
 	
 if(isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['pwd']) && isset($_POST['email']) )

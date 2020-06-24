@@ -24,7 +24,8 @@ class BrouillonDAO extends DAO {
 
 		$id_chercheur= $_SESSION['id'];
     	// Ajout du brouillon en base
-		$this -> _requete("INSERT INTO BROUILLON (id_brouillon,id_chercheur, id, donnee) VALUES (?, ?, ?, ?)", array($id_brouillon, $id_chercheur, $ID, $jsonString));
+		$this -> _requete("INSERT INTO BROUILLON (id_brouillon,id_chercheur, id, donnee) 
+						   VALUES (?, ?, ?, ?)", array($id_brouillon, $id_chercheur, $ID, $jsonString));
 		return $id_brouillon;
 	}
     

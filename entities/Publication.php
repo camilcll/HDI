@@ -17,9 +17,6 @@ class Publication {
 	public function getContenu() {
 		return $this -> _contenu;
 	}
-
-    
-	
 }
 
 ?>
