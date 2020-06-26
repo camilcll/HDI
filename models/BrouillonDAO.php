@@ -28,6 +28,20 @@ class BrouillonDAO extends DAO {
 						   VALUES (?, ?, ?, ?)", array($id_brouillon, $id_chercheur, $ID, $jsonString));
 		return $id_brouillon;
 	}
+
+
+	public function getBrouillon()
+    {
+		//recupere la derniere version du brouillon avec l'id
+		$res = $this -> queryRow('SELECT MAX(id) FROM BROUILLON');
+		$id = $res['MAX(id)'];
+
+		$id_chercheur= $_SESSION['id'];
+    	// recuperer le dernier brouillon effectuer par le chercheur
+		$donnee = $this -> _requete("SELECT donnee FROM BROUILLON WHERE id_chercheur=? AND id= ?
+						   VALUES (?, ?)", array($id_chercheur, $id));
+		return $donnee;
+	}
     
 }   
 ?>

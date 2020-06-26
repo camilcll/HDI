@@ -109,7 +109,10 @@ if(isset($_POST['br']))
             } 
 
             $brDAO= new BrouillonDAO();
-		    $br_id= $brDAO -> creerDonnee($jsonString, $id_brouillon);
+            $br_id= $brDAO -> creerDonnee($jsonString, $id_brouillon);
+            $br_donnee = $brDAO -> getBrouillon();
+            
+
 
             //$fp = fopen("brouillon.json","w+"); //creation du fichier
             //fputs($fp, $js); // on écrit les données dans le data.json

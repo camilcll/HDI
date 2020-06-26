@@ -94,7 +94,8 @@ class ChercheurDAO extends DAO {
 		$userID = $res['MAX(ID_CHERCHEUR)'] + 1;
 		
 		// Ajout du VIP en base
-		$this -> _requete("INSERT INTO CHERCHEUR (ID_CHERCHEUR, NOM, PRENOM, PWD, EMAIL) VALUES (?, ?, ?,?,?)", array($userID,$NOM, $PRENOM, $PWD, $EMAIL));
+		$this -> _requete("INSERT INTO CHERCHEUR (ID_CHERCHEUR, NOM, PRENOM, PWD, EMAIL)
+						   VALUES (?, ?, ?,?,?)", array($userID,$NOM, $PRENOM, $PWD, $EMAIL));
 		return $userID;
 	}
 	
@@ -103,7 +104,8 @@ class ChercheurDAO extends DAO {
 		//recuperation de l'email
 		$ligne = $this -> queryRow("SELECT * FROM CHERCHEUR WHERE EMAIL = ?", array($email));
 		if ($ligne) {
-			return new Chercheur($ligne['ID_CHERCHEUR'], $ligne['NOM'], $ligne['PRENOM'], $ligne['PWD'], $ligne['EMAIL'], $ligne['IDHAL'], $ligne['ORCID_ID']);
+			return new Chercheur($ligne['ID_CHERCHEUR'], $ligne['NOM'], $ligne['PRENOM'], $ligne['PWD'], 
+								 $ligne['EMAIL'], $ligne['IDHAL'], $ligne['ORCID_ID']);
 		}
 		else {
 			return false;

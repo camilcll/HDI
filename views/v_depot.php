@@ -15,7 +15,7 @@ if( isset($_SESSION['id']))
     $_SESSION['last_time']= time();
   }
 }
-
+echo $br_donnee;
 ?>
 
 <style>
@@ -46,6 +46,7 @@ if( isset($_SESSION['id']))
     }
 </style>
 <h3> Dépôt </h3>
+
 
 <div class="render">
 
